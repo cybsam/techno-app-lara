@@ -65,8 +65,9 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">username</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Verified</th>
                                 <th scope="col">Image</th>
+                                <th scope="col">Verified</th>
+                                <th scope="col">Block</th>
                                 <th scope="col">create</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -80,6 +81,7 @@
                                     <td>{{ Str::limit($users->name,10) }}</a></td>
                                     <td><a class="" href=""><span>@</span>{{ Str::limit($users->username,6) }}</a></td>
                                     <td><a href="mailto:{{ $users->email }}">{{ $users->email }}</a></td>
+                                    <td><img src="{{ asset('image/users') }}/{{ $users->user_image }}" height="35px" width="35px" alt=""></td>
                                     <td>
                                         @if ($users->email_verified == 1)
                                             <i class="bi bi-patch-check-fill text-primary"></i>
@@ -87,7 +89,17 @@
                                             <i class="bi bi-patch-exclamation text-danger"></i>
                                         @endif
                                     </td>
-                                    <td><img src="{{ asset('image/users') }}/{{ $users->user_image }}" height="35px" width="35px" alt=""></td>
+                                    
+                                    <td>
+                                        @if ($users->is_block == '0')
+                                            <i class="bi bi-person-fill text-info" style="font-size: 25px;"></i>
+                                    
+                                        @else
+                                            
+                                            <i class="bi bi-person-x-fill text-danger" style="font-size: 25px;"></i>
+                                        @endif
+                                        
+                                    </td>
                                     <td>{{ $users->created_at->diffForHumans() }}</td>
                                     <td>
                                         <div class="btn-group" role="group">
@@ -115,8 +127,9 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">username</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Verified</th>
                                 <th scope="col">Image</th>
+                                <th scope="col">Verified</th>
+                                <th scope="col">Block</th>
                                 <th scope="col">create</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -131,8 +144,9 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">username</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Verified</th>
                                 <th scope="col">Image</th>
+                                <th scope="col">Verified</th>
+                                <th scope="col">Block</th>
                                 <th scope="col">create</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -145,6 +159,7 @@
                                     <td>{{ Str::limit($admin->name,10) }}</td>
                                     <td><a class="" href=""><span>@</span>{{ Str::limit($admin->username,6) }}</a></td>
                                     <td><a href="mailto:{{ $admin->email }}">{{ $admin->email }}</a></td>
+                                    <td><img src="{{ asset('image/users') }}/{{ $admin->user_image }}" height="35px" width="35px" alt=""></td>
                                     <td>
                                         @if ($admin->email_verified == 1)
                                             <i class="bi bi-patch-check-fill text-primary"></i>
@@ -152,7 +167,15 @@
                                             <i class="bi bi-patch-exclamation text-danger"></i>
                                         @endif
                                     </td>
-                                    <td><img src="{{ asset('image/users') }}/{{ $admin->user_image }}" height="35px" width="35px" alt=""></td>
+                                    
+                                    <td>
+                                        @if ($admin->is_block == '0')
+                                            <i class="bi bi-person-fill text-info" style="font-size: 25px"></i>
+                                        @else
+                                            <i class="bi bi-person-x-fill text-danger" style="font-size: 25px;"></i>
+                                        @endif
+                                        
+                                    </td>
                                     <td>{{ $admin->created_at->diffForHumans() }}</td>
                                     <td>
                                         <div class="btn-group" role="group">
@@ -184,8 +207,10 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">username</th>
                                 <th scope="col">Email</th>
-                                <th scope="col">Verified</th>
                                 <th scope="col">Image</th>
+                                <th scope="col">Verified</th>
+                                
+                                <th scope="col">Block</th>
                                 <th scope="col">create</th>
                                 <th scope="col">Action</th>
                             </tr>
