@@ -189,8 +189,8 @@
                 </a>
             </li>
             <li>
-                <a href="">
-                <i class="bi bi-circle"></i><span>About Us</span>
+                <a href="{{ route('SupUser.SetingsAboutUsInfo') }}" class="@if(url()->current() == route('SupUser.SetingsAboutUsInfo')) active @endif">
+                <i class="bi bi-circle"></i><span>About Us Info</span>
                 </a>
             </li>
             <li>
