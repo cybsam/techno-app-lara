@@ -24,7 +24,7 @@ class User extends Authenticatable
         'user_image',
         'role_int',
         'role',
-        'is_block',
+        'is_active',
         'last_seen',
     ];
 

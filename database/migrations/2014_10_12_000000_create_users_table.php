@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('user_image')->nullable();
             $table->integer('role_int')->default(0);
             $table->string('role')->default('user');
-            $table->string('is_block')->default(0);
+            $table->integer('is_active')->default(1);
             $table->integer('email_verified')->default(0);
             $table->string('password');
             $table->timestamp('last_seen')->nullable();

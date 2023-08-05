@@ -19,7 +19,7 @@ class BasicUserMiddleware
     {
         if (Auth::check()) {
             if(Auth::user()->role_int == '0' && Auth::user()->role = 'user'){
-                if (Auth::user()->is_block == '0') {
+                if (Auth::user()->is_active == '1') {
                     return $next($request);
                 }else {
                     return redirect()->route('login')->with('logfaild','User block by admin, contact admin to release!');

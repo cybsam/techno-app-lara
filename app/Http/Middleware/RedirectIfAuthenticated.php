@@ -25,10 +25,10 @@ class RedirectIfAuthenticated
             // if (Auth::guard($guard)->check()) {
             //     return redirect(RouteServiceProvider::HOME);
             // }
-            if(Auth::guard($guard)->check() && Auth::user()->role_int == 1 && Auth::user()->is_block == '0'){
+            if(Auth::guard($guard)->check() && Auth::user()->role_int == 1 && Auth::user()->is_active == '1'){
                 return redirect()->route('Administrator.index');
                 
-            }elseif(Auth::guard($guard)->check() && Auth::user()->role_int == 0 && Auth::user()->is_block == '0'){
+            }elseif(Auth::guard($guard)->check() && Auth::user()->role_int == 0 && Auth::user()->is_active == '1'){
                 return redirect()->route('basicUser.dashboard');
                 
                 

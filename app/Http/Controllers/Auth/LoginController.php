@@ -30,14 +30,14 @@ class LoginController extends Controller
     // protected $redirectTo = RouteServiceProvider::HOME;
     protected function redirectTo(){
         if(Auth()->user()->role_int == '1'){
-            if(Auth()->user()->is_block == '0'){
+            if(Auth()->user()->is_active == '1'){
                 return route('Administrator.index');
             }else {
                 return redirect()->route('login')->with('logfaild','User Suspended by admin, contact admin to release!');
             }
             
         }else if(Auth()->user()->role_int = '0'){
-            if(Auth()->user()->is_block == '0'){
+            if(Auth()->user()->is_active == '1'){
                 return route('basicUser.dashboard');
             }else {
                 return redirect()->route('login')->with('logfaild','User Suspended by admin, contact admin to release!');
@@ -72,7 +72,7 @@ class LoginController extends Controller
         // 'username'=>$input['username'],
         if(Auth()->attempt(array('email'=>$input['email'],'password'=>$input['password']))){
             if(Auth()->user()->role_int == 1){
-                if (Auth()->user()->is_block == '0') {
+                if (Auth()->user()->is_active == '1') {
                     if (Auth()->user()->role == 'admin') {
                         return redirect()->route('Administrator.index');
                     }else {
@@ -82,7 +82,7 @@ class LoginController extends Controller
                     return redirect()->route('login')->with('logfaild','User Suspended by admin, contact admin to release!');
                 }
             }elseif (Auth()->user()->role_int == 0) {
-                if (Auth()->user()->is_block == '0') {
+                if (Auth()->user()->is_active == '1') {
                     if (Auth()->user()->role == 'user') {
                         return redirect()->route('basicUser.dashboard');
                     }else {
