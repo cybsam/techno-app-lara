@@ -106,6 +106,16 @@ class UsersController extends Controller
         }
     }
 
+    //is active
+    public function is_active(Request $request){
+        $data = User::find($request->id);
+        $data->is_active = $request->status;
+        $data->save();
+        return response()->json([
+            'status'=>'success',
+        ]);
+    }
+
     public function softDeleteUser(Request $request){
         dd($request->all());
         $userId = $request->dlt_id;

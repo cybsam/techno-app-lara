@@ -67,7 +67,7 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Verified</th>
-                                <th scope="col">Block</th>
+                                <th scope="col">is active</th>
                                 <th scope="col">create</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -91,14 +91,10 @@
                                     </td>
                                     
                                     <td>
-                                        @if ($users->is_block == '0')
-                                            <i class="bi bi-person-fill text-info" style="font-size: 25px;"></i>
-                                    
-                                        @else
-                                            
-                                            <i class="bi bi-person-x-fill text-danger" style="font-size: 25px;"></i>
-                                        @endif
-                                        
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" class="form-check-input is_active_switch" id="switch[{{ $key }}]" data-id="{{$users->id}}" {{ $users->is_active ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="switch[{{ $key }}]"></label>
+                                        </div>
                                     </td>
                                     <td>{{ $users->created_at->diffForHumans() }}</td>
                                     <td>
@@ -129,7 +125,7 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Verified</th>
-                                <th scope="col">Block</th>
+                                <th scope="col">is active</th>
                                 <th scope="col">create</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -146,7 +142,7 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Verified</th>
-                                <th scope="col">Block</th>
+                                <th scope="col">is active</th>
                                 <th scope="col">create</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -169,11 +165,11 @@
                                     </td>
                                     
                                     <td>
-                                        @if ($admin->is_block == '0')
-                                            <i class="bi bi-person-fill text-info" style="font-size: 25px"></i>
-                                        @else
-                                            <i class="bi bi-person-x-fill text-danger" style="font-size: 25px;"></i>
-                                        @endif
+                                        
+                                        <div class="form-check form-switch">
+                                            <input type="checkbox" class="form-check-input is_active_switch" id="switch[{{ $key }}]" data-id="{{$admin->id}}" {{ $admin->is_active ? 'checked' : '' }}>
+                                            <label class="form-check-label" for="switch[{{ $key }}]"></label>
+                                        </div>
                                         
                                     </td>
                                     <td>{{ $admin->created_at->diffForHumans() }}</td>
@@ -210,7 +206,7 @@
                                 <th scope="col">Image</th>
                                 <th scope="col">Verified</th>
                                 
-                                <th scope="col">Block</th>
+                                <th scope="col">is active</th>
                                 <th scope="col">create</th>
                                 <th scope="col">Action</th>
                             </tr>
