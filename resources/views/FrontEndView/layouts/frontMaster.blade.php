@@ -33,6 +33,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/FrontEnd/css/style.css')}}">
         <!-- responsive css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/FrontEnd/css/responsive.css')}}">
+        @yield('cssFront')
         
     </head>
     <body class="defult-home">
