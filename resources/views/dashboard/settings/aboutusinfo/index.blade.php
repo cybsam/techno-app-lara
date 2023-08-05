@@ -1,5 +1,5 @@
 @extends('layouts.SupUserMaster')
-@section('title', 'Settings About Us Information or Address - Techno Apogee Limited')
+@section('title', 'Settings ~ About Us Information or Address - Techno Apogee Limited')
 @section('SupUserContent')
 
     <div class="pagetitle">
@@ -12,11 +12,104 @@
             </ol>
         </nav>
     </div>
+    
 
     <div class="conainer">
         <div class="row">
             <div class="col-md-12">
-                hey
+                
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Company Name</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_name }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Website</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_web }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Email</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_email }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Office Time</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_office_time }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Header</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_header }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Description</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_description }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Address 1</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_address_1 }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Address 2</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_address_2 }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Mobile 1</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_mobile_1 }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Mobile 2</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_mobile_2 }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Telephone</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_telephone }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Facebook Page</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_facebook }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Twitter Username</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_twitter }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Linkdein</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_linkedin }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company Telegram</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_telegram }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company WhatsApp</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_whatsapp }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">Company YouTube</th>
+                            <th scope="col">:</th>
+                            <th scope="">{{ $companyInfo->company_youtube }}</th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="text-info">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#updateAboutUsInfo" data-id="{{ $companyInfo->id }}" data-bs-companyName="{{ $companyInfo->company_name }}" data-bs-companyWebSite="{{ $companyInfo->company_web }}" data-bs-companyEmail="{{ $companyInfo->company_email }}" data-bs-officeTime="{{ $companyInfo->company_office_time }}" data-bs-companyHeader="{{ $companyInfo->company_header }}" data-bs-companyDescription="{{ $companyInfo->company_description }}" data-bs-companyAdd1="{{ $companyInfo->company_address_1 }}" data-bs-companyAdd2="{{ $companyInfo->company_address_2 }}" data-bs-companyMobile1="{{ $companyInfo->company_mobile_1 }}" data-bs-companyMobile2="{{ $companyInfo->company_mobile_2 }}" class="btn btn-outline-warning text-black"> Update Contact Information</button>
+                </div>
             </div>
         </div>
     </div>

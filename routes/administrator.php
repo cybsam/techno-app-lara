@@ -32,6 +32,8 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
 
     //settings 
     Route::get('Settings/AboutUsInformation',[App\Http\Controllers\Administrator\Settings\AboutUsInformationController::class, 'index'])->name('SupUser.SetingsAboutUsInfo');
+    Route::post('Settings/AboutUsInformation/Update',[App\Http\Controllers\Administrator\Settings\AboutUsInformationController::class, 'updateInformation'])->name('SupUser.SetingsAboutUsInfoUpdate');
+    
 
     //end settings
 

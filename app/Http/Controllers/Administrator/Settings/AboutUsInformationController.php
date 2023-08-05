@@ -12,10 +12,14 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use Image;
 use Mail;
+use App\Models\AboutUsInformation;
 
 class AboutUsInformationController extends Controller
 {
     public function index(){
-        return view('dashboard.settings.aboutusinfo.index');
+        $companyInfo = AboutUsInformation::where('id',1)->first();
+        return view('dashboard.settings.aboutusinfo.index',[
+            'companyInfo'=>$companyInfo
+        ]);
     }
 }
