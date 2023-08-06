@@ -170,7 +170,7 @@
                                               <a href="">Blog</a>
                                           </li>
                                           <li class="">
-                                              <a href="">Contact</a>
+                                              <a href="{{ route('frontEnd.ContactS') }}">Contact</a>
                                           </li>
                                       </ul> <!-- //.nav-menu -->
                                   </nav>

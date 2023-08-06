@@ -12,6 +12,12 @@ class FrontEndController extends Controller
         return view('FrontEndView.index');
     }
 
+
+
+    Public function contact(){
+        return view('FrontEndView.Contact.index');
+    }
+
     public function aboutUs(){
         dd('hey, man!');
     }

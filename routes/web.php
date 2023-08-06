@@ -39,6 +39,10 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
     Route::get('Our-Concern', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'OurConcern'])->name('frontEndIndex.OurConcern');
     Route::get('our-expertise', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'ourExpertise'])->name('frontEndIndex.our-expertise');
     Route::get('strategic-partners', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
+
+
+    // contact 
+    Route::get('Contact',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contact'])->name('frontEnd.ContactS');
     
     Route::get('User/Verify/',[App\Http\Controllers\Auth\RegisterController::class, 'verify'])->name('user.verify');
 });
