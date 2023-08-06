@@ -1,5 +1,5 @@
 @extends('layouts.SupUserMaster')
-@section('title', 'Dashboard Super User - HealthyBotic')
+@section('title', 'Dashboard ~ Super User - Techno Apogee Limited')
 
 @section('SupUserContent')
 
