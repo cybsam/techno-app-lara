@@ -48,13 +48,13 @@
                                 <li>
                                     <i class="flaticon-call"></i>
                                     <div class="desc">
-                                        <a href="tel:+8801714378008">{{ $AboutUsInformation->company_mobile_1 }}</a>
+                                        <a href="tel:{{ $AboutUsInformation->company_mobile_1 }}">{{ $AboutUsInformation->company_mobile_1 }}</a>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="flaticon-email"></i>
                                     <div class="desc">
-                                        <a href="mailto:info@technoapogee.com">{{ $AboutUsInformation->company_email }}</a>
+                                        <a href="mailto:{{ $AboutUsInformation->company_email }}">{{ $AboutUsInformation->company_email }}</a>
                                     </div>
                                 </li>
                                 <li>

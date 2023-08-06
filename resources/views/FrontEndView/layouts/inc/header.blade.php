@@ -11,11 +11,11 @@
                               <ul>
                                   <li>
                                       <i class="flaticon-email"></i>
-                                      <a href="mailto:info@technoapogee.com">{{ $AboutUsInformation->company_email }}</a>
+                                      <a href="mailto:{{ $AboutUsInformation->company_email }}">{{ $AboutUsInformation->company_email }}</a>
                                   </li>
                                   <li>
                                       <i class="flaticon-call"></i>
-                                      <a href="tel:+8801714378008"> {{ $AboutUsInformation->company_mobile_1 }}</a>
+                                      <a href="tel:{{ $AboutUsInformation->company_mobile_1 }}"> {{ $AboutUsInformation->company_mobile_1 }}</a>
                                   </li>
                                   <li>
                                       <i class="flaticon-location"></i>
