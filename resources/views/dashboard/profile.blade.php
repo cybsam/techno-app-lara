@@ -89,11 +89,7 @@
                                 @endif
                                 <h5 class="card-title">About</h5>
                                 <p class="small fst-italic">
-                                    @if ($aboutUser)
-                                        {{ $aboutUser }}
-                                    @else
-                                        {{ __('Nothing To Display') }}
-                                    @endif
+                                    
                                 </p>
 
                                 <h5 class="card-title">Profile Details</h5>
