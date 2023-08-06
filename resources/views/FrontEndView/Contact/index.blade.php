@@ -30,23 +30,23 @@
                 <div class="address-contact text-center">
 
                     <h5>Address</h5>
-                    <h6><b>Dhaka Office:</b> House # 226, Road# 03, Avenue # 01 , Mirpur DOHS, Dhaka – 1216.</h6>
-                    <h6><b>Ctg. Office:</b> House # 50, Road # 04, O.R. Nizam Road (R/A), GEC Circle, Ctg, Bangladesh.
+                    <h6><b>Dhaka Office:</b> {{ $AboutUsInformation->company_address_1 }}.</h6>
+                    <h6><b>Ctg. Office:</b> {{ $AboutUsInformation->company_address_2 }}.
                     </h6>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="address-contact text-center">
                     <h5>Phone</h5>
-                    <h6>+880-2- 55041062</h6>
+                    <h6>{{ $AboutUsInformation->company_telephone }}</h6>
                     <h6>+880-2- 55041063</h6>
-                    <h6>+880 1714378008</h6>
+                    <h6>{{ $AboutUsInformation->company_mobile_1 }}</h6>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="address-contact text-center">
                     <h5>Email</h5>
-                    <h6>info@technoapogee.com, technoapogee@gmail.com</h6>
+                    <h6>{{ $AboutUsInformation->company_email }}</h6>
 
                 </div>
             </div>

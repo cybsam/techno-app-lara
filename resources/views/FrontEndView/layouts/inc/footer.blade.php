@@ -5,26 +5,26 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10">
                             <div class="footer-logo mb-40">
-                                <a href="index.html"><img src="{{ asset('image/FrontEnd/logoFav/logo.png') }}"
+                                <a href="{{ route('frontEndIndex') }}"><img src="{{ asset('image/FrontEnd/logoFav/logo.png') }}"
                                         alt=""></a>
                             </div>
                             <div class="textwidget white-color pb-40">
-                                <p>We denounce with righteous indig nation in and dislike men who are so beguiled and to
-                                    demo realized by the, so blinded by desire, that they cannot foresee.</p>
+                                <p>{{ $AboutUsInformation->company_description }}.</p>
                             </div>
                             <ul class="footer-social md-mb-30">
                                 <li>
-                                    <a href="#" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
+                                    <a href="{{ $AboutUsInformation->company_facebook }}" target="_blank"><span><i class="fa fa-facebook"></i></span></a>
                                 </li>
                                 <li>
-                                    <a href="# " target="_blank"><span><i class="fa fa-twitter"></i></span></a>
+                                    <a href="{{ $AboutUsInformation->company_twitter }}" target="_blank"><span><i class="fa fa-twitter"></i></span></a>
                                 </li>
 
                                 <li>
-                                    <a href="# " target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a>
+                                    {{-- <a href="" target="_blank"><span><i class="fa fa-pinterest-p"></i></span></a> --}}
+                                    <a href="{{ $AboutUsInformation->company_youtube }}" target="_blank"><span><i class="fa fa-youtube"></i></span></a>
                                 </li>
                                 <li>
-                                    <a href="# " target="_blank"><span><i class="fa fa-instagram"></i></span></a>
+                                    <a href="{{ $AboutUsInformation->company_linkedin }}" target="_blank"><span><i class="fa fa-linkedin"></i></span></a>
                                 </li>
 
                             </ul>
@@ -43,24 +43,24 @@
                             <ul class="address-widget">
                                 <li>
                                     <i class="flaticon-location"></i>
-                                    <div class="desc"> House # 226, Road# 03, Avenue # 01, Mirpur DOSH</div>
+                                    <div class="desc"> {{ $AboutUsInformation->company_address_1 }}</div>
                                 </li>
                                 <li>
                                     <i class="flaticon-call"></i>
                                     <div class="desc">
-                                        <a href="tel:+8801714378008">+880 1714378008</a>
+                                        <a href="tel:+8801714378008">{{ $AboutUsInformation->company_mobile_1 }}</a>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="flaticon-email"></i>
                                     <div class="desc">
-                                        <a href="mailto:info@technoapogee.com">info@technoapogee.com</a>
+                                        <a href="mailto:info@technoapogee.com">{{ $AboutUsInformation->company_email }}</a>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="flaticon-clock-1"></i>
                                     <div class="desc">
-                                        Office Hours: 9AM - 6PM
+                                        Office Hours: {{ $AboutUsInformation->company_office_time }}
                                     </div>
                                 </li>
                             </ul>

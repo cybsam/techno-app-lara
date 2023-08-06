@@ -11,15 +11,15 @@
                               <ul>
                                   <li>
                                       <i class="flaticon-email"></i>
-                                      <a href="mailto:info@technoapogee.com">info@technoapogee.com</a>
+                                      <a href="mailto:info@technoapogee.com">{{ $AboutUsInformation->company_email }}</a>
                                   </li>
                                   <li>
                                       <i class="flaticon-call"></i>
-                                      <a href="tel:+8801714378008"> +880 1714378008</a>
+                                      <a href="tel:+8801714378008"> {{ $AboutUsInformation->company_mobile_1 }}</a>
                                   </li>
                                   <li>
                                       <i class="flaticon-location"></i>
-                                      House # 226, Road# 03, Avenue # 01, Mirpur DOHS
+                                      {{ $AboutUsInformation->company_address_1 }}
                                   </li>
                               </ul>
                           </div>
@@ -27,8 +27,7 @@
                       <div class="col-lg-4 text-right">
                           <div class="toolbar-sl-share">
                               <ul>
-                                  <li class="opening"> <em><i class="flaticon-clock"></i>Saturday - Thursday / 9AM -
-                                          6PM</em> </li>
+                                  <li class="opening"> <em><i class="flaticon-clock"></i>Saturday - Thursday / {{ $AboutUsInformation->company_office_time }}</em> </li>
                                   <li><a href="{{ route('login') }}">Login</a></li>
                                   
                               </ul>
