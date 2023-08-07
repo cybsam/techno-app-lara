@@ -16,7 +16,7 @@ class CreateEmployeeTeamSubCategoriesTable extends Migration
         Schema::create('employee_team_sub_categories', function (Blueprint $table) {
             $table->id();
             $table->string('team_department_sub')->nullable();
-            $table->string('team_department_sub_slug')->nullable();
+            $table->string('team_department_sub_slug')->unique();
             $table->string('team_department_id')->nullable();
             $table->string('team_department_slug')->nullable();
             $table->string('user_id')->nullable();

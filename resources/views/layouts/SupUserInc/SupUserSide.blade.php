@@ -274,7 +274,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.TeamManagementInsert') }}">
                             <i class="bi bi-circle"></i><span>Employee Category</span>
                         </a>
                     </li>

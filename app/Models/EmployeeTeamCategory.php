@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+// use App\Models\EmployeeTeamSubCategory;
 
 class EmployeeTeamCategory extends Model
 {
@@ -15,4 +16,8 @@ class EmployeeTeamCategory extends Model
         'add_by',
         'user_id',
     ];
+
+    public function EmployeeTeamSubCategory(){
+        return $this->hasMany(EmployeeTeamSubCategory::class);
+    }
 }

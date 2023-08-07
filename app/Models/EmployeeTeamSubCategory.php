@@ -15,4 +15,8 @@ class EmployeeTeamSubCategory extends Model
         'team_department_slug',
         'user_id',
     ];
+
+    public function EmployeeTeamCategory(){
+        return $this->belongsTo(EmployeeTeamCategory::class);
+    }
 }
