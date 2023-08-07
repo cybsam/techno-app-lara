@@ -10,26 +10,26 @@ use App\Models\AboutUsInformation;
 class FrontEndController extends Controller
 {
     public function index(){
-        $AboutUsInformation = AboutUsInformation::where('id',1)->first();
+        // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
         return view('FrontEndView.index',[
-            'AboutUsInformation'=>$AboutUsInformation,
+            // 'AboutUsInformation'=>$AboutUsInformation,
         ]);
     }
 
 
 
     Public function contact(){
-        $AboutUsInformation = AboutUsInformation::where('id',1)->first();
+        // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
         return view('FrontEndView.Contact.index',[
-            'AboutUsInformation'=>$AboutUsInformation,
+            // 'AboutUsInformation'=>$AboutUsInformation,
         ]);
     }
 
     public function aboutUs(){
-        dd('hey, man!');
+        return view('FrontEndView.about-us.about-us');
     }
     public function missionAndVission(){
-        dd('hey, man!');
+        return view('FrontEndView.about-us.our-mission-vission');
     }
     public function OurTeam(){
         // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
@@ -38,12 +38,12 @@ class FrontEndController extends Controller
         ]);
     }
     public function OurConcern(){
-        dd('hey, man!');
+        return view('FrontEndView.about-us.our-concern');
     }
     public function ourExpertise(){
-        dd('hey, man!');
+        return view('FrontEndView.about-us.our-expertise');
     }
     public function strategicPartners(){
-        dd('hey, man!');
+        return view('FrontEndView.about-us.our-strategic-partners');
     }
 }
