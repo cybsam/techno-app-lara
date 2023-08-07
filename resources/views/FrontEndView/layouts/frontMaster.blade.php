@@ -39,6 +39,9 @@
     <body class="defult-home">
 
 <body>
+    @php
+        $AboutUsInformation = DB::table('about_us_information')->where('id','1')->first();
+    @endphp
             
     <div class="offwrap"></div>
      
