@@ -21,7 +21,10 @@ class OurTeamController extends Controller
 
 
     public function TeamManagement(){
-        return view('dashboard.settings.team-management.team-category');
+        $getData = EmployeeTeamCategory::all()->reverse();
+        return view('dashboard.settings.team-management.team-category',[
+            'getData'=>$getData,
+        ]);
     }
     public function TeamManagementIns(Request $request){
         $request->validate([
