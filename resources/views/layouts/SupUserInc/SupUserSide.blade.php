@@ -289,7 +289,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" target="blank" href="{{ route('frontEndIndex') }}">
+                <a class="nav-link collapsed" target="_blank" href="{{ route('supUser.visitWebSite') }}">
                     <i class="bi bi-dash-circle"></i>
                     <span>View Site</span>
                 </a>

@@ -20,6 +20,10 @@ class DashboardController extends Controller
         return view('dashboard.profile');
     }
 
+    public function VisitWebSite(){
+        return redirect()->route('frontEndIndex');
+    }
+
     public function blank(){
         return view('dashboard.blank');
     }
