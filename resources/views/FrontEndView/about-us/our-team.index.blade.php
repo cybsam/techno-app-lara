@@ -13,7 +13,7 @@
     </style>
     <style>
         .team-member {
-            background: #fff;
+            background: #e6e2e0;
             text-align: center;
             transition: all 0.3s ease-in-out;
             -moz-transition: all 0.3s ease-in-out;
@@ -217,7 +217,7 @@
     <div class="rs-breadcrumbs">
         <div class="container">
             <div class="breadcrumbs-inner">
-                <h1 class="page-title">
+                <h1 class="page-title " style="color:#303030">
                     Our team
                 </h1>
             </div>
@@ -237,9 +237,9 @@
                             <div class="team-name font-accident-two-bold-italic">Jack Moss</div>
                             <div class="team-position">CEO</div>
                         </div>
-                        <div class="team-content small">
+                        {{-- <div class="team-content small">
                             Truong is also the recipient of The George C. Lin Emerging Filmmaker Award from the San Diego
-                        </div>
+                        </div> --}}
                         <figcaption>
 
                             <p class="icon-links">
