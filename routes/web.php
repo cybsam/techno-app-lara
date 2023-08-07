@@ -34,11 +34,11 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
 
     //about us
     Route::get('About-Us', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'aboutUs'])->name('frontEndIndex.about-us');
-    Route::get('Our-mission-and-vission', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'missionAndVission'])->name('frontEndIndex.MissionAndVission');
-    Route::get('Our-team', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'OurTeam'])->name('frontEndIndex.ourTeam');
-    Route::get('Our-Concern', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'OurConcern'])->name('frontEndIndex.OurConcern');
-    Route::get('our-expertise', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'ourExpertise'])->name('frontEndIndex.our-expertise');
-    Route::get('strategic-partners', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
+    Route::get('About-Us/Our-mission-and-vission', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'missionAndVission'])->name('frontEndIndex.MissionAndVission');
+    Route::get('About-Us/Our-team', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'OurTeam'])->name('frontEndIndex.ourTeam');
+    Route::get('About-Us/Our-Concern', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'OurConcern'])->name('frontEndIndex.OurConcern');
+    Route::get('About-Us/our-expertise', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'ourExpertise'])->name('frontEndIndex.our-expertise');
+    Route::get('About-Us/strategic-partners', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
 
 
     // contact 

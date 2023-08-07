@@ -105,8 +105,13 @@
                 </a>
                 <ul id="about_us_frontend" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.OurTeam') }}" class="@if(URL()->current() == route('SupUser.OurTeam')) active @endif">
                             <i class="bi bi-circle"></i><span>Our Team </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('SupUser.AboutUsIndex') }}" class="@if(URL()->current() == route('SupUser.AboutUsIndex')) active @endif">
+                            <i class="bi bi-circle"></i><span>About Us </span>
                         </a>
                     </li>
                     <li>
@@ -289,7 +294,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" target="_blank" href="{{ route('supUser.visitWebSite') }}">
+                <a class="nav-link collapsed" target="_blank" href="{{ url('/') }}">
                     <i class="bi bi-dash-circle"></i>
                     <span>View Site</span>
                 </a>
