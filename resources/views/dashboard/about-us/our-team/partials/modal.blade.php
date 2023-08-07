@@ -14,7 +14,22 @@
                         <input type="text" class="form-control">
                     </div>
                     <div class="form-group">
-                        <option value=""></option>
+                        <label for="">Select Department</label>
+                        <select name="" class="form-control" id="">
+                            <option value="" selected>Select Department</option>
+                            <option value="">Support Team Electrical & Maintenance</option>
+                            <option value="">Information Technology & Design</option>
+                            <option value="">Business Development</option>
+                            <option value="">Admin & Operation</option>
+                            <option value="">Project Engineering & Operation Department</option>
+                            <option value="">Management</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Select Degination</label>
+                        <select name="" class="form-control" id="">
+                            <option value="" selected>Select Degination</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="">Member Email</label>

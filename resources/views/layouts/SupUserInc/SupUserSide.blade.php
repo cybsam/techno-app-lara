@@ -273,6 +273,11 @@
                             <i class="bi bi-circle"></i><span>Terms Of Condition</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Employee Category</span>
+                        </a>
+                    </li>
 
                 </ul>
             </li>
