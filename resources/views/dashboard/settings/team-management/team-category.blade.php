@@ -15,6 +15,9 @@
     <hr>
     <div class="card">
         <div class="card-header">
+            <div class="float-left">
+                <a href="{{ route('SupUser.TeamManagementDegination') }}" class="btn btn-success">Show Degination</a>
+            </div>
             <div class="float-right">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addManagementCate">+
                     Management</button>
@@ -48,7 +51,7 @@
                         <tr class="table-light">
                             <th scope="row"><a href="#">#{{ $Data->id }}</a></td>
                             <td>{{ Str::limit($Data->team_department, 30) }}</td>
-                            <td>{{ Str::limit($Data->team_department, 30) }}</td>
+                            <td>{{ Str::limit($Data->team_department_slug, 30) }}</td>
                             <td>{{ Str::title($Data->add_by) }}</td>
 
 
@@ -96,7 +99,7 @@
                             <label for="">Management Name</label>
                             <input type="text" name="team_department_slug" id="management-name" required
                                 class="form-control">
-                            @error('management-name')
+                            @error('team_department_slug')
                                 <span>{{ $message }}</span>
                             @enderror
                         </div>

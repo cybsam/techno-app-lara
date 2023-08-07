@@ -274,8 +274,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.TeamManagementInsert') }}">
-                            <i class="bi bi-circle"></i><span>Employee Category</span>
+                        <a href="{{ route('SupUser.TeamManagementInsert') }}" class="@if(URL()->current() == route('SupUser.TeamManagementInsert')) active @endif">
+                            <i class="bi bi-circle"></i><span>Employee Management Department List</span>
                         </a>
                     </li>
 

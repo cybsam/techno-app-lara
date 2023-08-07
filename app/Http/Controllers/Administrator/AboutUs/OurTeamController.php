@@ -9,6 +9,7 @@ use Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
 use App\Models\EmployeeTeamCategory;
+use App\Models\EmployeeTeamSubCategory;
 
 class OurTeamController extends Controller
 {
@@ -48,6 +49,41 @@ class OurTeamController extends Controller
         }else{
             return redirect()->back()->with('err','Something went wrong!');
         }
+
+    }
+    public function TeamManagementDegination(){
+        $allTeam = EmployeeTeamCategory::all();
+        return view('dashboard.settings.team-management.team-sub-category',[
+            'allTeam'=>$allTeam,
+        ]);
+    }
+    public function TeamManagementDeginationInsert(Request $request){
+        
+        $request->validate([
+            'team_department_sub_slug'=>['required','unique:employee_team_sub_categories'],
+        ]);
+
+        $input = $request->all();
+        $slug = Str::slug($input['team_department_sub_slug']);
+        $userId = Auth::user()->id;
+        $userName = Auth::user()->name;
+
+        $fetchData = explode('.',$input['manegement-team']);
+
+        $getDataFromDb = EmployeeTeamCategory::where('id',$fetchData[0])->where('team_department_slug',$fetchData[1])->first();
+        if ($getDataFromDb) {
+            $db_slug = $getDataFromDb->team_department_slug;
+            $db_id = $getDataFromDb->id;
+            $insData = new EmployeeTeamSubCategory();
+            $insData->team_department_sub = $input['team_department_sub_slug'];
+        }else{
+            return redirect()->back()->with('err','database not match!');
+        }
+        
+        
+
+       
+
 
     }
 }
