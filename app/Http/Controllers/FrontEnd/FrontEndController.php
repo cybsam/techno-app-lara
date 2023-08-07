@@ -32,9 +32,9 @@ class FrontEndController extends Controller
         dd('hey, man!');
     }
     public function OurTeam(){
-        $AboutUsInformation = AboutUsInformation::where('id',1)->first();
-        return view('FrontEndView.about-us.our-team.index',[
-            'AboutUsInformation'=>$AboutUsInformation,
+        // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
+        return view('FrontEndView.about-us.our-team',[
+            // 'AboutUsInformation'=>$AboutUsInformation,
         ]);
     }
     public function OurConcern(){
