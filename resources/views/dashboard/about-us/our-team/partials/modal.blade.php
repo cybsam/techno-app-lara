@@ -17,8 +17,8 @@
                         <label for="" class="text-danger">Select Department</label>
                         <select name="department" class="form-control" id="department">
                             <option value="{{ _('0') }}" selected>Select Department</option>
-                            @foreach ($empSectionCategory as $EmpSectionCat)
-                                <option value="{{ $EmpSectionCat->id }}.{{ $EmpSectionCat->idteam_department_slug }}">{{ $EmpSectionCat->team_department }}</option>
+                            @foreach ($empSectionCategory as $key => $EmpSectionCat)
+                                <option value="{{ $EmpSectionCat->id }}">{{ $EmpSectionCat->team_department }}</option>
                             @endforeach
                             
                         </select>
@@ -27,8 +27,8 @@
                         <label for="" class="text-danger">Select Degination</label>
                         <select name="degination" class="form-control" id="degination">
                             <option value="{{ _('0') }}" selected>Select Degination</option>
-                            @foreach ($empDeginationCategory as $empDegination)
-                                <option value="{{ $empDegination->id }}{{ _('.') }}{{ $empDegination->team_department_sub_slug }}">{{ $empDegination->team_department_sub }}</option>
+                            @foreach ($empDeginationCategory as $key $empDegination)
+                                <option value="{{ $empDegination->id }}">{{ $empDegination->team_department_sub }}</option>
                             @endforeach
                         </select>
                     </div>

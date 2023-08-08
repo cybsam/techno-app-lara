@@ -20,3 +20,27 @@
 
     }));
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $("document").ready(function(){
+        $('.select[name="department"]').on('change',fucntion(){
+            var deptId = $(this).val();
+            if(deptId){
+                $.ajax({
+                    url: '/en/Administrator/Our-team/Index',
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data){
+                        $('select[name="degination"]').empty();
+                        $.each(data, function(key, value){
+                            #('.select[name="degination"]').append('<option value="'+key+'">'+value+'</option>')
+                        })
+                    }
+
+                })
+            }else{
+                $('.select[name="degination"]').empty();
+            }
+        })
+    });
+</script>
