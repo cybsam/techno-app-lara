@@ -125,7 +125,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.MissionVission') }}" class="@if(URL()->current() == route('SupUser.MissionVission')) active @endif">
                             <i class="bi bi-circle"></i><span>Our Mission & Vission </span>
                         </a>
                     </li>
