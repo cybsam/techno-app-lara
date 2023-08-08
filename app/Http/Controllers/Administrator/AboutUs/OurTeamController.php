@@ -23,7 +23,9 @@ class OurTeamController extends Controller
     }
 
 
-
+    public function teamInsert(Request $request){
+        dd($request->all());
+    }
 
 
     public function TeamManagement(){

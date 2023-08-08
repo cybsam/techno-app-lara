@@ -6,16 +6,16 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Add team member</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="{{ route('SupUser.OurTeamInsert') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="">Member name</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="name" id="name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="">Select Department</label>
-                        <select name="department" class="form-control" id="">
+                        <label for="" class="text-danger">Select Department</label>
+                        <select name="department" class="form-control" id="department">
                             <option value="{{ _('0') }}" selected>Select Department</option>
                             @foreach ($empSectionCategory as $EmpSectionCat)
                                 <option value="{{ $EmpSectionCat->id }}.{{ $EmpSectionCat->idteam_department_slug }}">{{ $EmpSectionCat->team_department }}</option>
@@ -24,8 +24,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="">Select Degination</label>
-                        <select name="degination" class="form-control" id="">
+                        <label for="" class="text-danger">Select Degination</label>
+                        <select name="degination" class="form-control" id="degination">
                             <option value="{{ _('0') }}" selected>Select Degination</option>
                             @foreach ($empDeginationCategory as $empDegination)
                                 <option value="{{ $empDegination->id }}{{ _('.') }}{{ $empDegination->team_department_sub_slug }}">{{ $empDegination->team_department_sub }}</option>
@@ -34,27 +34,29 @@
                     </div>
                     <div class="form-group">
                         <label for="">Member Email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" name="email" name="email" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Member Mobile</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="number" id="number" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Member WhatsApp</label>
-                        <input type="text" class="form-control">
+                        <input type="text" name="whatsapp" id="whatsapp" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Member Image</label>
-                        <input type="file" class="form-control">
+                        <input type="file" name="pro_image" id="pro_image" class="form-control">
                     </div>
+                    <div class="form-group float-right mt-3">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Insert Member</button>
+                    </div>
+                    <div class="form-group pt-3"></div>
                 </div>
             </form>
 
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+            
 
         </div>
     </div>
