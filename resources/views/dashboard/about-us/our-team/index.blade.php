@@ -59,36 +59,23 @@
                 </thead>
                 <tbody>
     
-                    {{-- @foreach ($Admin as $key => $admin)
+                    @foreach ($listMember as $key => $listMember)
                         <tr class="table-light">
-                            <th scope="row"><a href="#">#{{ $admin->id }}</a></td>
-                            <td>{{ Str::limit($admin->name,10) }}</td>
-                            <td><a class="" href=""><span>@</span>{{ Str::limit($admin->username,6) }}</a></td>
-                            <td><a href="mailto:{{ $admin->email }}">{{ $admin->email }}</a></td>
-                            <td><img src="{{ asset('image/users') }}/{{ $admin->user_image }}" height="35px" width="35px" alt=""></td>
-                            <td>
-                                @if ($admin->email_verified == 1)
-                                    <i class="bi bi-patch-check-fill text-primary"></i>
-                                @else
-                                    <i class="bi bi-patch-exclamation text-danger"></i>
-                                @endif
-                            </td>
-                            
-                            <td>
-                                
-                                <div class="form-check form-switch">
-                                    <input type="checkbox" class="form-check-input is_active_switch" id="switch[{{ $key }}]" data-id="{{$admin->id}}" {{ $admin->is_active ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="switch[{{ $key }}]"></label>
-                                </div>
-                                
-                            </td>
-                            <td>{{ $admin->created_at->diffForHumans() }}</td>
+                            <th scope="row"><a href="#">#{{ $listMember->id }}</a></td>
+                            <td><img src="{{ asset('image/about-us/our-team') }}/{{ $listMember->image }}" height="35px" width="35px" alt=""></td>
+                            <td>{{ $listMember->name }}</td>
+                            <td>{{ Str::limit($listMember->degination,15) }}</td>
+                            <td>{{ Str::limit($listMember->department,15) }}</td>
+                            <td>{{ $listMember->mobile }}</td>
+                            <td>{{ $listMember->email }}</td>
+                            <td>{{ $listMember->whatsapp }}</td>
+                            <td>{{ $listMember->created_at->diffForHumans() }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#adminUpdateModal" data-admin_id="{{ $admin->id }}" data-admin_name="{{ $admin->name }}" data-admin_username="{{ $admin->username }}" data-admin_email="{{ $admin->email }}" data-admin_role_int="{{ $admin->role_int }}" data-admin_role="{{ $admin->role }}" class="btn btn-warning">
+                                    {{-- <button type="button" data-bs-toggle="modal" data-bs-target="#adminUpdateModal" data-admin_id="{{ $admin->id }}" data-admin_name="{{ $admin->name }}" data-admin_username="{{ $admin->username }}" data-admin_email="{{ $admin->email }}" data-admin_role_int="{{ $admin->role_int }}" data-admin_role="{{ $admin->role }}" class="btn btn-warning">
                                         <i class="bi bi-pencil-square" aria-hidden="true"></i>
-                                    </button>
-                                    <button type="submit" data-bs-toggle="modal" data-bs-target="#deleteUser" data-id="{{ $admin->id }}" class="btn btn-danger">
+                                    </button> --}}
+                                    <button type="submit" data-bs-toggle="modal" data-bs-target="#deleteUser" data-id="{{ $listMember->id }}" class="btn btn-danger">
                                         <i class="bi bi-trash" aria-hidden="true"></i>
                                     </button>
                                 </div>
@@ -96,7 +83,7 @@
     
                             </td>
                         </tr>
-                    @endforeach --}}
+                    @endforeach
     
                 </tbody>
                 <tfoot>

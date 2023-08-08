@@ -223,19 +223,22 @@
             </div>
         </div>
     </div>
-
+    <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Management</h4>
     <div class="container">
         <div class="row bootstrap snippets bootdey">
+            
+            @foreach ($management as $key => $management)
+                
             <div class="col-md-4">
                 <div class="team-member">
                     <figure class="effect-zoe">
                         <div class="team-photo">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Rachel James Johnes"
+                            <img src="{{ asset('image/about-us/our-team') }}/{{ $management->image }}" alt="Rachel James Johnes"
                                 class="img-responsive">
                         </div>
                         <div class="team-attrs">
-                            <div class="team-name font-accident-two-bold-italic">Jack Moss</div>
-                            <div class="team-position">CEO</div>
+                            <div class="team-name font-accident-two-bold-italic">{{ $management->name }}</div>
+                            <div class="team-position">{{ $management->degination }}</div>
                         </div>
                         {{-- <div class="team-content small">
                             Truong is also the recipient of The George C. Lin Emerging Filmmaker Award from the San Diego
@@ -243,21 +246,21 @@
                         <figcaption>
 
                             <p class="icon-links">
-                                <a href="#!"><i class="fa fa-google"></i></a>
-                                <a href="#!"><i class="fa fa-instagram"></i></a>
-                                <a href="#!"><i class="fa fa-facebook"></i></a>
+                                <a href="mailto:{{ $management->email }}"><i class="fa fa-google"></i></a>
+                                <a href="tel:{{ $management->mobile }}"><i class="fa fa-phone"></i></a>
+                                <a href="tel:{{ $management->whatsapp }}"><i class="fa fa-whatsapp"></i></a>
                             </p>
 
                             <p class="phone-number">
-                                <a href="#!">tel: 1 234 567-89-10</a>
+                                <a href="tel:{{ $management->mobile }}">tel: {{ $management->mobile }}</a>
                             </p>
                         </figcaption>
                     </figure>
                 </div>
                 <div class="dividewhite4"></div>
             </div>
-
-            <div class="col-md-4">
+            @endforeach
+            {{-- <div class="col-md-4">
                 <div class="team-member">
                     <figure class="effect-zoe">
                         <div class="team-photo">
@@ -345,12 +348,207 @@
                     </figure>
                 </div>
                 <div class="dividewhite4"></div>
+            </div> --}}
+        </div>
+    </div>
+    <div class="pt-5"></div>
+    <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Admin & Operation</h4>
+    <div class="container">
+        <div class="row bootstrap snippets bootdey">
+            
+            @foreach ($admin_operation as $key => $admin_operation)
+                
+            <div class="col-md-4">
+                <div class="team-member">
+                    <figure class="effect-zoe">
+                        <div class="team-photo">
+                            <img src="{{ asset('image/about-us/our-team') }}/{{ $admin_operation->image }}" alt="{{ $admin_operation->name }}"
+                                class="img-responsive">
+                        </div>
+                        <div class="team-attrs">
+                            <div class="team-name font-accident-two-bold-italic">{{ $admin_operation->name }}</div>
+                            <div class="team-position">{{ $admin_operation->degination }}</div>
+                        </div>
+                        
+                        <figcaption>
+
+                            <p class="icon-links">
+                                <a href="mailto:{{ $admin_operation->email }}"><i class="fa fa-google"></i></a>
+                                <a href="tel:{{ $admin_operation->mobile }}"><i class="fa fa-phone"></i></a>
+                                <a href="tel:{{ $admin_operation->whatsapp }}"><i class="fa fa-whatsapp"></i></a>
+                            </p>
+
+                            <p class="phone-number">
+                                <a href="tel:{{ $admin_operation->mobile }}">tel: {{ $admin_operation->mobile }}</a>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="dividewhite4"></div>
             </div>
+            @endforeach
+            
         </div>
     </div>
 
+    <div class="pt-5"></div>
+    <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Business Development</h4>
+    <div class="container">
+        <div class="row bootstrap snippets bootdey">
+            
+            @foreach ($business_development as $key => $business_development)
+                
+            <div class="col-md-4">
+                <div class="team-member">
+                    <figure class="effect-zoe">
+                        <div class="team-photo">
+                            <img src="{{ asset('image/about-us/our-team') }}/{{ $business_development->image }}" alt="{{ $business_development->name }}"
+                                class="img-responsive">
+                        </div>
+                        <div class="team-attrs">
+                            <div class="team-name font-accident-two-bold-italic">{{ $business_development->name }}</div>
+                            <div class="team-position">{{ $business_development->degination }}</div>
+                        </div>
+                        
+                        <figcaption>
 
+                            <p class="icon-links">
+                                <a href="mailto:{{ $business_development->email }}"><i class="fa fa-google"></i></a>
+                                <a href="tel:{{ $business_development->mobile }}"><i class="fa fa-phone"></i></a>
+                                <a href="tel:{{ $business_development->whatsapp }}"><i class="fa fa-whatsapp"></i></a>
+                            </p>
 
+                            <p class="phone-number">
+                                <a href="tel:{{ $business_development->mobile }}">tel: {{ $business_development->mobile }}</a>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="dividewhite4"></div>
+            </div>
+            @endforeach
+            
+        </div>
+    </div>
 
+    <div class="pt-5"></div>
+    <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Information Technology & Design</h4>
+    <div class="container">
+        <div class="row bootstrap snippets bootdey">
+            
+            @foreach ($information_technology_design as $key => $information_technology_design)
+                
+            <div class="col-md-4">
+                <div class="team-member">
+                    <figure class="effect-zoe">
+                        <div class="team-photo">
+                            <img src="{{ asset('image/about-us/our-team') }}/{{ $information_technology_design->image }}" alt="{{ $information_technology_design->name }}"
+                                class="img-responsive">
+                        </div>
+                        <div class="team-attrs">
+                            <div class="team-name font-accident-two-bold-italic">{{ $information_technology_design->name }}</div>
+                            <div class="team-position">{{ $information_technology_design->degination }}</div>
+                        </div>
+                        
+                        <figcaption>
+
+                            <p class="icon-links">
+                                <a href="mailto:{{ $information_technology_design->email }}"><i class="fa fa-google"></i></a>
+                                <a href="tel:{{ $information_technology_design->mobile }}"><i class="fa fa-phone"></i></a>
+                                <a href="tel:{{ $information_technology_design->whatsapp }}"><i class="fa fa-whatsapp"></i></a>
+                            </p>
+
+                            <p class="phone-number">
+                                <a href="tel:{{ $information_technology_design->mobile }}">tel: {{ $information_technology_design->mobile }}</a>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="dividewhite4"></div>
+            </div>
+            @endforeach
+            
+        </div>
+    </div>
+
+    <div class="pt-5"></div>
+    <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Project Engineering & Operation Department</h4>
+    <div class="container">
+        <div class="row bootstrap snippets bootdey">
+            
+            @foreach ($project_engineering_operation_department as $key => $project_engineering_operation_department)
+                
+            <div class="col-md-4">
+                <div class="team-member">
+                    <figure class="effect-zoe">
+                        <div class="team-photo">
+                            <img src="{{ asset('image/about-us/our-team') }}/{{ $project_engineering_operation_department->image }}" alt="{{ $project_engineering_operation_department->name }}"
+                                class="img-responsive">
+                        </div>
+                        <div class="team-attrs">
+                            <div class="team-name font-accident-two-bold-italic">{{ $project_engineering_operation_department->name }}</div>
+                            <div class="team-position">{{ $project_engineering_operation_department->degination }}</div>
+                        </div>
+                        
+                        <figcaption>
+
+                            <p class="icon-links">
+                                <a href="mailto:{{ $project_engineering_operation_department->email }}"><i class="fa fa-google"></i></a>
+                                <a href="tel:{{ $project_engineering_operation_department->mobile }}"><i class="fa fa-phone"></i></a>
+                                <a href="tel:{{ $project_engineering_operation_department->whatsapp }}"><i class="fa fa-whatsapp"></i></a>
+                            </p>
+
+                            <p class="phone-number">
+                                <a href="tel:{{ $project_engineering_operation_department->mobile }}">tel: {{ $project_engineering_operation_department->mobile }}</a>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="dividewhite4"></div>
+            </div>
+            @endforeach
+            
+        </div>
+    </div>
+
+    <div class="pt-5"></div>
+    <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Support Team Electrical & Maintenance</h4>
+    <div class="container">
+        <div class="row bootstrap snippets bootdey">
+            
+            @foreach ($support_team_electrical_maintenance as $key => $support_team_electrical_maintenance)
+                
+            <div class="col-md-4">
+                <div class="team-member">
+                    <figure class="effect-zoe">
+                        <div class="team-photo">
+                            <img src="{{ asset('image/about-us/our-team') }}/{{ $support_team_electrical_maintenance->image }}" alt="{{ $support_team_electrical_maintenance->name }}"
+                                class="img-responsive">
+                        </div>
+                        <div class="team-attrs">
+                            <div class="team-name font-accident-two-bold-italic">{{ $support_team_electrical_maintenance->name }}</div>
+                            <div class="team-position">{{ $support_team_electrical_maintenance->degination }}</div>
+                        </div>
+                        
+                        <figcaption>
+
+                            <p class="icon-links">
+                                <a href="mailto:{{ $support_team_electrical_maintenance->email }}"><i class="fa fa-google"></i></a>
+                                <a href="tel:{{ $support_team_electrical_maintenance->mobile }}"><i class="fa fa-phone"></i></a>
+                                <a href="tel:{{ $support_team_electrical_maintenance->whatsapp }}"><i class="fa fa-whatsapp"></i></a>
+                            </p>
+
+                            <p class="phone-number">
+                                <a href="tel:{{ $support_team_electrical_maintenance->mobile }}">tel: {{ $support_team_electrical_maintenance->mobile }}</a>
+                            </p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="dividewhite4"></div>
+            </div>
+            @endforeach
+            
+        </div>
+    </div>
 
 @endsection

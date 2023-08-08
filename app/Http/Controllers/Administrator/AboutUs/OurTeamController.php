@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Administrator\AboutUs;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Carbon;
+use Carbon\Carbon;
+use Image;
 use App\Models\User;
 use Illuminate\Support\Str;
 use App\Models\EmployeeTeamCategory;
@@ -17,9 +18,11 @@ class OurTeamController extends Controller
     public function index(){
         $empSectionCategory = EmployeeTeamCategory::all()->reverse();
         $empDeginationCategory = EmployeeTeamSubCategory::all()->reverse();
+        $listMember = AboutOurTeam::all();
         return view('dashboard.about-us.our-team.index',[
             'empSectionCategory'=>$empSectionCategory,
             'empDeginationCategory'=>$empDeginationCategory,
+            'listMember'=>$listMember,
         ]);
     }
 
@@ -44,7 +47,7 @@ class OurTeamController extends Controller
         }else{
             if($request->hasFile('image')){
                 $nameStr = Str::slug($input['name']);
-                $deginaStr = Str::slug($input['degination']);
+                $deginaStr = Str::slug($deginationEplode[1]);
                 $inpImage = $request->file('image');
                 $randstr = Carbon::now()->format('Y-m-d-H-i-s-u');
                 $imageNameNew = $nameStr.'-'.$deginaStr.'-'.$randstr.'.'.$inpImage->getClientOriginalExtension();
