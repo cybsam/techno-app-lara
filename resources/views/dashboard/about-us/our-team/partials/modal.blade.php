@@ -15,20 +15,21 @@
                     </div>
                     <div class="form-group">
                         <label for="">Select Department</label>
-                        <select name="" class="form-control" id="">
-                            <option value="" selected>Select Department</option>
-                            <option value="">Support Team Electrical & Maintenance</option>
-                            <option value="">Information Technology & Design</option>
-                            <option value="">Business Development</option>
-                            <option value="">Admin & Operation</option>
-                            <option value="">Project Engineering & Operation Department</option>
-                            <option value="">Management</option>
+                        <select name="department" class="form-control" id="">
+                            <option value="{{ _('0') }}" selected>Select Department</option>
+                            @foreach ($empSectionCategory as $EmpSectionCat)
+                                <option value="{{ $EmpSectionCat->id }}.{{ $EmpSectionCat->idteam_department_slug }}">{{ $EmpSectionCat->team_department }}</option>
+                            @endforeach
+                            
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="">Select Degination</label>
-                        <select name="" class="form-control" id="">
-                            <option value="" selected>Select Degination</option>
+                        <select name="degination" class="form-control" id="">
+                            <option value="{{ _('0') }}" selected>Select Degination</option>
+                            @foreach ($empDeginationCategory as $empDegination)
+                                <option value="{{ $empDegination->id }}{{ _('.') }}{{ $empDegination->team_department_sub_slug }}">{{ $empDegination->team_department_sub }}</option>
+                            @endforeach
                         </select>
                     </div>
                     <div class="form-group">

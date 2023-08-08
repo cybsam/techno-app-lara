@@ -36,21 +36,24 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Management Department</th>
+                        <th scope="col">Degination</th>
                         <th scope="col">Slug</th>
-                        <th scope="col">Added By</th>
+                        <th scope="col">Management/Section</th>
+                        
                         <th scope="col">Create at</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
 
-                    {{-- @foreach ($getData as $key => $Data)
+                    @foreach ($allTeam as $key => $Data)
                         <tr class="table-light">
                             <th scope="row"><a href="#">#{{ $Data->id }}</a></td>
-                            <td>{{ Str::limit($Data->team_department, 30) }}</td>
+                            <td>{{ Str::limit($Data->team_department_sub, 30) }}</td>
+                            <td>{{ Str::limit($Data->team_department_sub_slug, 30) }}</td>
                             <td>{{ Str::limit($Data->team_department_slug, 30) }}</td>
-                            <td>{{ Str::title($Data->add_by) }}</td>
+                            
+                            
 
 
                             <td>{{ $Data->created_at->diffForHumans() }}</td>
@@ -66,7 +69,7 @@
 
                             </td>
                         </tr>
-                    @endforeach --}}
+                    @endforeach
 
                 </tbody>
                 <tfoot>

@@ -14,7 +14,12 @@ use App\Models\EmployeeTeamSubCategory;
 class OurTeamController extends Controller
 {
     public function index(){
-        return view('dashboard.about-us.our-team.index');
+        $empSectionCategory = EmployeeTeamCategory::all()->reverse();
+        $empDeginationCategory = EmployeeTeamSubCategory::all()->reverse();
+        return view('dashboard.about-us.our-team.index',[
+            'empSectionCategory'=>$empSectionCategory,
+            'empDeginationCategory'=>$empDeginationCategory,
+        ]);
     }
 
 
@@ -23,8 +28,10 @@ class OurTeamController extends Controller
 
     public function TeamManagement(){
         $getData = EmployeeTeamCategory::all()->reverse();
+        
         return view('dashboard.settings.team-management.team-category',[
             'getData'=>$getData,
+            
         ]);
     }
     public function TeamManagementIns(Request $request){
@@ -52,7 +59,7 @@ class OurTeamController extends Controller
 
     }
     public function TeamManagementDegination(){
-        $allTeam = EmployeeTeamCategory::all();
+        $allTeam = EmployeeTeamSubCategory::all()->reverse();
         return view('dashboard.settings.team-management.team-sub-category',[
             'allTeam'=>$allTeam,
         ]);
@@ -76,14 +83,19 @@ class OurTeamController extends Controller
             $db_id = $getDataFromDb->id;
             $insData = new EmployeeTeamSubCategory();
             $insData->team_department_sub = $input['team_department_sub_slug'];
+            $insData->team_department_sub_slug = $slug;
+            $insData->team_department_id = $fetchData[0];
+            $insData->team_department_slug = $fetchData[1];
+            $insData->user_id = $userId;
+            $insDataSave = $insData->save();
+            if ($insDataSave) {
+                return redirect()->back()->with('succ','insert successfully');
+            }else {
+                return redirect()->back()->with('err','Something went wrong!');
+            }
         }else{
             return redirect()->back()->with('err','database not match!');
         }
         
-        
-
-       
-
-
     }
 }
