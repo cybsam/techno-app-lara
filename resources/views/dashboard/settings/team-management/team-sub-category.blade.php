@@ -108,7 +108,7 @@
                         <div class="form-group">
                             <select name="manegement-team" class="form-control" id="manegement-team">
                                 <option value="0" selected>Selected</option>
-                                @foreach ($allTeam as $team)
+                                @foreach ($getData as $key => $team)
                                     <option value="{{ $team->id }}.{{ $team->team_department_slug }}">{{ $team->team_department }}</option>
                                 @endforeach
                             </select>

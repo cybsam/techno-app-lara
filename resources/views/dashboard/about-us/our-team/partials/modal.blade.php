@@ -11,7 +11,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="">Member name <span class="text-danger">*</span></label>
-                        <input type="text" name="name" id="name" class="form-control">
+                        <input type="text" name="name" value="{{ old('name') }}" id="name" class="form-control">
                         <div class="text-danger">
                             @error('name')
                                 <span>{{ $message }}</span>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Member Email <span class="text-danger">*</span></label>
-                        <input type="email" name="email" name="email" class="form-control">
+                        <input type="email" name="email" value="{{ old('email') }}" name="email" class="form-control">
                         <div class="text-danger">
                             @error('email')
                                 <span>{{ $message }}</span>
@@ -58,16 +58,16 @@
                     </div>
                     <div class="form-group">
                         <label for="">Member Mobile <span class="text-danger">*</span></label>
-                        <input type="text" name="number" id="number" class="form-control">
+                        <input type="text" name="mobile" value="{{ old('mobile') }}" id="mobile" class="form-control">
                         <div class="text-danger">
-                            @error('number')
+                            @error('mobile')
                                 <span>{{ $message }}</span>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Member WhatsApp <span class="text-danger">*</span></label>
-                        <input type="text" name="whatsapp" id="whatsapp" class="form-control">
+                        <input type="text" name="whatsapp" value="{{ old('whatsapp') }}" id="whatsapp" class="form-control">
                         <div class="text-danger">
                             @error('whatsapp')
                                 <span>{{ $message }}</span>

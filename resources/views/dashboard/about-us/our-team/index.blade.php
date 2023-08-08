@@ -22,6 +22,20 @@
                     <b>{{ Session::get('validerr') }}</b>
                 @endif
             </div>
+            <div class="text-info">
+                @if (Session::get('succ'))
+                    <b>{{ Session::get('succ') }}</b>
+                @endif
+            </div>
+            <div class="">
+                @if ($errors->all())
+                    <span class="text-danger">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </span>
+                @endif
+            </div>
             <div class="float-right">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addteammember">+ Member</button>
             </div>
