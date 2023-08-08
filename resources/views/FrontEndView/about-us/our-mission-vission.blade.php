@@ -1,26 +1,77 @@
 @extends('FrontEndView.layouts.frontMaster')
 @section('title', 'Our Team ~ About Us - Fire Panel Repair & Maintenance BD | Techno Apogee Limited')
+@section('metaTitle','Techno Apogee Mission And Vission, Techno Apogee Limited, Apogee Engineering Limited, Apogee Consulting Limited')
+@section('metaDescription',"{{ $missionAndVission->mission_vission_keyword }}")
 @section('content')
+<style>
+    .weDoMission {
+    box-shadow: 0 0 13px 0 #917a7a;
+    padding: 20px 6px;
+}
+.rs-breadcrumbs {
+  background-image: url("public/image/fontend/img/breadcrumbs/inr_6.jpg");
+  /* background-image: url('./public/image/fontend/img/breadcrumbs/inr_6.jpg'); */
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+</style>
 
-    <style>
-        .rs-breadcrumbs {
-            background-image: url("public/image/fontend/img/breadcrumbs/inr_6.jpg");
-            /* background-image: url('./public/image/fontend/img/breadcrumbs/inr_6.jpg'); */
-            background-repeat: no-repeat !important;
-            background-size: cover !important;
-            background-position: center !important;
-        }
-    </style>
-    <div class="rs-breadcrumbs">
-        <div class="container">
-            <div class="breadcrumbs-inner">
-                <h1 class="page-title " style="color:#303030">
-                    Our Mission & Vission
-                </h1>
+<main class="main">
+        <!--==================== About Header ====================-->
+        <div class="rs-breadcrumbs">
+            <div class="container">
+                <div class="breadcrumbs-inner">
+                    <h1 class="page-title">
+                        Our Mission & Vission
+                    </h1>
+                </div>
             </div>
         </div>
-    </div>
 
+ 
+        <!--==================== What We Do ====================-->
+        <section id="weDo">
+            <div class="container">
+                <div class="row mt-5 mb-5 weDoMission">
+                    <div class="col-lg-6">
+                        <div class="weDo">
+                            <img src="{{ asset('image/about-us/mission-vission') }}/{{ $missionAndVission->mission_image }}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="weDo">
+                            <h3>Our Mission</h3>
+                            <p>{{ $missionAndVission->mission_description }}.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=============== award ================-->
+        <section id="weDo">
+            <div class="container">
+                <div class="row mt-5 mb-5 weDoMission">
+                    
+                    <div class="col-lg-6">
+                        <div class="weDo">
+                            <h3>Our Vission</h3>
+                            <p>{{ $missionAndVission->vission_description }}.</p>
+                        </div>
+                </div>
+                
+                    <div class="col-lg-6">
+                        <div class="weDo">
+                            <img src="{{asset('image/fontend/img/vission.jpg')}}" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
 
 
 

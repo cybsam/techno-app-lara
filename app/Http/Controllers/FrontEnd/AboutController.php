@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\AboutUsInformation;
 use App\Models\AboutOurTeam;
 use App\Models\AboutUs;
+use App\Models\MissionAndVission;
 
 class AboutController extends Controller
 {
@@ -18,7 +19,10 @@ class AboutController extends Controller
         ]);
     }
     public function missionAndVission(){
-        return view('FrontEndView.about-us.our-mission-vission');
+        $missionAndVission = MissionAndVission::where('id','1')->firstOrFail();
+        return view('FrontEndView.about-us.our-mission-vission',[
+            'missionAndVission'=>$missionAndVission,
+        ]);
     }
     public function OurTeam(){
         // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
