@@ -13,10 +13,35 @@
         </nav>
     </div>
 
-
-    <div class="container">
-        
+    <div class="card">
+        <div class="card-header">
+            <div class="float-right">
+                <a href="" class="btn btn-warning">Update</a>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover datatable table-sm">
+                <thead>
+                    <tr>
+                        
+                        <th>Image</th>
+                        <th>Description</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="{{ asset('image/about-us/about-us') }}/{{ $backAbout->image }}" alt="about us" height="100%" width="100%">
+                        </td>
+                        <td>{{ $backAbout->description }}</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+    
     
 
    

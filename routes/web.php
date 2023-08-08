@@ -33,12 +33,12 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
     Route::get('Index', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'index'])->name('frontEndIndex');
 
     //about us
-    Route::get('About-Us', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'aboutUs'])->name('frontEndIndex.about-us');
-    Route::get('About-Us/Our-mission-and-vission', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'missionAndVission'])->name('frontEndIndex.MissionAndVission');
-    Route::get('About-Us/Our-team', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'OurTeam'])->name('frontEndIndex.ourTeam');
-    Route::get('About-Us/Our-Concern', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'OurConcern'])->name('frontEndIndex.OurConcern');
-    Route::get('About-Us/our-expertise', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'ourExpertise'])->name('frontEndIndex.our-expertise');
-    Route::get('About-Us/strategic-partners', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
+    Route::get('About-Us', [App\Http\Controllers\FrontEnd\AboutController::class, 'aboutUs'])->name('frontEndIndex.about-us');
+    Route::get('About-Us/Our-mission-and-vission', [App\Http\Controllers\FrontEnd\AboutController::class, 'missionAndVission'])->name('frontEndIndex.MissionAndVission');
+    Route::get('About-Us/Our-team', [App\Http\Controllers\FrontEnd\AboutController::class, 'OurTeam'])->name('frontEndIndex.ourTeam');
+    Route::get('About-Us/Our-Concern', [App\Http\Controllers\FrontEnd\AboutController::class, 'OurConcern'])->name('frontEndIndex.OurConcern');
+    Route::get('About-Us/our-expertise', [App\Http\Controllers\FrontEnd\AboutController::class, 'ourExpertise'])->name('frontEndIndex.our-expertise');
+    Route::get('About-Us/strategic-partners', [App\Http\Controllers\FrontEnd\AboutController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
 
 
     // contact 
