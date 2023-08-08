@@ -14,7 +14,7 @@
         <p class="lead">
             The page is expried. try reload or return back.
           </p>
-        <a href="{{ redirect(url()->previous()) }}" class="btn btn-primary">Go Home</a>
+          <a href="{{ URL::previous() }}" class="btn btn-primary">Go Back</a>
     </div>
 </div>
 <div class="pt-5"></div>

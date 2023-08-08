@@ -10,6 +10,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use App\Models\EmployeeTeamCategory;
 use App\Models\EmployeeTeamSubCategory;
+use App\Models\AboutOurTeam;
 
 class OurTeamController extends Controller
 {
@@ -24,7 +25,26 @@ class OurTeamController extends Controller
 
 
     public function teamInsert(Request $request){
-        dd($request->all());
+        $request->validate([
+            'name'=>['required','string'],
+            'department'=>['required'],
+            'degination'=>['required'],
+            'email'=>['required'],
+            'number'=>['required'],
+            'whatsapp'=>['required'],
+            'image'=>['required','mimes:jpg,jped,png,ico,gif','max:3000']
+        ]);
+        
+        $input = $request->all();
+        $departmentExplode = explode('.',$input['department']);
+        $deginationEplode = explode('.',$input['degination']);
+
+        if($input['department'] == '0' || $input['degination'] == '0'){
+            return redirect()->back()->with('validerr','Department or Degination is missing!');
+        }else{
+            //
+        }
+
     }
 
 

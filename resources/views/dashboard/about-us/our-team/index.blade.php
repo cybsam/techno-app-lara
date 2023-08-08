@@ -17,11 +17,17 @@
     <hr>
     <div class="card">
         <div class="card-header">
+            <div class="text-danger">
+                @if (Session::get('validerr'))
+                    <b>{{ Session::get('validerr') }}</b>
+                @endif
+            </div>
             <div class="float-right">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addteammember">+ Member</button>
             </div>
         </div>
         <div class="card-body">
+            
             <table class="table table-hover datatable table-sm">
                 <thead>
                     <tr>

@@ -10,43 +10,78 @@
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="">Member name</label>
+                        <label for="">Member name <span class="text-danger">*</span></label>
                         <input type="text" name="name" id="name" class="form-control">
+                        <div class="text-danger">
+                            @error('name')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="" class="text-danger">Select Department</label>
+                        <label for="" class="text-danger">Select Department <b>*</b></label>
                         <select name="department" class="form-control" id="department">
                             <option value="{{ _('0') }}" selected>Select Department</option>
                             @foreach ($empSectionCategory as $key => $EmpSectionCat)
-                                <option value="{{ $EmpSectionCat->id }}">{{ $EmpSectionCat->team_department }}</option>
+                                <option value="{{ $EmpSectionCat->id }}{{ _('.') }}{{ $EmpSectionCat->team_department_slug }}">{{ $EmpSectionCat->team_department }}</option>
                             @endforeach
                             
                         </select>
+                        <div class="text-danger">
+                            @error('department')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="" class="text-danger">Select Degination</label>
+                        <label for="" class="text-danger">Select Degination <b>*</b></label>
                         <select name="degination" class="form-control" id="degination">
                             <option value="{{ _('0') }}" selected>Select Degination</option>
-                            @foreach ($empDeginationCategory as $key $empDegination)
-                                <option value="{{ $empDegination->id }}">{{ $empDegination->team_department_sub }}</option>
+                            @foreach ($empDeginationCategory as $key => $empDegination)
+                                <option value="{{ $empDegination->id }}{{ _('.') }}{{ $empDegination->team_department_sub_slug }}">{{ $empDegination->team_department_sub }}</option>
                             @endforeach
                         </select>
+                        <div class="text-danger">
+                            @error('degination')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="">Member Email</label>
+                        <label for="">Member Email <span class="text-danger">*</span></label>
                         <input type="email" name="email" name="email" class="form-control">
+                        <div class="text-danger">
+                            @error('email')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="">Member Mobile</label>
+                        <label for="">Member Mobile <span class="text-danger">*</span></label>
                         <input type="text" name="number" id="number" class="form-control">
+                        <div class="text-danger">
+                            @error('number')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="">Member WhatsApp</label>
+                        <label for="">Member WhatsApp <span class="text-danger">*</span></label>
                         <input type="text" name="whatsapp" id="whatsapp" class="form-control">
+                        <div class="text-danger">
+                            @error('whatsapp')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="">Member Image</label>
-                        <input type="file" name="pro_image" id="pro_image" class="form-control">
+                        <label for="">Member Image <span class="text-danger">*</span></label>
+                        <input type="file" name="image" id="image" class="form-control">
+                        <div class="text-danger">
+                            @error('image')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group float-right mt-3">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
