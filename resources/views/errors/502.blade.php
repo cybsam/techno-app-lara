@@ -15,7 +15,7 @@
         <p class="lead">
             The server was acting as a gateway or proxy and received an invalid response from the upstream server.
           </p>
-        <a href="{{ route('frontEndIndex') }}" class="btn btn-primary">Go Home</a>
+          <a href="{{ URL::previous() }}" class="btn btn-primary">Go Back</a>
     </div>
 </div>
 <div class="pt-5"></div>

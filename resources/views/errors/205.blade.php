@@ -14,7 +14,7 @@
         <p class="lead">
             The server successfully processed the request, asks that the requester reset its document view, and is not returning any content.
           </p>
-        <a href="{{ route('frontEndIndex') }}" class="btn btn-primary">Go Home</a>
+          <a href="{{ URL::previous() }}" class="btn btn-primary">Go Back</a>
     </div>
 </div>
 <div class="pt-5"></div>

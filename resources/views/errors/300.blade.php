@@ -14,7 +14,7 @@
         <p class="lead">
             A link list. The user can select a link and go to that location.
           </p>
-        <a href="{{ route('frontEndIndex') }}" class="btn btn-primary">Go Home</a>
+          <a href="{{ URL::previous() }}" class="btn btn-primary">Go Back</a>
     </div>
 </div>
 <div class="pt-5"></div>

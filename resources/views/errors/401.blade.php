@@ -15,7 +15,7 @@
         <p class="lead">
             The request was a legal request, but the server is refusing to respond to it. For use when authentication is possible but has failed or not yet been provided.
           </p>
-        <a href="{{ route('frontEndIndex') }}" class="btn btn-primary">Go Home</a>
+          <a href="{{ URL::previous() }}" class="btn btn-primary">Go Back</a>
     </div>
 </div>
 <div class="pt-5"></div>

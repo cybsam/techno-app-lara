@@ -14,7 +14,7 @@
         <p class="lead">
             The page is expried. try reload or return back.
           </p>
-        <a href="{{ route('frontEndIndex') }}" class="btn btn-primary">Go Home</a>
+        <a href="{{ redirect(url()->previous()) }}" class="btn btn-primary">Go Home</a>
     </div>
 </div>
 <div class="pt-5"></div>

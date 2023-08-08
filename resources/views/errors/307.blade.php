@@ -14,7 +14,7 @@
         <p class="lead">
             The requested page has moved temporarily to a new URL.
           </p>
-        <a href="{{ route('frontEndIndex') }}" class="btn btn-primary">Go Home</a>
+          <a href="{{ URL::previous() }}" class="btn btn-primary">Go Back</a>
     </div>
 </div>
 <div class="pt-5"></div>
