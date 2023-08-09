@@ -85,12 +85,12 @@
                 </a>
                 <ul id="our_project_front" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.ProjectOnGoing') }}" class="@if(URL::current() == route('SupUser.ProjectOnGoing')) active @endif">
                             <i class="bi bi-circle"></i><span>On Going Project</span>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.ProjectComplete') }}" class="@if(URL::current() == route('SupUser.ProjectComplete')) active @endif">
                             <i class="bi bi-circle"></i><span>Complete Project</span>
                         </a>
                     </li>

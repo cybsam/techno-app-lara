@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Image;
-use App\Models\User;
+
 use Illuminate\Support\Str;
 use App\Models\projectCategory;
 use App\Models\Project;
@@ -59,7 +59,7 @@ class ProjectController extends Controller
                 $project->project_location = $input['project_location'];
                 $project->project_description = $request->project_description;
                 $project->is_ongoing = $input['is_ongoing'];
-                $project->project_added_by = Auth::user()->name();
+                $project->project_added_by = Auth::user()->name;
                 $projectSave = $project->save();
 
                 if($projectSave){
@@ -73,5 +73,20 @@ class ProjectController extends Controller
         }else{
             return redirect()->back()->with('err','You are not selected Project Category, try again!');
         }
+    }
+
+
+    public function ProjectOnGoing(){
+        $onGoingProject = Project::where('is_ongoing',1)->get();
+        return view('dashboard.project.on-going',[
+            'onGoingProject'=>$onGoingProject,
+        ]);
+    }
+
+    public function ProjectComplete(){
+        $CompleteProject = Project::where('is_ongoing',0)->get();
+        return view('dashboard.project.complete',[
+            'CompleteProject'=>$CompleteProject,
+        ]);
     }
 }
