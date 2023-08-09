@@ -45,7 +45,7 @@ class ProjectController extends Controller
                 $randstr = Carbon::now()->format('Y-m-d-H-i-s-u');
                 $headerImageNewName = $slug.'-'.$afterExplodeSlug[0].'-'.$randstr.'.'.$headerImage->getClientOriginalExtension();
 
-                $imagePath = base_path('public/image/project/',$headerImageNewName);
+                $imagePath = base_path('public/image/project/'.$headerImageNewName);
                 Image::make($headerImage)->save($imagePath);
 
                 $project = new Project();
