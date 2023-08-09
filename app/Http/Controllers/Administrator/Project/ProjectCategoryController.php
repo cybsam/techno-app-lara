@@ -10,9 +10,8 @@ use Image;
 use App\Models\User;
 use Illuminate\Support\Str;
 
-class ProjectController extends Controller
+
+class ProjectCategoryController extends Controller
 {
-    public function showProjectList(){
-        //
-    }
+    //
 }
