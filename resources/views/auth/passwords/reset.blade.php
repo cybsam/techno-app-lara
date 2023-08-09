@@ -1,6 +1,10 @@
-@extends('layouts.app')
 
+
+@extends('FrontEndView.layouts.frontMaster')
+@section('title','Password Reset ~ Fire Panel Repair & Maintenance BD - Techno Apogee Limited')
 @section('content')
+<div class="pt-10 mt-5 "></div>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -62,4 +66,7 @@
         </div>
     </div>
 </div>
+
+
+<div class="pt-5 mt-5"></div>
 @endsection

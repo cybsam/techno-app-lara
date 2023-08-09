@@ -16,4 +16,14 @@ class ProjectCategoryController extends Controller
     public function showCategory(){
         return view('dashboard.project.project-category');
     }
+
+
+
+    public function ProjectCategoryInsert(Request $request){
+        $request->validate([
+            'project_category'=>['required','unique']
+        ]);
+        $input = $request->all();
+
+    }
 }

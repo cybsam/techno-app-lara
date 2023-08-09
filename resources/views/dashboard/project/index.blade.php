@@ -40,7 +40,7 @@
             </div>
             <a href="{{ route('SupUser.ProjectCategoryShow') }}" class="btn btn-success">Project Category List</a>
             <div class="float-right">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addteammember">+ Project Category</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectcategory">+ Project Category</button>
             </div>
         </div>
         <div class="card-body">

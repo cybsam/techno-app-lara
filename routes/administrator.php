@@ -44,6 +44,8 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     
     //category
     Route::get('Project/Category/Index',[App\Http\Controllers\Administrator\Project\ProjectCategoryController::class, 'showCategory'])->name('SupUser.ProjectCategoryShow');
+    Route::post('Project/Category/Insert',[App\Http\Controllers\Administrator\Project\ProjectCategoryController::class, 'ProjectCategoryInsert'])->name('SupUser.ProjectCategoryInsert');
+    
 
     // end Project
     
