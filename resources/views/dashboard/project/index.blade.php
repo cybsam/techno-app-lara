@@ -1,14 +1,16 @@
 @extends('layouts.SupUserMaster')
-@section('title', 'Our Team ~ About Us - Techno Apogee Limited')
+
+@section('title', 'Insert New Project Details - Techno Apogee Limited')
 @section('SupUserContent')
+@include('dashboard.summernote.summernote')
 
     <div class="pagetitle">
-        <h1>Our Team</h1>
+        <h1>Insert New Project Details</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('Administrator.index') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('SupUser.AboutUsIndex') }}">About Us</a></li>
-                <li class="breadcrumb-item active">Our Team</li>
+                <li class="breadcrumb-item"><a href="">Project</a></li>
+                <li class="breadcrumb-item active">Insert New Project Details</li>
             </ol>
         </nav>
     </div>
@@ -36,73 +38,79 @@
                     </span>
                 @endif
             </div>
+            <a href="{{ route('SupUser.ProjectCategoryShow') }}" class="btn btn-success">Project Category List</a>
             <div class="float-right">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addteammember">+ Member</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addteammember">+ Project Category</button>
             </div>
         </div>
         <div class="card-body">
             
-            <table class="table table-hover datatable table-sm">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Degination</th>
-                        <th scope="col">Department</th>
-                        <th scope="col">Mobile</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">WhatsApp</th>
-                        <th scope="col">Create at</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-    
-                    @foreach ($listMember as $key => $listMember)
-                        <tr class="table-light">
-                            <th scope="row"><a href="#">#{{ $listMember->id }}</a></td>
-                            <td><img src="{{ asset('image/about-us/our-team') }}/{{ $listMember->image }}" height="35px" width="35px" alt=""></td>
-                            <td>{{ $listMember->name }}</td>
-                            <td>{{ Str::limit($listMember->degination,15) }}</td>
-                            <td>{{ Str::limit($listMember->department,15) }}</td>
-                            <td>{{ $listMember->mobile }}</td>
-                            <td>{{ $listMember->email }}</td>
-                            <td>{{ $listMember->whatsapp }}</td>
-                            <td>{{ $listMember->created_at->diffForHumans() }}</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    {{-- <button type="button" data-bs-toggle="modal" data-bs-target="#adminUpdateModal" data-admin_id="{{ $admin->id }}" data-admin_name="{{ $admin->name }}" data-admin_username="{{ $admin->username }}" data-admin_email="{{ $admin->email }}" data-admin_role_int="{{ $admin->role_int }}" data-admin_role="{{ $admin->role }}" class="btn btn-warning">
-                                        <i class="bi bi-pencil-square" aria-hidden="true"></i>
-                                    </button> --}}
-                                    <button type="submit" data-bs-toggle="modal" data-bs-target="#deleteUser" data-id="{{ $listMember->id }}" class="btn btn-danger">
-                                        <i class="bi bi-trash" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                                
-    
-                            </td>
-                        </tr>
-                    @endforeach
-    
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Degination</th>
-                        <th scope="col">Department</th>
-                        <th scope="col">Mobile</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">WhatsApp</th>
-                        <th scope="col">Create at</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </tfoot>
-            </table>
+            <form action="" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group mt-2">
+                    <label for="">__Project Name: <b class="text-danger">*</b></label>
+                    <input type="text" name="project_name" id="project_name" class="form-control" value="" placeholder="Ex. Navana Engineering Limited" required="required" >
+                </div>
+                <div class="form-group mt-2">
+                    <label for="">__Project Header Image: <b class="text-danger">*</b></label>
+                    <input type="file" name="project_header_image" id="project_header_image" class="form-control" >
+                </div>
+                <div class="form-group mt-2">
+                    <label for="" class="text-danger">__Select Project Category: <b class="text-danger">**</b></label>
+                    <select name="project_category_slug" class="form-control" id="project_category_slug">
+                        <option value="0" selected>Select Project Category</option>
+
+                    </select>
+                </div>
+                <hr>
+                <div class="form-group mt-2">
+                    <label for="">__Project Keywords: ( , )<b class="text-danger">**</b></label>
+                    <input type="text" name="project_keyword" class="form-control" id="project_keyword" required="required">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="">__Project Scope: <b class="text-danger">*</b></label>
+                    <textarea class="form-control" name="project_scope" id="project_scope"></textarea>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="">__Project Type: <b class="text-danger">*</b></label>
+                    <textarea name="project_type" id="project_type" class="form-control"></textarea>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="">__Project Location <span class="text-warning">(if have location then insert or leave it blank)</span></label>
+                    <input type="text" name="project_location" id="project_location" class="form-control" placeholder="Ex. ho:226, rd:03, ave:01, mirpur 12">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="">__Project Description <b class="text-danger">**</b></label>
+                    <textarea name="project_description" class="form-control" id="summernote" ></textarea>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="" class="text-warning">__Project Status (On-Going or Complete) <b class="text-danger">**</b></label>
+                    <select name="is_ongoing" class="form-control" id="is_ongoing">
+                        <option value="null" selected>Select Project Status</option>
+                        <option value="0">Complete</option>
+                        <option value="1">On Going</option>
+                    </select>
+                </div>
+                <div class="form-group mt-2">
+                    <div class="button-group">
+                        <button type="" class="btn btn-secondary">Clear</button>
+                        <button type="" class="btn btn-primary">Insert Project</button>
+                    </div>
+                </div>
+                
+            </form>
+            
         </div>
     </div>
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Type something about project...',
+            tabsize: 2,
+            height: 200
+        });
+    </script>
+    
+
     
 
    
@@ -112,8 +120,8 @@
 
 
 
-@include('dashboard.about-us.our-team.partials.modal')
+@include('dashboard.project.partials.modal')
 @endsection
 @section('js')
-@include('dashboard.about-us.our-team.partials.js')
+@include('dashboard.project.partials.js')
 @endsection

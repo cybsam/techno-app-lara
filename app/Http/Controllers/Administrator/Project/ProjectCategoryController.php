@@ -13,5 +13,7 @@ use Illuminate\Support\Str;
 
 class ProjectCategoryController extends Controller
 {
-    //
+    public function showCategory(){
+        return view('dashboard.project.project-category');
+    }
 }

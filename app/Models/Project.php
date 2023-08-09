@@ -13,6 +13,7 @@ class Project extends Model
         'project_slug',
         'project_header_image',
         'project_category_slug',
+        'project_keyword',
         'project_scope',
         'project_type',
         'project_location',

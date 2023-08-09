@@ -94,6 +94,16 @@
                             <i class="bi bi-circle"></i><span>Complete Project</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('SupUser.ProjectList') }}" class="@if(url()->current() == route('SupUser.ProjectList')) active @endif">
+                            <i class="bi bi-circle"></i><span>Insert New Project</span>
+                        </a>
+                    </li>
+                    {{-- <li>
+                        <a href="">
+                            <i class="bi bi-circle"></i><span>Archive Project</span>
+                        </a>
+                    </li> --}}
 
                 </ul>
             </li>

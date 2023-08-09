@@ -19,6 +19,7 @@ class CreateProjectsTable extends Migration
             $table->string('project_slug')->nullable();
             $table->string('project_header_image')->nullable();
             $table->string('project_category_slug')->nullable();
+            $table->longText('project_keyword')->nullable();
             $table->longText('project_scope')->nullable();
             $table->longText('project_type')->nullable();
             $table->longText('project_location')->nullable();
