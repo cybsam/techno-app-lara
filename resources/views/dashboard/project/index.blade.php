@@ -20,7 +20,7 @@
     <div class="card">
         <div class="card-header">
             <div class="text-danger">
-                @if (Session::get('validerr'))
+                @if (Session::get('err'))
                     <b>{{ Session::get('validerr') }}</b>
                 @endif
             </div>
@@ -45,7 +45,7 @@
         </div>
         <div class="card-body">
             
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('SupUser.ProjectInsert') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group mt-2">
                     <label for="">__Project Name: <b class="text-danger">*</b></label>
@@ -59,7 +59,9 @@
                     <label for="" class="text-danger">__Select Project Category: <b class="text-danger">**</b></label>
                     <select name="project_category_slug" class="form-control" id="project_category_slug">
                         <option value="0" selected>Select Project Category</option>
-
+                        @foreach ($projectCategory as $key => $projectCategory)
+                            <option value="{{ $projectCategory->id }}{{ _('.') }}{{ $projectCategory->project_category_slug }}">{{ $projectCategory->project_category }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <hr>

@@ -9,10 +9,19 @@ use Carbon\Carbon;
 use Image;
 use App\Models\User;
 use Illuminate\Support\Str;
+use App\Models\projectCategory;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
     public function showProjectList(){
-        return view('dashboard.project.index');
+        $projectCategory = projectCategory::all();
+        return view('dashboard.project.index',[
+            'projectCategory'=>$projectCategory,
+        ]);
+    }
+
+    public function ProjectInsert(Request $request){
+        dd($request->all());
     }
 }
