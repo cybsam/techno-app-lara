@@ -64,15 +64,11 @@
                                           <li class="menu-item-has-children">
                                               <a href="{{ route('frontEndIndex.about-us') }}">About Us</a>
                                               <ul class="sub-menu">
-                                                  <li><a href="{{ route('frontEndIndex.MissionAndVission') }}">Our
-                                                          Mission & Vision</a></li>
+                                                  <li><a href="{{ route('frontEndIndex.MissionAndVission') }}">Our Mission & Vision</a></li>
                                                   <li><a href="{{ route('frontEndIndex.ourTeam') }}">Our Team</a></li>
-                                                  <li><a href="{{ route('frontEndIndex.OurConcern') }}">Our Concern</a>
-                                                  </li>
-                                                  <li><a href="{{ route('frontEndIndex.our-expertise') }}">Our
-                                                          Expertise</a></li>
-                                                  <li><a href="{{ route('frontEndIndex.strategic-partners') }}">Strategic
-                                                          Partners</a>
+                                                  <li><a href="{{ route('frontEndIndex.OurConcern') }}">Our Concern</a></li>
+                                                  <li><a href="{{ route('frontEndIndex.our-expertise') }}">Our Expertise</a></li>
+                                                  <li><a href="{{ route('frontEndIndex.strategic-partners') }}">Strategic Partners</a>
                                                   </li>
 
                                               </ul>
@@ -85,8 +81,7 @@
                                                   <li>
                                                       <div class="sub-menu-mega">
                                                           <div class="meu-item " style="padding-left: 56px;">
-                                                              <a href="">DESIGN
-                                                                  & CONSULTANCY SERVICES</a>
+                                                              <a href="">DESIGN & CONSULTANCY SERVICES</a>
                                                               <ul>
                                                                   {{-- @foreach ($menu as $item)
                                                                       @if ($item->parentid == 2)
@@ -100,8 +95,7 @@
                                                               </ul>
                                                           </div>
                                                           <div class="meu-item ">
-                                                              <a href="">ELECTRICAL
-                                                                  SOLUTION</a>
+                                                              <a href="">ELECTRICAL SOLUTION</a>
                                                               <ul>
                                                                   {{-- @foreach ($menu as $item)
                                                                       @if ($item->parentid == 3)
@@ -149,21 +143,18 @@
                                                   <li><a href="{{ route('FrontEnd.OnGoingProject') }}">Ongoing
                                                           Project</a></li>
                                                   <li class="menu-item-has-children-sub">
-                                                      <a href="#">Complete
-                                                          Project</a>
+                                                      <a href="#">Complete Project</a>
                                                       <ul>
-                                                          <li><a href="">Industry
-                                                                  Projects</a></li>
-                                                          <li><a href="">Bank
-                                                                  & Financial Projects</a></li>
+                                                        @foreach ($projectCategory as $key => $projectCategory)
+                                                            <li><a href="{{ $projectCategory->project_category_slug }}">{{ $projectCategory->project_category }}</a></li>
+                                                        @endforeach
+                                                          
+                                                          {{-- <li><a href="">Bank & Financial Projects</a></li>
                                                           <li><a href="">NGO</a></li>
                                                           <li><a href="">Club</a></li>
-                                                          <li><a href="">Hotel &
-                                                                  Resorts</a></li>
-                                                          <li><a href="">Govt.
-                                                                  Projects</a></li>
-                                                          <li><a href="">Commercial
-                                                                  Building Projects</a></li>
+                                                          <li><a href="">Hotel & Resorts</a></li>
+                                                          <li><a href="">Govt. Projects</a></li>
+                                                          <li><a href="">Commercial Building Projects</a></li> --}}
                                                       </ul>
                                                   </li>
                                               </ul>

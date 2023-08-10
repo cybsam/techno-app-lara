@@ -53,6 +53,10 @@
     @php
         $AboutUsInformation = DB::table('about_us_information')->where('id','1')->first();
     @endphp
+
+    @php
+        $projectCategory = DB::table('project_categories')->get();
+    @endphp
             
     <div class="offwrap"></div>
      
