@@ -11,7 +11,7 @@
                               <ul>
                                   <li>
                                       <i class="flaticon-email"></i>
-<<<<<<< HEAD
+
                                       <a
                                           href="mailto:{{ $AboutUsInformation->company_email }}">{{ $AboutUsInformation->company_email }}</a>
                                   </li>
@@ -19,13 +19,7 @@
                                       <i class="flaticon-call"></i>
                                       <a href="tel:{{ $AboutUsInformation->company_mobile_1 }}">
                                           {{ $AboutUsInformation->company_mobile_1 }}</a>
-=======
-                                      <a href="mailto:{{ $AboutUsInformation->company_email }}">{{ $AboutUsInformation->company_email }}</a>
-                                  </li>
-                                  <li>
-                                      <i class="flaticon-call"></i>
-                                      <a href="tel:{{ $AboutUsInformation->company_mobile_1 }}"> {{ $AboutUsInformation->company_mobile_1 }}</a>
->>>>>>> f335813df46c9f41cc496a5b00dc6b2f2bbb9457
+
                                   </li>
                                   <li>
                                       <i class="flaticon-location"></i>
@@ -37,16 +31,12 @@
                       <div class="col-lg-4 text-right">
                           <div class="toolbar-sl-share">
                               <ul>
-<<<<<<< HEAD
+
                                   <li class="opening"> <em><i class="flaticon-clock"></i>Saturday - Thursday /
                                           {{ $AboutUsInformation->company_office_time }}</em> </li>
                                   <li><a href="{{ route('basicUser.dashboard') }}">Dashboard</a></li>
 
-=======
-                                  <li class="opening"> <em><i class="flaticon-clock"></i>Saturday - Thursday / {{ $AboutUsInformation->company_office_time }}</em> </li>
-                                  <li><a href="{{ route('basicUser.dashboard') }}">Dashboard</a></li>
-                                  
->>>>>>> f335813df46c9f41cc496a5b00dc6b2f2bbb9457
+
                               </ul>
                           </div>
                       </div>
@@ -185,7 +175,7 @@
                                           <li>
                                               <a href="">Blog</a>
                                           </li>
-<<<<<<< HEAD
+
                                           <li class="bg-warning">
                                               <a class="" href="{{ route('logout') }}"
                                                   onclick="event.preventDefault();
@@ -196,10 +186,7 @@
                                                   class="d-none">
                                                   @csrf
                                               </form>
-=======
-                                          <li class="">
-                                              <a href="{{ route('frontEnd.ContactS') }}">Contact</a>
->>>>>>> f335813df46c9f41cc496a5b00dc6b2f2bbb9457
+
                                           </li>
                                       </ul> <!-- //.nav-menu -->
                                   </nav>
@@ -213,11 +200,9 @@
                                   <li class="humburger">
                                       <a id="nav-expander" class="nav-expander bar" href="#">
                                           <div class="bar">
-<<<<<<< HEAD
+
                                               <img src="" alt="">
-=======
-                                            <img src="" alt="">
->>>>>>> f335813df46c9f41cc496a5b00dc6b2f2bbb9457
+
                                               <span class="dot1"></span>
                                               <span class="dot2"></span>
                                               <span class="dot3"></span>
@@ -229,11 +214,9 @@
                                               <span class="dot9"></span>
                                           </div>
                                       </a>
-<<<<<<< HEAD
+
                                   </li>
-=======
-                                  </li> 
->>>>>>> f335813df46c9f41cc496a5b00dc6b2f2bbb9457
+
                               </ul>
                           </div>
                       </div>
