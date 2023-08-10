@@ -43,7 +43,9 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
 
 
     Route::get('Project/On-going',[App\Http\Controllers\FrontEnd\ProjectController::class, 'onGoingProject'])->name('FrontEnd.OnGoingProject');
+    Route::get('Project/Complete/{project_cate_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'CompleteProjectList'])->name('FrontEnd.CompleteProjectShow');
 
+    Route::get('Project/Complete/Details/{project_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'ProjectDetailsShow'])->name('FrontEnd.ProjectDetailsShow');
 
     // contact 
     Route::get('Contact',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contact'])->name('frontEnd.ContactS');

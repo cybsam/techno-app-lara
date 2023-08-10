@@ -146,15 +146,9 @@
                                                       <a href="#">Complete Project</a>
                                                       <ul>
                                                         @foreach ($projectCategory as $key => $projectCategory)
-                                                            <li><a href="{{ $projectCategory->project_category_slug }}">{{ $projectCategory->project_category }}</a></li>
+                                                            <li><a href="{{ route('FrontEnd.CompleteProjectShow',['project_cate_slug'=>$projectCategory->project_category_slug]) }}">{{ $projectCategory->project_category }}</a></li>
                                                         @endforeach
                                                           
-                                                          {{-- <li><a href="">Bank & Financial Projects</a></li>
-                                                          <li><a href="">NGO</a></li>
-                                                          <li><a href="">Club</a></li>
-                                                          <li><a href="">Hotel & Resorts</a></li>
-                                                          <li><a href="">Govt. Projects</a></li>
-                                                          <li><a href="">Commercial Building Projects</a></li> --}}
                                                       </ul>
                                                   </li>
                                               </ul>

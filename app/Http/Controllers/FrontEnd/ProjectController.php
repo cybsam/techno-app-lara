@@ -19,4 +19,18 @@ class ProjectController extends Controller
             'onGoingProject'=>$onGoingProject,
         ]);
     }
+
+
+    public function CompleteProjectList(Request $request, $project_cate_slug){
+        $pro_slug = $project_cate_slug;
+        $categoryWiseProjectList = Project::where('is_ongoing','0')->where('project_category_slug',$pro_slug)->get();
+        return view('FrontEndView.project.categorywise-project',[
+            'proejct_slug'=>$project_cate_slug,
+            'categoryWiseProjectList'=>$categoryWiseProjectList,
+        ]);
+    }
+
+    public function ProjectDetailsShow(Request $request, $project_slug){
+        echo $project_slug;
+    }
 }
