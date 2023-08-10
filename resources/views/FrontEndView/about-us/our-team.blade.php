@@ -2,15 +2,7 @@
 @section('title', 'Our Team ~ About Us - Fire Panel Repair & Maintenance BD | Techno Apogee Limited')
 @section('content')
 
-    <style>
-        .rs-breadcrumbs {
-            background-image: url("public/image/fontend/img/breadcrumbs/inr_6.jpg");
-            /* background-image: url('./public/image/fontend/img/breadcrumbs/inr_6.jpg'); */
-            background-repeat: no-repeat !important;
-            background-size: cover !important;
-            background-position: center !important;
-        }
-    </style>
+    
     <style>
         .team-member {
             background: #e6e2e0;
@@ -217,7 +209,7 @@
     <div class="rs-breadcrumbs">
         <div class="container">
             <div class="breadcrumbs-inner">
-                <h1 class="page-title " style="color:#303030">
+                <h1 class="page-title " style="color:#ffffff">
                     Our team
                 </h1>
             </div>
@@ -227,9 +219,8 @@
         <div class="container">
             <div class="row mt-5 mb-5">
                 <div class="col-lg-12">
-                    <div class="teamHeading text-center">
-                        <h3>Management</h3>
-                    </div>
+                    
+    <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Management</h4>
 
                     @foreach ($management as $key => $management)
                         <div class="managementTem m-auto text-center">
@@ -246,131 +237,7 @@
             </div>
         </div>
     </section>
-    <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Management</h4>
-    <div class="container">
-        <div class="row bootstrap snippets bootdey">
-
-            {{-- @foreach ($management as $key => $management)
-                <div class="col-md-4">
-                    <div class="team-member">
-                        <figure class="effect-zoe">
-                            <div class="team-photo">
-                                <img src="{{ asset('image/about-us/our-team') }}/{{ $management->image }}"
-                                    alt="Rachel James Johnes" class="img-responsive">
-                            </div>
-                            <div class="team-attrs">
-                                <div class="team-name font-accident-two-bold-italic">{{ $management->name }}</div>
-                                <div class="team-position">{{ $management->degination }}</div>
-                            </div>
-                            
-                            <figcaption>
-
-                                <p class="icon-links">
-                                    <a href="mailto:{{ $management->email }}"><i class="fa fa-google"></i></a>
-                                    <a href="tel:{{ $management->mobile }}"><i class="fa fa-phone"></i></a>
-                                    <a href="tel:{{ $management->whatsapp }}"><i class="fa fa-whatsapp"></i></a>
-                                </p>
-
-                                <p class="phone-number">
-                                    <a href="tel:{{ $management->mobile }}">tel: {{ $management->mobile }}</a>
-                                </p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="dividewhite4"></div>
-                </div>
-            @endforeach --}}
-            {{-- <div class="col-md-4">
-                <div class="team-member">
-                    <figure class="effect-zoe">
-                        <div class="team-photo">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Rachel James Johnes"
-                                class="img-responsive">
-                        </div>
-                        <div class="team-attrs">
-                            <div class="team-name font-accident-two-bold-italic">Kate Keppler</div>
-                            <div class="team-position">Art-Director</div>
-                        </div>
-                        <div class="team-content small">
-                            Truong is also the recipient of The George C. Lin Emerging Filmmaker Award from the San Diego
-                        </div>
-                        <figcaption>
-                            <p class="icon-links">
-                                <a href="#!"><i class="fa fa-google"></i></a>
-                                <a href="#!"><i class="fa fa-instagram"></i></a>
-                                <a href="#!"><i class="fa fa-facebook"></i></a>
-                            </p>
-
-                            <p class="phone-number">
-                                <a href="#!">tel: 1 234 567-89-10</a>
-                            </p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="dividewhite4"></div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="team-member">
-                    <figure class="effect-zoe">
-                        <div class="team-photo">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Rachel James Johnes"
-                                class="img-responsive">
-                        </div>
-                        <div class="team-attrs">
-                            <div class="team-name font-accident-two-bold-italic">Mario Quinn</div>
-                            <div class="team-position">Designer</div>
-                        </div>
-                        <div class="team-content small">
-                            Truong is also the recipient of The George C. Lin Emerging Filmmaker Award from the San Diego
-                        </div>
-                        <figcaption>
-                            <p class="icon-links">
-                                <a href="#!"><i class="fa fa-google"></i></a>
-                                <a href="#!"><i class="fa fa-instagram"></i></a>
-                                <a href="#!"><i class="fa fa-facebook"></i></a>
-                            </p>
-
-                            <p class="phone-number">
-                                <a href="#!">tel: 1 234 567-89-10</a>
-                            </p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="dividewhite4"></div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="team-member">
-                    <figure class="effect-zoe">
-                        <div class="team-photo">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Rachel James Johnes"
-                                class="img-responsive">
-                        </div>
-                        <div class="team-attrs">
-                            <div class="team-name font-accident-two-bold-italic">Ramon Vasquez</div>
-                            <div class="team-position">Manager</div>
-                        </div>
-                        <div class="team-content small">
-                            Truong is also the recipient of The George C. Lin Emerging Filmmaker Award from the San Diego
-                        </div>
-                        <figcaption>
-                            <p class="icon-links">
-                                <a href="#!"><i class="fa fa-google"></i></a>
-                                <a href="#!"><i class="fa fa-instagram"></i></a>
-                                <a href="#!"><i class="fa fa-facebook"></i></a>
-                            </p>
-
-                            <p class="phone-number">
-                                <a href="#!">tel: 1 234 567-89-10</a>
-                            </p>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="dividewhite4"></div>
-            </div> --}}
-        </div>
-    </div>
+    
     <div class="pt-5"></div>
     <h4 class="align-center text-black" style="text-align: center;color:#303030;font-style:italic;">Admin & Operation</h4>
     <div class="container">

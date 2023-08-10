@@ -8,13 +8,7 @@
     box-shadow: 0 0 13px 0 #917a7a;
     padding: 20px 6px;
 }
-.rs-breadcrumbs {
-  background-image: url("public/image/fontend/img/breadcrumbs/inr_6.jpg");
-  /* background-image: url('./public/image/fontend/img/breadcrumbs/inr_6.jpg'); */
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
+
 </style>
 
 <main class="main">

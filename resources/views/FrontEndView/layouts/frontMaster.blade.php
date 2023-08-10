@@ -36,6 +36,15 @@
         <!-- responsive css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/FrontEnd/css/responsive.css')}}">
         @yield('cssFront')
+        <style>
+            .rs-breadcrumbs {
+                background-image: url("{{ asset('image/FrontEnd/breadcrumb/breadcrumb.jpg') }}");
+                /* background-image: url('./public/image/fontend/img/breadcrumbs/inr_6.jpg'); */
+                background-repeat: no-repeat !important;
+                background-size: cover !important;
+                background-position: center !important;
+            }
+        </style>
         
     </head>
     <body class="defult-home">
