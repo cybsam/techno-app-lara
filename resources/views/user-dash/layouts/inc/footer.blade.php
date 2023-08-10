@@ -90,7 +90,11 @@
                         <div class="col-lg-6">
                             <div class="copyright text-lg-start text-center ">
                                 <p>&copy;2006 - <?php echo date('Y'); ?> Techno Apogee Limited | All Rights Reserved.</p>
+<<<<<<< HEAD
                                 <p>Developed by <a href="https://github.com/cybsam"> CybSam</a></p>
+=======
+                                <p>Developed by <a href="https://github.com/cybsam">~ CybSam</a></p>
+>>>>>>> f335813df46c9f41cc496a5b00dc6b2f2bbb9457
                             </div>
                         </div>
                     </div>

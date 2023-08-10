@@ -59,14 +59,22 @@
     <!-- Main content Start -->
     <div class="main-content">
 
+<<<<<<< HEAD
     @include('user-dash.layouts.inc.header')
+=======
+    @include('FrontEndView.layouts.inc.header')
+>>>>>>> f335813df46c9f41cc496a5b00dc6b2f2bbb9457
     <!--==================== HEADER ====================-->
     @yield('content')
 
 </div> 
 <!-- Main content End -->
     <!--==================== FOOTER ====================-->
+<<<<<<< HEAD
     @include('user-dash.layouts.inc.footer')
+=======
+    @include('FrontEndView.layouts.inc.footer')
+>>>>>>> f335813df46c9f41cc496a5b00dc6b2f2bbb9457
 
     <!--=============== SCROLL UP ===============-->
 
