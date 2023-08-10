@@ -9,6 +9,6 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function index(){
-        return view('user-dash.dashboard');
+        return view('dash-user.dashboard');
     }
 }
