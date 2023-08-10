@@ -11,11 +11,13 @@
                               <ul>
                                   <li>
                                       <i class="flaticon-email"></i>
-                                      <a href="mailto:{{ $AboutUsInformation->company_email }}">{{ $AboutUsInformation->company_email }}</a>
+                                      <a
+                                          href="mailto:{{ $AboutUsInformation->company_email }}">{{ $AboutUsInformation->company_email }}</a>
                                   </li>
                                   <li>
                                       <i class="flaticon-call"></i>
-                                      <a href="tel:{{ $AboutUsInformation->company_mobile_1 }}"> {{ $AboutUsInformation->company_mobile_1 }}</a>
+                                      <a href="tel:{{ $AboutUsInformation->company_mobile_1 }}">
+                                          {{ $AboutUsInformation->company_mobile_1 }}</a>
                                   </li>
                                   <li>
                                       <i class="flaticon-location"></i>
@@ -27,9 +29,10 @@
                       <div class="col-lg-4 text-right">
                           <div class="toolbar-sl-share">
                               <ul>
-                                  <li class="opening"> <em><i class="flaticon-clock"></i>Saturday - Thursday / {{ $AboutUsInformation->company_office_time }}</em> </li>
+                                  <li class="opening"> <em><i class="flaticon-clock"></i>Saturday - Thursday /
+                                          {{ $AboutUsInformation->company_office_time }}</em> </li>
                                   <li><a href="{{ route('login') }}">Login</a></li>
-                                  
+
                               </ul>
                           </div>
                       </div>
@@ -143,7 +146,7 @@
                                           <li class="menu-item-has-children">
                                               <a href="">Our project</a>
                                               <ul class="sub-menu">
-                                                  <li><a href="">Ongoing
+                                                  <li><a href="{{ route('FrontEnd.OnGoingProject') }}">Ongoing
                                                           Project</a></li>
                                                   <li class="menu-item-has-children-sub">
                                                       <a href="#">Complete
@@ -183,7 +186,7 @@
                                   <li class="humburger">
                                       <a id="nav-expander" class="nav-expander bar" href="#">
                                           <div class="bar">
-                                            <img src="" alt="">
+                                              <img src="" alt="">
                                               <span class="dot1"></span>
                                               <span class="dot2"></span>
                                               <span class="dot3"></span>
@@ -195,7 +198,7 @@
                                               <span class="dot9"></span>
                                           </div>
                                       </a>
-                                  </li> 
+                                  </li>
                               </ul>
                           </div>
                       </div>

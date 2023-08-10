@@ -41,6 +41,10 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
     Route::get('About-Us/strategic-partners', [App\Http\Controllers\FrontEnd\AboutController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
 
 
+
+    Route::get('Project/On-going',[App\Http\Controllers\FrontEnd\ProjectController::class, 'onGoingProject'])->name('FrontEnd.OnGoingProject');
+
+
     // contact 
     Route::get('Contact',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contact'])->name('frontEnd.ContactS');
     
