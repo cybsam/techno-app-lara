@@ -25,10 +25,7 @@
                         <h3>{{ Str::title(Auth::user()->role) }}</h3>
 
                         <div class="social-links mt-2">
-                            {{-- <a href="{{ $dbTwitter }}" target="blank" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="{{ $dbFacebook }}" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="{{ $dbInstagram }}" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="{{ $dbLinkedin }}" class="linkedin"><i class="bi bi-linkedin"></i></a> --}}
+                            
                         </div>
                     </div>
                 </div>
@@ -44,10 +41,7 @@
 
                         <ul class="nav nav-tabs nav-tabs-bordered">
 
-                            <li class="nav-item">
-                                <button class="nav-link active" data-bs-toggle="tab"
-                                    data-bs-target="#profile-overview">Overview</button>
-                            </li>
+                            
 
                             <li class="nav-item">
                                 <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-edit">Edit
@@ -70,8 +64,7 @@
                                     @endforeach
                                 </span>
                             @endif
-                            <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                                @if (Session::get('success'))
+                            @if (Session::get('success'))
                                     <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
                                         role="alert">
                                         {{ Session::get('success') }}
@@ -87,20 +80,7 @@
                                             aria-label="Close"></button>
                                     </div>
                                 @endif
-                                <h5 class="card-title">About</h5>
-                                <p class="small fst-italic">
-                                    
-                                </p>
-
-                                <h5 class="card-title">Profile Details</h5>
-
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                                    <div class="col-lg-9 col-md-8">{{ Auth::user()->name }}</div>
-                                </div>
-
-                                
-                            </div>
+                            
 
                             <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
@@ -136,150 +116,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    {{-- <input type="hidden" name="userId" id="userId" value="{{ Auth::user()->id }}">
-                                    <div class="row mb-3">
-                                        <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <textarea name="UserAbout" class="form-control"
-                                                placeholder="Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.
-                    "
-                                                id="UserAbout" style="height: 100px">{{ $aboutUser }}.</textarea>
-                                            @error('UserAbout')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="company" class="col-md-4 col-lg-3 col-form-label">Company</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="company" type="text" class="form-control"
-                                                placeholder="HowTiune Inc" id="company" value="{{ $company }}">
-                                            @error('company')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Job" class="col-md-4 col-lg-3 col-form-label">Job Title</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="jobTitle" type="text" class="form-control"
-                                                placeholder="Designer/Developer/Blogger" id="jobTitle"
-                                                value="{{ $jobtitle }}">
-                                            @error('jobTitle')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="country" type="text" class="form-control"
-                                                placeholder="USA/UK/BD/ " id="Country" value="{{ $dbCountry }}">
-                                            @error('country')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="address" type="text" class="form-control"
-                                                placeholder="A108 Adam Street, New York, NY 535022" id="address"
-                                                value="{{ $dbAddress }}">
-                                            @error('address')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="phone" type="text" class="form-control" id="Phone"
-                                                placeholder="(436) 486-3538 x29071" value=" {{ $dbPhone }}">
-                                            @error('phone')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="row mb-3">
-                                        <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter
-                                            Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="twitter" type="text" class="form-control" id="twitter"
-                                                placeholder="https://twitter.com/your-account"
-                                                value="{{ $dbTwitter }}">
-                                            @error('twitter')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook
-                                            Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="facebook" type="text" class="form-control" id="facebook"
-                                                placeholder="https://facebook.com/your-account"
-                                                value="{{ $dbFacebook }}">
-                                            @error('facebook')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram
-                                            Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="instagram" type="text" class="form-control" id="instagram"
-                                                placeholder="https://instagram.com/your-account"
-                                                value="{{ $dbInstagram }}">
-                                            @error('instagram')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin
-                                            Profile</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="linkedin" type="text" class="form-control" id="linkedin"
-                                                placeholder="https://linkedin.com/your-account"
-                                                value="{{ $dbLinkedin }}">
-                                            @error('linkedin')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div> --}}
+                                    
 
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -349,11 +186,10 @@
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Change Password</button>
                                     </div>
-                                </form><!-- End Change Password Form -->
-
+                                </form>
                             </div>
 
-                        </div><!-- End Bordered Tabs -->
+                        </div>
 
                     </div>
                 </div>
