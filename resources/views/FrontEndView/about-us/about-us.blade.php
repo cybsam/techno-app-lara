@@ -9,7 +9,7 @@
     <div class="rs-breadcrumbs">
         <div class="container">
             <div class="breadcrumbs-inner">
-                <h1 class="page-title " style="color:#303030">
+                <h1 class="page-title " style="color:#ffffff">
                     About Us
                 </h1>
             </div>
