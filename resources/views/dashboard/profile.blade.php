@@ -44,7 +44,7 @@
                             
 
                             <li class="nav-item">
-                                <button class="nav-link " data-bs-toggle="tab" data-bs-target="#profile-edit">Edit
+                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit
                                     Profile</button>
                             </li>
 
