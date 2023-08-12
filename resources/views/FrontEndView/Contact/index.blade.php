@@ -2,15 +2,7 @@
 @section('title', 'Contact ~ Fire Panel Repair & Maintenance BD | Techno Apogee Limited')
 @section('content')
 
-<style>
-    .rs-breadcrumbs {
-        background-image: url("public/image/fontend/img/breadcrumbs/inr_6.jpg");
-        /* background-image: url('./public/image/fontend/img/breadcrumbs/inr_6.jpg'); */
-        background-repeat: no-repeat !important;
-        background-size: cover !important;
-        background-position: center !important;
-    }
-</style>
+
 
 <!-- Breadcrumbs Start -->
 <div class="rs-breadcrumbs">
@@ -22,6 +14,9 @@
         </div>
     </div>
 </div>
+@php
+        $AboutUsInformation = DB::table('about_us_information')->where('id','1')->first();
+    @endphp
 
 <section id="contact-information">
     <div class="container">
