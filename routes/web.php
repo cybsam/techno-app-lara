@@ -49,6 +49,8 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
 
     // contact 
     Route::get('Contact',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contact'])->name('frontEnd.ContactS');
+    Route::post('Contact/s',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contactStore'])->name('frontEnd.ContactStore');
+    
     
     Route::get('User/Verify/',[App\Http\Controllers\Auth\RegisterController::class, 'verify'])->name('user.verify');
 });

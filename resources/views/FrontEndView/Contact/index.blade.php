@@ -53,26 +53,39 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="contactlist text-center">
-                    <form>
-
+                    <form action="{{ route('frontEnd.ContactStore') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @if ($errors->all())
+                            <span style="color: red;">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </span>
+                        @endif
+                        @if (Session::get('succFrontEnd'))
+                            <span style="color: green">{{ Session::get('succFrontEnd') }}</span>
+                        @endif
+                        @if (Session::get('errFrontEnd'))
+                            <span style="color: red">{{ Session::get('errFrontEnd') }}</span>
+                        @endif
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Your Name">
+                                <input type="text" name="sender_name" class="form-control" placeholder="Your Name">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Mobile No.">
+                                <input type="text" name="sender_number" class="form-control" placeholder="Mobile No.">
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Subject">
+                                <input type="text" name="sender_subject" class="form-control" placeholder="Subject">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Email Address">
+                                <input type="email" name="sender_email" class="form-control" placeholder="Email Address">
                             </div>
                         </div>
                         <div class="message">
-                            <textarea name="" id="" placeholder="Message"></textarea>
+                            <textarea name="sender_message" id="sender_message" placeholder="Message"></textarea>
                         </div>
                         <button type="submit">Submit</button>
                     </form>
