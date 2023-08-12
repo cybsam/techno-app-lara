@@ -268,6 +268,11 @@
                         </a>
                     </li>
                     <li>
+                        <a href="{{ route('SupUser.FrontSliderImage') }}" class="@if(URL::current() == route('SupUser.FrontSliderImage')) active @endif">
+                            <i class="bi bi-circle"></i><span>Front Slider</span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="">
                             <i class="bi bi-circle"></i><span>Find Us</span>
                         </a>
@@ -298,13 +303,13 @@
                     <span>F.A.Q</span>
                 </a>
             </li><!-- End F.A.Q Page Nav -->
-            {{-- @php
-                $countContact = App\Models\Contact::where('seen',0)->count();
-            @endphp --}}
+            @php
+                $countUnSeenMsg = DB::table('front_contacts')->where('is_seen',0)->count();
+            @endphp
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('supUser.FrontEndContact') }}">
                     <i class="bi bi-envelope"></i>
-                    <span>Contact Message <span style="color:red;">6</span></span>
+                    <span>Contact Message <span class="badge bg-success badge-number">{{ $countUnSeenMsg }}</span></span>
                 </a>
             </li>
 

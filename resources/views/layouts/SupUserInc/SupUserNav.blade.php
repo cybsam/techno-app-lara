@@ -100,38 +100,40 @@
                     $msgfetch = DB::table('contacts')->where('seen',0)->take(5)->get();
                     $countMsg = $msgfetch->count();
                 @endphp --}}
+                @php
+                    $countUnSeenMsg = DB::table('front_contacts')->where('is_seen',0)->count();
+                    $fetchMsgFrnt = DB::table('front_contacts')->where('is_seen',0)->take(7)->get();
+                @endphp
 
                   <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                       <i class="bi bi-chat-left-text"></i>
-                      <span class="badge bg-success badge-number">7</span>
+                      <span class="badge bg-success badge-number">{{ $countUnSeenMsg }}</span>
                   </a><!-- End Messages Icon -->
 
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                       <li class="dropdown-header">
-                          You have 7 new messages
+                          You have {{ $countUnSeenMsg }} new messages
                           <a href="#"><span
                                   class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                       </li>
                       <li>
                           <hr class="dropdown-divider">
                       </li>
-                      {{-- @foreach ($msgfetch as $fetchMsg)
-
-
+                      @foreach ($fetchMsgFrnt as $key => $fetchMsgFrnt)
                       <li class="message-item">
-                          <a href="{{ route('supuser.frontendcontactMsgShow',['message_id'=>$fetchMsg->id]) }}">
+                          <a href="">
                               <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
                               <div>
-                                  <h4>{{ $fetchMsg->anonymouse_name }}</h4>
-                                  <p>{{ $fetchMsg->anonymouse_subject }}...</p>
-                                  <p>{{ $fetchMsg->created_at }}</p>
+                                  <h4>{{ $fetchMsgFrnt->sender_name }}</h4>
+                                  <p>{{ $fetchMsgFrnt->sender_ip }}...</p>
+                                  <p>{{ $fetchMsgFrnt->created_at }}</p>
                               </div>
                           </a>
                       </li>
                       <li>
                           <hr class="dropdown-divider">
                       </li>
-                      @endforeach --}}
+                      @endforeach
 
                       <li>
                           <hr class="dropdown-divider">

@@ -45,4 +45,11 @@ class DashboardController extends Controller
             'getData'=>$getData,
         ]);
     }
+
+    public function frontSliderImage(){
+        //
+    }
+    public function frontSliderImageUpdate(){
+        //
+    }
 }
