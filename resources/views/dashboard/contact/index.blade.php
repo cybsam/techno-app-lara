@@ -16,9 +16,33 @@
     </div>
     <hr>
 
-    <div class="card">
-        
-    </div>
+    <table class="table table-hover datatable table-sm">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($showContact as $key => $contactU)
+                <tr class="@if($contactU->is_seen == 1)text-muted @endif">
+                    <td>{{ $contactU->id }}</td>
+                    <td>{{ $contactU->sender_name }}</td>
+                    <td><a href="mailto:{{ $contactU->sender_email }}">{{ $contactU->sender_email }}</a></td>
+                    <td>{{ Str::limit($contactU->sender_subject, 20) }}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="{{ route('supUser.FrontEndContactShow',['id'=>$contactU->id]) }}">View</a>
+                        
+                    </td>
+                </tr>
+            @endforeach
+            
+        </tbody>
+    </table>
 
 
 

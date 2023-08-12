@@ -35,4 +35,14 @@ class DashboardController extends Controller
             'showContact'=>$showContact,
         ]);
     }
+    public function ContactFrontEndShow(Request $request, $id){
+        $cntId = $id;
+        $updateFrontContact = FrontContact::where('id',$cntId)->update([
+            'is_seen'=>1
+        ]);
+        $getData = FrontContact::where('id',$cntId)->first();
+        return view('dashboard.contact.view',[
+            'getData'=>$getData,
+        ]);
+    }
 }
