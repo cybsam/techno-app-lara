@@ -18,10 +18,23 @@
 
     <div class="card">
         <div class="card-header">
-            ddd
+            {{ _('Message From: ') }} <b>{{ $getData->sender_name }}</b>
         </div>
         <div class="card-body">
-            jfd
+            <h6>Email: <a href="">{{ $getData->sender_email }}</a>.</h6>
+            <h6>Number: <a href="">{{ $getData->sender_number }}</a>.</h6>
+            <hr>
+            <h6>Subject: <b>{{ $getData->sender_subject }}.</b></h6>
+            <hr>
+            <p>Description:</br>{{ $getData->sender_message }}</p>
+            <hr>
+            <div class="button-group">
+                <a href="" class="btn btn-primary">Email</a>
+                <a href="" class="btn btn-info">Call</a>
+                <div class="float-right">
+                    <p>Sender IP: <b>{{ $getData->sender_ip }}</b></p>
+                </div>
+            </div>
             
         </div>
     </div>
