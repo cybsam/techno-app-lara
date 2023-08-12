@@ -16,9 +16,9 @@
     <div id="rs-slider" class="rs-slider slider3">
         <div class="bend niceties">
             <div id="nivoSlider" class="slides">
-                <img src="{{ asset('image/fontend/img/slider/engrieening.png')}}" alt="" title="#slide-1" />
-                <img src="{{ asset('image/fontend/img/slider/installsutation.png')}}" alt="" title="#slide-2" />
-                <img src="{{ asset('image/fontend/img/slider/pocurement.png')}}" alt="" title="#slide-3" />
+                <img src="{{ asset('image/carosel-slider/engrieening.png')}}" alt="" title="#slide-1" />
+                <img src="{{ asset('image/carosel-slider/installsutation.png')}}" alt="" title="#slide-2" />
+                <img src="{{ asset('image/carosel-slider/pocurement.png')}}" alt="" title="#slide-3" />
                 
             </div>
             <!-- Slide 1 -->
