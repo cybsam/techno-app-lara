@@ -302,7 +302,7 @@
                 $countContact = App\Models\Contact::where('seen',0)->count();
             @endphp --}}
             <li class="nav-item">
-                <a class="nav-link collapsed" href="">
+                <a class="nav-link collapsed" href="{{ route('supUser.FrontEndContact') }}">
                     <i class="bi bi-envelope"></i>
                     <span>Contact Message <span style="color:red;">6</span></span>
                 </a>

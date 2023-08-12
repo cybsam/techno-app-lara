@@ -66,5 +66,8 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
 
     //end settings
 
+    //contact
+    Route::get('contact/front',[App\Http\Controllers\Administrator\DashboardController::class, 'ContactFrontEnd'])->name('supUser.FrontEndContact');
+
     Route::get('blank',[DashboardController::class, 'blank'])->name('dashboard.blank');
 });
