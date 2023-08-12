@@ -31,6 +31,10 @@ class ProjectController extends Controller
     }
 
     public function ProjectDetailsShow(Request $request, $project_slug){
-        echo $project_slug;
+        $project_slug = $project_slug;
+        $projectDetaisView =  Project::where('project_slug',$project_slug)->first();
+        return view('FrontEndView.project.project-details',[
+            'projectDetaisView'=>$projectDetaisView,
+        ]);
     }
 }

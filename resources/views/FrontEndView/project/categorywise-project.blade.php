@@ -1,6 +1,6 @@
 @extends('FrontEndView.layouts.frontMaster')
 @section('title', 'Project Portfolio ~ Fire Panel Repair & Maintenance BD - Techno Apogee Limited')
-@section('metaTitle', '')
+@section('metaTitle', 'Project Portfulio techno Apogee Engineering Limited, Fire panel & Maintenance BD, Techno Apogee Limited')
 @section('metaDescription', '')
 @section('content')
     <div class="rs-breadcrumbs">
@@ -18,7 +18,7 @@
             <div class="row">
                 @foreach ($categoryWiseProjectList as $key => $categoryProject)
                     <div class="col-lg-4 col-md-6 mb-30">
-                        <a href="">
+                        
                             <div class="project-item">
                                 <div class="project-img">
                                     <a href="">
@@ -34,7 +34,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                 @endforeach
             </div>
