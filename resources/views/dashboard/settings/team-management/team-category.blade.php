@@ -3,7 +3,7 @@
 @section('SupUserContent')
 
     <div class="pagetitle">
-        <h1>Blank Page</h1>
+        <h1>Team Category </h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('Administrator.index') }}">Dashboard</a></li>
