@@ -13,7 +13,10 @@ use App\Models\ProductService;
 class ProductServiceController extends Controller
 {
     public function index(){
-        return view('dashboard.productService.index');
+        $productServiceStatus = ProductService::all()->reverse();
+        return view('dashboard.productService.index',[
+            'productServiceStatus'=>$productServiceStatus,
+        ]);
     }
 
     public function insertCheck(){

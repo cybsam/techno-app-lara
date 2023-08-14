@@ -17,7 +17,35 @@
     
     
     <hr>
-    
+
+    <table class="table table-hover datatable table-sm">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Slug</th>
+                <th scope="col">image</th>
+                <th scope="col">Parent</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($productServiceStatus as $key => $productService)
+                <tr>
+                    <td>{{ $productService->id }}</td>
+                    <td><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>$productService->__proserslug]) }}">{{ $productService->__proserslug }}</a></td>
+                    <td><img src="{{ asset('image/productservice') }}/{{ $productService->__proserheadimage }}" height="55px" width="55px" alt="{{ $productService->__prosername }}"></td>
+                    <td>{{ $productService->__prosermenuselect }}</td>
+                    <td>
+                        <div class="button-group">
+                            <a href="" class="btn btn-warning btn-sm">Update</a>
+                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+
 
 
 <script>
