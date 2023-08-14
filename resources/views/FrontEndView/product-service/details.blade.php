@@ -1,7 +1,11 @@
 @extends('FrontEndView.layouts.frontMaster')
 @section('title', 'Product and Service Details ~ Product And Service - Fire Panel Repair & Maintenance BD | Techno Apogee Limited')
-@section('metaTitle'," ")
-@section('metaDescription'," ")
+@section('metaTitle'," {{ $fetchPro->__prosername }} ")
+@section('metaDescription'," {{ $fetchPro->__proserkeyword }} ")
+@section('cssFront')
+
+
+@section('content')
 <style>
     .prodectDetail_img img {
             width: 100%;
@@ -26,8 +30,6 @@
             margin-bottom: -5px;
         }
 </style>
-
-@section('content')
     <div class="rs-breadcrumbs">
         <div class="container">
             <div class="breadcrumbs-inner">
@@ -61,7 +63,7 @@
             <div class="row">
 
                 @php
-                    $randPro = DB::table('product_services')->where('__prosermenuselect',$fetchPro->__prosermenuselect)->get();
+                    $randPro = DB::table('product_services')->where('__prosermenuselect',$fetchPro->__prosermenuselect)->orderByRandom()->limit(4)->get();
                 @endphp
 
                 @foreach ($randPro as $RandProduct)
