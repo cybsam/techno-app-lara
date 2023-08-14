@@ -46,29 +46,29 @@
             <li class="nav-heading">Product & Service</li>
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#product_and_service" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-button-wide"></i><span>Product & Service</span><i
+                    <i class="bi bi-gem"></i><span>Product & Service</span><i
                         class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="product_and_service" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    {{-- <li>
-                    <a href="{{ route('supuserBlog.myBlog') }}">
-                    <i class="bi bi-circle"></i><span>My Article</span>
+                    <li>
+                    <a href="{{ route('SupUser.ProductSerIndex') }}">
+                    <i class="bi bi-circle"></i><span>Index</span>
                     </a>
-                </li> --}}
+                </li>
                     <li>
-                        {{-- <a href="{{ route('supuser.blog') }}">
-                <i class="bi bi-circle"></i><span>List Article</span>
-                </a> --}}
+                        <a href="{{ route('SupUser.ProductSerInsertChk') }}">
+                <i class="bi bi-circle"></i><span>Insert</span>
+                </a>
                     </li>
                     <li>
-                        {{-- <a href="{{ route('supuser.blog.insert') }}">
-                <i class="bi bi-circle"></i><span>Insert Article</span>
-                </a> --}}
+                        <a href="">
+                <i class="bi bi-circle"></i><span>Archive</span>
+                </a>
                     </li>
                     <li>
-                        {{-- <a href="{{ route('supuser.blogArchive') }}">
-                <i class="bi bi-circle"></i><span>Archive Article</span>
-                </a> --}}
+                        <a href="">
+                <i class="bi bi-circle"></i><span>Trush</span>
+                </a>
                     </li>
 
 
@@ -228,7 +228,7 @@
                 </ul>
             </li>
 
-            <li class="nav-heading">Menu</li>
+            {{-- <li class="nav-heading">Menu</li>
             <li class="nav-item ">
                 <a class="nav-link collapsed" data-bs-target="#menu_part" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-menu-up"></i><span>Menu Bar</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -250,7 +250,7 @@
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
 
 
