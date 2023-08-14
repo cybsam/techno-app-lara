@@ -30,26 +30,26 @@ Route::middleware(['middleware'=>'preventbackhistory'])->group(function(){
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('en')->middleware(['guest:web'])->group(function(){
-    Route::get('Index', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'index'])->name('frontEndIndex');
+    Route::get('index', [App\Http\Controllers\FrontEnd\FrontEndController::class, 'index'])->name('frontEndIndex');
 
     //about us
-    Route::get('About-Us', [App\Http\Controllers\FrontEnd\AboutController::class, 'aboutUs'])->name('frontEndIndex.about-us');
-    Route::get('About-Us/Our-mission-and-vission', [App\Http\Controllers\FrontEnd\AboutController::class, 'missionAndVission'])->name('frontEndIndex.MissionAndVission');
-    Route::get('About-Us/Our-team', [App\Http\Controllers\FrontEnd\AboutController::class, 'OurTeam'])->name('frontEndIndex.ourTeam');
-    Route::get('About-Us/Our-Concern', [App\Http\Controllers\FrontEnd\AboutController::class, 'OurConcern'])->name('frontEndIndex.OurConcern');
-    Route::get('About-Us/our-expertise', [App\Http\Controllers\FrontEnd\AboutController::class, 'ourExpertise'])->name('frontEndIndex.our-expertise');
-    Route::get('About-Us/strategic-partners', [App\Http\Controllers\FrontEnd\AboutController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
+    Route::get('about-us', [App\Http\Controllers\FrontEnd\AboutController::class, 'aboutUs'])->name('frontEndIndex.about-us');
+    Route::get('about-us/our-mission-and-vission', [App\Http\Controllers\FrontEnd\AboutController::class, 'missionAndVission'])->name('frontEndIndex.MissionAndVission');
+    Route::get('about-us/our-team', [App\Http\Controllers\FrontEnd\AboutController::class, 'OurTeam'])->name('frontEndIndex.ourTeam');
+    Route::get('about-us/our-Concern', [App\Http\Controllers\FrontEnd\AboutController::class, 'OurConcern'])->name('frontEndIndex.OurConcern');
+    Route::get('about-us/our-expertise', [App\Http\Controllers\FrontEnd\AboutController::class, 'ourExpertise'])->name('frontEndIndex.our-expertise');
+    Route::get('about-us/strategic-partners', [App\Http\Controllers\FrontEnd\AboutController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
 
     Route::get('product-and-service/{slug}',[App\Http\Controllers\FrontEnd\ProductAndServiceController::class, 'ProductFetch'])->name('frontEndIndex.ProductAndService');
 
-    Route::get('Project/On-going',[App\Http\Controllers\FrontEnd\ProjectController::class, 'onGoingProject'])->name('FrontEnd.OnGoingProject');
-    Route::get('Project/Complete/{project_cate_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'CompleteProjectList'])->name('FrontEnd.CompleteProjectShow');
+    Route::get('project/on-going',[App\Http\Controllers\FrontEnd\ProjectController::class, 'onGoingProject'])->name('FrontEnd.OnGoingProject');
+    Route::get('project/complete/{project_cate_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'CompleteProjectList'])->name('FrontEnd.CompleteProjectShow');
 
-    Route::get('Project/Complete/Details/{project_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'ProjectDetailsShow'])->name('FrontEnd.ProjectDetailsShow');
+    Route::get('project/complete/details/{project_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'ProjectDetailsShow'])->name('FrontEnd.ProjectDetailsShow');
 
     // contact 
-    Route::get('Contact',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contact'])->name('frontEnd.ContactS');
-    Route::post('Contact/s',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contactStore'])->name('frontEnd.ContactStore');
+    Route::get('contact',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contact'])->name('frontEnd.ContactS');
+    Route::post('contact/s',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contactStore'])->name('frontEnd.ContactStore');
     
     
     Route::get('User/Verify/',[App\Http\Controllers\Auth\RegisterController::class, 'verify'])->name('user.verify');
