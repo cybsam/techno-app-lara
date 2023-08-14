@@ -60,20 +60,24 @@
         <div class="container custom">
             <div class="row">
 
-                {{-- @foreach ($submenu_data as $item) --}}
+                @php
+                    $randPro = DB::table('product_services')->where('__prosermenuselect',$fetchPro->__prosermenuselect)->get();
+                @endphp
+
+                @foreach ($randPro as $RandProduct)
                     <div class="col-lg-4 col-md-6 mb-20">
                         <div class="service-wrap">
                             <div class="image-part product">
-                                <img src="" alt="">
+                                <img src="{{ asset('image/productservice') }}/{{ $RandProduct->__proserheadimage }}" alt="">
                             </div>
                             <div class="content-part">
 
-                                <div class="desc"><a href="" target="_blank">fdfdf</a>
+                                <div class="desc"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>$RandProduct->__proserslug]) }}" target="_blank">{{ $RandProduct->__prosername }}</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                {{-- @endforeach --}}
+                @endforeach
 
             </div>
         </div>
