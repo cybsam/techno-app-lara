@@ -21,7 +21,35 @@ class ProductServiceController extends Controller
     }
 
     public function insert(Request $request){
-        dd($request->all());
+        // dd($request->all());
+        $request->validate([
+            '__prosername'=>['required','max:255'],
+            '__prosermenuselect'=>['required'],
+            '__proserheadimage'=>['required','mimes:png,jpg,jpeg,ico,gif','max:2048'],
+            '__proserkeyword'=>['required'],
+            '__proserdescription'=>['required'],
+        ]);
+
+        $input = $request->all();
+        $afterMenuVal = explode('.',$input['__prosermenuselect']);
+        if ($afterMenuVal[0] == 0) {
+            return redirect()->back()->with('ProDuctError','Menu not selected');
+        }else {
+            $randstr = Carbon::now()->format('Y-m-d-H-i-s-u');
+            
+            $productSlug = Str::slug($input['__prosername']);
+            $checkSlug = ProductService::where('__proserslug',$productSlug)->first();
+            if($checkSlug == true){
+                return redirect()->back()->with('ProDuctError','Product or Service already available in our system, please change something!');
+            }else{
+                $headerImage = $request->file('__proserheadimage');
+                $headerImageNewName = $productSlug.'-'.$afterMenuVal[1].'-'.$randstr.'.'.$headerImage->getClientOriginalExtension();
+                $uploadLocation = base_path('public/image/productservice/'.$headerImageNewName);
+                Image::make($headerImage)->save($uploadLocation);
+                $insPro = new ProductService();
+
+            }
+        }
     }
 
     public function archive(){
