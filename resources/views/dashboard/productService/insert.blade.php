@@ -29,11 +29,21 @@
                 </span>
                 @endif
             </div>
+            <div class="text-info">
+                @if (Session::get('proUpdSuc'))
+                    <b>{{ Session::get('proUpdSuc') }}</b>
+                @endif
+            </div>
+            <div class="text-danger">
+                @if (Session::get('ProDuctError'))
+                    <b>{{ Session::get('ProDuctError') }}</b>
+                @endif
+            </div>
             <form action="{{ route('SupUser.ProductSerInsert') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Product & service name</label>
-                    <input type="text" name="__prosername" class="form-control" id="__prosername"  required="required">
+                    <input type="text" name="__prosername" value="{{ old('__prosername') }}" class="form-control" id="__prosername"  required="required">
                     <div class="text-danger">
                         @error('__prosername')
                             <span>
@@ -61,7 +71,7 @@
                 </div>
                 <div class="form-group">
                     <label>Product & service Header Image</label>
-                    <input type="file" name="__proserheadimage" id="__proserheadimage" class="form-control" required="required">
+                    <input type="file" value="{{ old('__proserheadimage') }}" name="__proserheadimage" id="__proserheadimage" class="form-control" required="required">
                     <div class="text-danger">
                         @error('__proserheadimage')
                             <span>
@@ -73,7 +83,7 @@
                 <hr>
                 <div class="form-group">
                     <label>Product & service keyword</label>
-                    <input type="text" name="__proserkeyword" class="form-control" id="__proserkeyword" required="required">
+                    <input type="text" name="__proserkeyword" value="{{ old('__proserkeyword') }}" class="form-control" id="__proserkeyword" required="required">
                     <div class="text-danger">
                         @error('__proserkeyword')
                             <span>
@@ -85,7 +95,7 @@
                 <hr>
                 <div class="form-group">
                     <label>Description</label>
-                    <textarea name="__proserdescription" id="summernote" cols="30" rows="10" required="required"></textarea>
+                    <textarea name="__proserdescription" id="summernote" cols="30" rows="10" required="required" value="{{ old('__proserdescription') }}"></textarea>
                     <div class="text-danger">
                         @error('__proserdescription')
                             <span>

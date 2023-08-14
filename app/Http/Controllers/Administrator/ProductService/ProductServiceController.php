@@ -47,7 +47,19 @@ class ProductServiceController extends Controller
                 $uploadLocation = base_path('public/image/productservice/'.$headerImageNewName);
                 Image::make($headerImage)->save($uploadLocation);
                 $insPro = new ProductService();
-
+                $insPro->__prosername = $input['__prosername'];
+                $insPro->__proserslug = $productSlug;
+                $insPro->__prosermenuselect = $afterMenuVal[1];
+                $insPro->__proserheadimage = $headerImageNewName;
+                $insPro->__proserkeyword = $input['__proserkeyword'];
+                $insPro->__proserdescription = $input['__proserdescription'];
+                $insPro->added_by = Auth::user()->id.'-'.Auth::user()->name;
+                $saveProd = $insPro->save();
+                if($saveProd){
+                    return redirect()->back()->with('proUpdSuc','Product or Service insert successfully.');
+                }else{
+                    return redirect()->back()->with('ProDuctError','Something went wrong!');
+                }
             }
         }
     }
