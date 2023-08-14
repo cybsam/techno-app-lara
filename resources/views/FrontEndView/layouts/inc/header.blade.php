@@ -94,41 +94,41 @@
                                                               </ul>
                                                           </div>
                                                           <div class="meu-item ">
-                                                              <a href="">ELECTRICAL SOLUTION</a>
+                                                              <a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">ELECTRICAL SOLUTION</a>
                                                               <ul>
-                                                                  {{-- @foreach ($menu as $item)
-                                                                      @if ($item->parentid == 3)
+                                                                  @foreach ($productAndServiceElectrial as $ElectricalSol)
+                                                                      
                                                                           <li><a
-                                                                                  href="{{ url($item->slug) }}">{{ $item->name }}</a>
+                                                                                  href="{{ route('frontEndIndex.ProductAndService',['slug'=>$ElectricalSol->__proserslug]) }}">{{ $ElectricalSol->__prosername }}</a>
                                                                           </li>
-                                                                      @endif
-                                                                  @endforeach --}}
+                                                                      
+                                                                  @endforeach
                                                               </ul>
                                                           </div>
                                                           <div class="meu-item">
                                                               <a href="">FIRE
                                                                   SOLUTION</a>
                                                               <ul>
-                                                                  {{-- @foreach ($menu as $item)
-                                                                      @if ($item->parentid == 4)
+                                                                  @foreach ($productAndServiceFire as $FireSolutions)
+                                                                      
                                                                           <li><a
-                                                                                  href="{{ url($item->slug) }}">{{ $item->name }}</a>
+                                                                                  href="{{ route('frontEndIndex.ProductAndService',['slug'=>$FireSolutions->__proserslug]) }}">{{ $FireSolutions->__prosername }}</a>
                                                                           </li>
-                                                                      @endif
-                                                                  @endforeach --}}
+                                                                      
+                                                                  @endforeach
                                                               </ul>
                                                           </div>
                                                           <div class="meu-item">
                                                               <a href="">AUTOMATION
                                                                   SOLUTION</a>
                                                               <ul>
-                                                                  {{-- @foreach ($menu as $item)
-                                                                      @if ($item->parentid == 5)
+                                                                  @foreach ($productAndServiceAutomation as $ProductAndAutomationSolution)
+                                                                      
                                                                           <li><a
-                                                                                  href="{{ url($item->slug) }}">{{ $item->name }}</a>
+                                                                                  href="{{ route('frontEndIndex.ProductAndService',['slug'=>$ProductAndAutomationSolution->__proserslug]) }}">{{ $ProductAndAutomationSolution->__prosername }}</a>
                                                                           </li>
-                                                                      @endif
-                                                                  @endforeach --}}
+                                                                      
+                                                                  @endforeach
                                                               </ul>
                                                           </div>
                                                       </div>
@@ -238,11 +238,11 @@
                       <a href="blog.html">Our project</a>
                   </li>
                   <li>
-                      <a href="blog.html">Blog</a>
+                      <a href="">Blog</a>
                   </li>
 
                   <li class="menu-item-has-children">
-                      <a href="#">Contact</a>
+                      <a href="{{ route('frontEnd.ContactS') }}">Contact</a>
 
                   </li>
               </ul> <!-- //.nav-menu -->
