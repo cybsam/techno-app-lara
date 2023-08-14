@@ -15,6 +15,15 @@ class CreateProductServicesTable extends Migration
     {
         Schema::create('product_services', function (Blueprint $table) {
             $table->id();
+            $table->string('__prosername')->nullable();
+            $table->string('__proserslug')->nullable();
+            $table->string('__prosermenuselect')->nullable();
+            $table->string('__proserheadimage')->nullable();
+            $table->longText('__proserkeyword')->nullable();
+            $table->longText('__proserdescription')->nullable();
+            $table->string('added_by')->nullable();
+            $table->integer('is_active')->default('1');
+            
             $table->timestamps();
         });
     }

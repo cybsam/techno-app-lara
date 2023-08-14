@@ -61,12 +61,12 @@
                 </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.ProductSerArchive') }}">
                 <i class="bi bi-circle"></i><span>Archive</span>
                 </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.ProductSerDelete') }}">
                 <i class="bi bi-circle"></i><span>Trush</span>
                 </a>
                     </li>
