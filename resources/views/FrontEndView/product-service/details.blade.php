@@ -63,7 +63,7 @@
             <div class="row">
 
                 @php
-                    $randPro = DB::table('product_services')->where('__prosermenuselect',$fetchPro->__prosermenuselect)->inRandomOrder()->take(4)->get();
+                    $randPro = DB::table('product_services')->where('__prosermenuselect',$fetchPro->__prosermenuselect)->inRandomOrder()->take(6)->get();
                 @endphp
 
                 @foreach ($randPro as $RandProduct)
@@ -84,9 +84,7 @@
             </div>
         </div>
     </div>
-    <!-- Services Section End -->
-
-    </div>
+    
     
 
 
