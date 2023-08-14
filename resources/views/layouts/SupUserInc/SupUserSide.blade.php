@@ -51,22 +51,22 @@
                 </a>
                 <ul id="product_and_service" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                    <a href="{{ route('SupUser.ProductSerIndex') }}">
+                    <a href="{{ route('SupUser.ProductSerIndex') }}" class="@if(URL::current() == route('SupUser.ProductSerIndex')) active @endif">
                     <i class="bi bi-circle"></i><span>Index</span>
                     </a>
                 </li>
                     <li>
-                        <a href="{{ route('SupUser.ProductSerInsertChk') }}">
+                        <a href="{{ route('SupUser.ProductSerInsertChk') }}" class="@if(URL::current() == route('SupUser.ProductSerInsertChk')) active @endif">
                 <i class="bi bi-circle"></i><span>Insert</span>
                 </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.ProductSerArchive') }}">
+                        <a href="{{ route('SupUser.ProductSerArchive') }}" class="@if(URL::current() == route('SupUser.ProductSerArchive')) active @endif">
                 <i class="bi bi-circle"></i><span>Archive</span>
                 </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.ProductSerDelete') }}">
+                        <a href="{{ route('SupUser.ProductSerDelete') }}" class="@if(URL::current() == route('SupUser.ProductSerDelete')) active @endif">
                 <i class="bi bi-circle"></i><span>Trush</span>
                 </a>
                     </li>
@@ -80,8 +80,7 @@
             <li class="nav-heading">Our Project</li>
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#our_project_front" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-journal-text"></i><span>Our Project</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-journal-text"></i><span>Our Project</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="our_project_front" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
