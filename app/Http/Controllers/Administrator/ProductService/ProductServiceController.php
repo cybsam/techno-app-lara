@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Image;
 use Illuminate\Support\Str;
+use App\Models\ProductService;
 
 class ProductServiceController extends Controller
 {
