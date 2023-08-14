@@ -57,6 +57,14 @@
     @php
         $projectCategory = DB::table('project_categories')->get();
     @endphp
+
+    @php
+        $productAndServiceDesign = DB::table('product_services')->where('__prosermenuselect','design-and-consultancy-services')->get();
+        $productAndServiceElectrial = DB::table('product_services')->where('__prosermenuselect','electrical-solution')->get();
+        $productAndServiceFire = DB::table('product_services')->where('__prosermenuselect','fire-solution')->get();
+        $productAndServiceAutomation = DB::table('product_services')->where('__prosermenuselect','automation-solution')->get();
+        
+    @endphp
             
     <div class="offwrap"></div>
      

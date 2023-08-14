@@ -64,11 +64,15 @@
                                           <li class="menu-item-has-children">
                                               <a href="{{ route('frontEndIndex.about-us') }}">About Us</a>
                                               <ul class="sub-menu">
-                                                  <li><a href="{{ route('frontEndIndex.MissionAndVission') }}">Our Mission & Vision</a></li>
+                                                  <li><a href="{{ route('frontEndIndex.MissionAndVission') }}">Our
+                                                          Mission & Vision</a></li>
                                                   <li><a href="{{ route('frontEndIndex.ourTeam') }}">Our Team</a></li>
-                                                  <li><a href="{{ route('frontEndIndex.OurConcern') }}">Our Concern</a></li>
-                                                  <li><a href="{{ route('frontEndIndex.our-expertise') }}">Our Expertise</a></li>
-                                                  <li><a href="{{ route('frontEndIndex.strategic-partners') }}">Strategic Partners</a>
+                                                  <li><a href="{{ route('frontEndIndex.OurConcern') }}">Our Concern</a>
+                                                  </li>
+                                                  <li><a href="{{ route('frontEndIndex.our-expertise') }}">Our
+                                                          Expertise</a></li>
+                                                  <li><a href="{{ route('frontEndIndex.strategic-partners') }}">Strategic
+                                                          Partners</a>
                                                   </li>
 
                                               </ul>
@@ -82,16 +86,11 @@
                                                       <div class="sub-menu-mega">
                                                           <div class="meu-item " style="padding-left: 56px;">
                                                               <a href="">DESIGN & CONSULTANCY SERVICES</a>
+                                                              
                                                               <ul>
-                                                                  {{-- @foreach ($menu as $item)
-                                                                      @if ($item->parentid == 2)
-                                                                          
-                                                                          <li><a
-                                                                                  href="{{ url($item->slug) }}">{{ $item->name }}</a>
-                                                                          </li>
-                                                                      @endif
-                                                                  @endforeach --}}
-
+                                                                  @foreach ($productAndServiceDesign as $ProductDesign)
+                                                                      <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>$ProductDesign->__proserslug]) }}">{{ $ProductDesign->__prosername }}</a></li>
+                                                                  @endforeach
                                                               </ul>
                                                           </div>
                                                           <div class="meu-item ">
@@ -145,10 +144,12 @@
                                                   <li class="menu-item-has-children-sub">
                                                       <a href="#">Complete Project</a>
                                                       <ul>
-                                                        @foreach ($projectCategory as $key => $projectCategory)
-                                                            <li><a href="{{ route('FrontEnd.CompleteProjectShow',['project_cate_slug'=>$projectCategory->project_category_slug]) }}">{{ $projectCategory->project_category }}</a></li>
-                                                        @endforeach
-                                                          
+                                                          @foreach ($projectCategory as $key => $projectCategory)
+                                                              <li><a
+                                                                      href="{{ route('FrontEnd.CompleteProjectShow', ['project_cate_slug' => $projectCategory->project_category_slug]) }}">{{ $projectCategory->project_category }}</a>
+                                                              </li>
+                                                          @endforeach
+
                                                       </ul>
                                                   </li>
                                               </ul>
