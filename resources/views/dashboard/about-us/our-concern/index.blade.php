@@ -13,6 +13,16 @@
             </ol>
         </nav>
     </div>
+    <div class="text-success">
+        @if(Session::get('concernInser'))
+            <b>{{ Session::get('concernInser') }}</b>
+        @endif
+    </div>
+    <div class="text-danger">
+        @if(Session::get('concernError'))
+            <b>{{ Session::get('concernError') }}</b>
+        @endif
+    </div>
     <div class="card">
         <div class="card-header">
             <span>Our Concern List</span>
