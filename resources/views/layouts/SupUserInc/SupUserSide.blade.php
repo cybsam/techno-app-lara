@@ -130,7 +130,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.OurExpertiseIndex') }}" class="@if(URL::current() == route('SupUser.OurExpertiseIndex')) active @endif">
                             <i class="bi bi-circle"></i><span>Our Expertise </span>
                         </a>
                     </li>
