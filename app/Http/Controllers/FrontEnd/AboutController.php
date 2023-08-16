@@ -9,6 +9,7 @@ use App\Models\AboutUsInformation;
 use App\Models\AboutOurTeam;
 use App\Models\AboutUs;
 use App\Models\MissionAndVission;
+use App\Models\OurConcern;
 
 class AboutController extends Controller
 {
@@ -45,7 +46,9 @@ class AboutController extends Controller
         ]);
     }
     public function OurConcern(){
-        return view('FrontEndView.about-us.our-concern');
+        $fetchFromDb = OurConcern::where('is_active','0')->get();
+
+        return view('FrontEndView.about-us.our-concern',['fetchFromDb'=>$fetchFromDb]);
     }
     public function ourExpertise(){
         return view('FrontEndView.about-us.our-expertise');
