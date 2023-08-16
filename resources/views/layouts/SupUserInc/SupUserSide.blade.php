@@ -78,6 +78,7 @@
                 $pendingPost = App\Models\SupUserBlog::where('post_status',3)->count();
             @endphp --}}
             <li class="nav-heading">Our Project</li>
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#our_project_front" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-journal-text"></i><span>Our Project</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -124,7 +125,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="{{ route('SupUser.OurConcernBck') }}" class="@if(URL::current() == route('SupUser.OurConcernBck')) active @endif">
                             <i class="bi bi-circle"></i><span>Our Concern </span>
                         </a>
                     </li>
