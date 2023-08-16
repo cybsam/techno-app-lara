@@ -13,7 +13,7 @@
                     @csrf
                     <div class="form-group">
                         <span>Concern Name</span>
-                        <input type="text" class="form-control" name="concern_name" id="concern_name">
+                        <input type="text" class="form-control" name="concern_name" value="{{ old('concern_name') }}" id="concern_name">
                         <div class="text-danger">
                             @error('concern_name')
                                 <span>{{ $message }}</span>
@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <div class="button-group">
                             <button type="reset" class="btn btn-secondary">Reset</button>
-                            <button class="btn btn-primary" type="submit">Insert</button>
+                            <button class="btn btn-primary" type="submit">Insert Concern</button>
                         </div>
                     </div>
                 </form>
