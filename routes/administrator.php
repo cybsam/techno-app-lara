@@ -38,6 +38,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::get('About-Us/Our-team/Index',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'index'])->name('SupUser.OurTeam');
     Route::post('Our-team/Index/Insert',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'teamInsert'])->name('SupUser.OurTeamInsert');
     Route::get('About-Us/our-concern',[App\Http\Controllers\Administrator\AboutUs\OurConcernController::class, 'bckIndex'])->name('SupUser.OurConcernBck');
+    Route::post('About-Us/our-concern/insert',[App\Http\Controllers\Administrator\AboutUs\OurConcernController::class, 'bckIndexInsert'])->name('SupUser.OurConcernBckInsert');
 
     // our project
     Route::get('Project/Index',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'showProjectList'])->name('SupUser.ProjectList');

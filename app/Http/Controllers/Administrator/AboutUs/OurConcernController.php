@@ -17,4 +17,8 @@ class OurConcernController extends Controller
         $listConcern = OurConcern::all();
         return view('dashboard.about-us.our-concern.index',['listConcern'=>$listConcern,]);
     }
+
+    public function bckIndexInsert(Request $request){
+        
+    }
 }

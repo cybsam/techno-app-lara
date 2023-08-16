@@ -17,7 +17,7 @@
         <div class="card-header">
             <span>Our Concern List</span>
             <div class="float-right">
-                <button class="btn btn-primary btn-sm" data-bs-toggle="" data-bs-target="" type="button">+ Concern</button>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target=".concernModal" type="button">+ Concern</button>
             </div>
         </div>
         <div class="card-body">
