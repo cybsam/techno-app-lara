@@ -22,7 +22,26 @@
         </div>
         <div class="card-body">
             <table class="table table-hover datatable table-sm">
-
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Concern Image</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($listConcern as $key => $concern)
+                        <tr>
+                            <td>{{ $concern->id }}</td>
+                            <td>{{ $concern->concern_image }}</td>
+                            <td>{{ $concern->concern_description }}</td>
+                            <td>
+                                <button class="btn btn-info">Update</button>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
     </div>

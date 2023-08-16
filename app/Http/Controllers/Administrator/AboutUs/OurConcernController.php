@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 class OurConcernController extends Controller
 {
     public function bckIndex(){
-        return view('dashboard.about-us.our-concern.index');
+        $listConcern = OurConcern::all();
+        return view('dashboard.about-us.our-concern.index',['listConcern'=>$listConcern,]);
     }
 }
