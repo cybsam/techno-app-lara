@@ -106,7 +106,7 @@
                                                               </ul>
                                                           </div>
                                                           <div class="meu-item">
-                                                              <a href="">FIRE
+                                                              <a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'fire-solution']) }}">FIRE
                                                                   SOLUTION</a>
                                                               <ul>
                                                                   @foreach ($productAndServiceFire as $FireSolutions)
@@ -119,7 +119,7 @@
                                                               </ul>
                                                           </div>
                                                           <div class="meu-item">
-                                                              <a href="">AUTOMATION
+                                                              <a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'automation-solution']) }}">AUTOMATION
                                                                   SOLUTION</a>
                                                               <ul>
                                                                   @foreach ($productAndServiceAutomation as $ProductAndAutomationSolution)

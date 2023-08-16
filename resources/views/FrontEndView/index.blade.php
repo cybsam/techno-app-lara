@@ -18,7 +18,7 @@
             <div id="nivoSlider" class="slides">
                 <img src="{{ asset('image/carosel-slider/engrieening.png')}}" alt="" title="#slide-1" />
                 <img src="{{ asset('image/carosel-slider/installsutation.png')}}" alt="" title="#slide-2" />
-                <img src="{{ asset('image/carosel-slider/pocurement.png')}}" alt="" title="#slide-3" />
+                <img src="{{ asset('image/carosel-slider/pocurement.jpg')}}" alt="" title="#slide-3" />
                 
             </div>
             <!-- Slide 1 -->
@@ -30,7 +30,7 @@
                         </div>
                       
                         <div class="slider-bottom ">
-                            <a class="readon consultant slider" href="contact.html">Discover More</a>
+                            <a class="readon consultant slider" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">Discover More</a>
                         </div>
                     </div>
                 </div>
@@ -74,36 +74,36 @@
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('image/fontend/img/icons/design&Consultancy.svg')}}" alt="">
+                            <img src="{{ asset('public/image/svg/design&Consultancy.svg')}}" alt="">
                         </div>
-                        <h4 class="title mb-18"><a href="#">Design & Consultancy Services</a></h4>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">Design & Consultancy Services</a></h4>
                         <div class="desc mb-12">Our Chartered Industrial Engineers and Consultants work with you to provide practical and cost-effective.</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/fontend/img/icons/electrical&Fire.svg')}}" alt="">
+                            <img src="{{ asset('public/image/svg/electrical&Fire.svg')}}" alt="">
                         </div>
-                        <h4 class="title mb-18"><a href="">Fire & Electrical Solution</a></h4>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">Fire & Electrical Solution</a></h4>
                         <div class="desc mb-12">Fire & Electrical Solutions is competent to work in all types of domestic & business settings.</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid br-none bdru">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/fontend/img/icons/risks.svg')}}" alt="">
+                            <img src="{{ asset('public/image/svg/risks.svg')}}" alt="">
                         </div>
-                        <h4 class="title mb-18"><a href="#">Automation Solution</a></h4>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'automation-solution']) }}">Automation Solution</a></h4>
                         <div class="desc mb-12">The implementation of automation systems regarding building controls has been growing lately, and it is only getting better as technology .</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'automation-solution']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
