@@ -15,7 +15,16 @@
     </div>
 
 
-
+    <div class="text-primary">
+        @if(Session::get('expSuccess'))
+        <b>{{ Session::get('expSuccess') }}</b>
+        @endif
+    </div>
+    <div class="text-danger">
+        @if(Session::get('expError'))
+        <b>{{ Session::get('expError') }}</b>
+        @endif
+    </div>
     <div class="card">
         <div class="card-header">
             Our Expertise
@@ -28,12 +37,23 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($fetchData as $key => $fetchExpertise)
                         <tr>
                             <td>{{ $fetchExpertise->id }}</td>
+                            <td>{{ $fetchExpertise->expertise_name }}</td>
+                            <td>{{ Str::limit($fetchExpertise->expertise_description, 100) }}</td>
+                            <td>
+                                <div class="button-group">
+                                    <a href="" class="btn btn-secondary btn-sm">Update</a>
+                                    <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

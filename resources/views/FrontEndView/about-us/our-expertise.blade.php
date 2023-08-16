@@ -30,43 +30,15 @@
                 </div>
             </div>
             <div class="row mb-5">
+                @foreach ($expertiseFetch as $key => $expertise)
                 <div class="col-lg-6 expartice-col">
                     <div class="expartise text-center">
-                        <h5><b>Prof. Dr. Muhammad Riazul Hamid</b></h5>
-                        <p>Member- Association of Energy </p>
-                        <p>Engineering (USA)</p>
-                        <p>Certified Energy Auditor</p>
-                        <p>Member-Ashrae</p>
-                        <p>Fellow-Institute of IEB</p>
-                        <p>LEED AP (BD+C), LEED AP (O+M), EDGE & Solar Energy Expert</p>
+                        <h5><b>{{ $expertise->expertise_name }}</b></h5>
+                        <p>{!! $expertise->expertise_description !!}</p>
                     </div>
                 </div>
-                <div class="col-lg-6 expartice-col">
-                    <div class="expartise text-center">
-                        <h5><b>Engr.Md.Mahmudur Rahman Manna PEng.CEAI,FIEB</b></h5>
-                        <p>RAJUK & COUK Registered & Enlisted Electrical Engr.(BNBC</p>
-                        <p>Certified Reg# EE/0024)</p>
-                        <p>Certified Energy Auditor International (CEAI- 90389)</p>
-                        <p>Professional Engineer(Reg.# 03/0034)</p>
-                        <p>Certified National Fire Protection Association (NFPA),USA</p>
-                        <p>Certified Safety Professional (CSP)</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 expartice-col">
-                    <div class="expartise text-center">
-                        <h5><b>Md. Umainul Islam</b></h5>
-                        <p>Director – Process Excellence</p>
-                        <p>Masters in BPM</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 expartice-col">
-                    <div class="expartise text-center">
-                        <h5><b>Ataul kabir</b></h5>
-                        <p>Marine engineer(UK)</p>
-                        <p>Post grad (Sydney)</p>
-                        <p>Mep/project management consultant</p>
-                    </div>
-                </div>
+                @endforeach
+                
             </div>
         </div>
 

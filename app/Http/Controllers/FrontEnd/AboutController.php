@@ -10,6 +10,7 @@ use App\Models\AboutOurTeam;
 use App\Models\AboutUs;
 use App\Models\MissionAndVission;
 use App\Models\OurConcern;
+use App\Models\Expertise;
 
 class AboutController extends Controller
 {
@@ -51,7 +52,8 @@ class AboutController extends Controller
         return view('FrontEndView.about-us.our-concern',['fetchFromDb'=>$fetchFromDb]);
     }
     public function ourExpertise(){
-        return view('FrontEndView.about-us.our-expertise');
+        $expertiseFetch = Expertise::where('is_active','0')->get();
+        return view('FrontEndView.about-us.our-expertise',['expertiseFetch'=>$expertiseFetch]);
     }
     public function strategicPartners(){
         return view('FrontEndView.about-us.our-strategic-partners');
