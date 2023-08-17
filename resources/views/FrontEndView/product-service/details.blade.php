@@ -63,18 +63,18 @@
             <div class="row">
 
                 @php
-                    $randPro = DB::table('product_services')->where('__prosermenuselect',$fetchPro->__prosermenuselect)->inRandomOrder()->take(6)->get();
+                    $randPro = DB::table('product_service_subs')->where('__prosermaincateslug',$fetchPro->__proserslug)->inRandomOrder()->take(6)->get();
                 @endphp
 
                 @foreach ($randPro as $RandProduct)
                     <div class="col-lg-4 col-md-6 mb-20">
                         <div class="service-wrap">
                             <div class="image-part product">
-                                <img src="{{ asset('image/productservice') }}/{{ $RandProduct->__proserheadimage }}" alt="">
+                                <img src="{{ asset('image/productservice/subproduct') }}/{{ $RandProduct->__proserheadimage }}" alt="{{ $RandProduct->__prosername }}">
                             </div>
                             <div class="content-part">
 
-                                <div class="desc"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>$RandProduct->__proserslug]) }}" target="_blank">{{ $RandProduct->__prosername }}</a>
+                                <div class="desc"><a href="{{ route('frontEndIndex.ProductAndServiceSubPro',['s_slug'=>$RandProduct->__prosermaincateslug,'sub_slug'=>$RandProduct->__proserslug]) }}" target="_blank">{{ $RandProduct->__prosername }}</a>
                                 </div>
                             </div>
                         </div>

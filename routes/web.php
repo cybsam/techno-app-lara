@@ -41,6 +41,7 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
     Route::get('about-us/strategic-partners', [App\Http\Controllers\FrontEnd\AboutController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
 
     Route::get('product-and-service/{slug}',[App\Http\Controllers\FrontEnd\ProductAndServiceController::class, 'ProductFetch'])->name('frontEndIndex.ProductAndService');
+    Route::get('product-and-service/{s_slug}/{sub_slug}',[App\Http\Controllers\FrontEnd\ProductAndServiceController::class, 'SubProductFetch'])->name('frontEndIndex.ProductAndServiceSubPro');
 
     Route::get('project/on-going',[App\Http\Controllers\FrontEnd\ProjectController::class, 'onGoingProject'])->name('FrontEnd.OnGoingProject');
     Route::get('project/complete/{project_cate_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'CompleteProjectList'])->name('FrontEnd.CompleteProjectShow');

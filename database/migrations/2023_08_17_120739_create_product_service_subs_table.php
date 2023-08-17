@@ -18,6 +18,7 @@ class CreateProductServiceSubsTable extends Migration
             $table->string('__prosername')->nullable();
             $table->string('__proserslug')->nullable();
             $table->string('__prosermaincateslug')->nullable();
+            $table->string('__prosermaincateid')->nullable();
             $table->string('__proserheadimage')->nullable();
             $table->longText('__proserkeyword')->nullable();
             $table->longText('__proserdescription')->nullable();

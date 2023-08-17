@@ -9,15 +9,18 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('Administrator.index') }}">Dashboard</a></li>
-                
-                <li class="breadcrumb-item active">Product & Service</li>
+                <li class="breadcrumb-item"><a href="{{ route('SupUser.ProductSerIndex') }}">Product & Service</a></li>
+                <li class="breadcrumb-item active">Product & Service Sub Menu</li>
             </ol>
         </nav>
     </div>
-    
-    
     <hr>
-
+    <div class="card-header">
+        <a href="{{ URL::previous() }}" class="btn btn-info"><- Back</a>
+        <div class="float-right">
+            <a href="{{ route('SupUserProduct.SubMenuInsert',['menu_slug'=>$menu_slug]) }}" class="btn btn-primary btn-sm">+ Sub Product</a>
+        </div>
+    </div>
     <table class="table table-hover datatable table-sm">
         <thead>
             <tr>
@@ -29,15 +32,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($productServiceStatus as $key => $productService)
+            @foreach ($ProductServiceSubMenu as $key => $ProductServiceSubMenu)
                 <tr>
-                    <td>{{ $productService->id }}</td>
-                    <td><a href="{{ route('SupUserProduct.SubMenuShow',['menu_slug'=>$productService->__proserslug]) }}">{{ $productService->__proserslug }}</a></td>
-                    <td><img src="{{ asset('image/productservice') }}/{{ $productService->__proserheadimage }}" height="55px" width="55px" alt="{{ $productService->__prosername }}"></td>
-                    <td>{{ $productService->__prosermenuselect }}</td>
+                    <td>{{ $ProductServiceSubMenu->id }}</td>
+                    <td><a href="">{{ $ProductServiceSubMenu->__proserslug }}</a></td>
+                    <td><img src="{{ asset('image/productservice/subproduct') }}/{{ $ProductServiceSubMenu->__proserheadimage }}" height="55px" width="55px" alt="{{ $ProductServiceSubMenu->__prosername }}"></td>
+                    <td>{{ $ProductServiceSubMenu->__prosermaincateslug }}</td>
                     <td>
                         <div class="button-group">
-                            <a href="{{ route('SupUserProduct.SubMenuShow',['menu_slug'=>$productService->__proserslug]) }}" class="btn btn-primary btn-sm">View</a>
+                            
                             <a href="" class="btn btn-warning btn-sm">Update</a>
                             <a href="" class="btn btn-danger btn-sm">Delete</a>
                         </div>
@@ -48,19 +51,4 @@
     </table>
 
 
-
-<script>
-    $('#summernote').summernote({
-        placeholder: 'Type something about project...',
-        tabsize: 2,
-        height: 200
-    });
-</script>
-
-
-
-@include('dashboard.project.partials.modal')
-@endsection
-@section('js')
-@include('dashboard.project.partials.js')
 @endsection
