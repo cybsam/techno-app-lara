@@ -69,4 +69,16 @@ class ProSerSubController extends Controller
             return redirect()->back()->with('prosubInsErr','Over smart!');
         }
     }
+
+    public function Delete(Request $request){
+        $ProductId = $request->input('subProductServiceDeltid');
+
+        $deleteProductService = ProductServiceSub::where('id',$ProductId)->delete();
+
+        if($deleteProductService){
+            return redirect()->back()->with('ProDelSuc','Product Delete Successfully');
+        }else{
+            return redirect()->back()->with('prodelerr','somthing went wrong!');
+        }
+    }
 }

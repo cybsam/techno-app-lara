@@ -15,6 +15,16 @@
         </nav>
     </div>
     <hr>
+    <div>
+        @if(Session::get('ProDelSuc'))
+        <b class="text-info">{{ Session::get('ProDelSuc') }}</b>
+        @endif
+    </div>
+    <div>
+        @if(Session::get('prodelerr'))
+        <b class="text-danger">{{ Session::get('prodelerr') }}</b>
+        @endif
+    </div>
     <div class="card-header">
         <a href="{{ URL::previous() }}" class="btn btn-info"><- Back</a>
         <div class="float-right">
@@ -42,7 +52,7 @@
                         <div class="button-group">
                             
                             <a href="" class="btn btn-warning btn-sm">Update</a>
-                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                            <button type="button" value="{{ $ProductServiceSubMenu->id }}" class="btn btn-danger deleteProductServiceSub btn-sm">Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -50,5 +60,8 @@
         </tbody>
     </table>
 
-
+@include('dashboard.productService.subProductService.partials.modal')
+@endsection
+@section('js')
+@include('dashboard.productService.subProductService.partials.js')
 @endsection
