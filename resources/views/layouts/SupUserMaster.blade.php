@@ -79,7 +79,8 @@
     
     <script src="{{ asset('SupUser/assets/js/main.js') }}"></script>
     
-    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.1.js"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js" integrity="sha512-9UR1ynHntZdqHnwXKTaOm1s6V9fExqejKvg5XMawEMToW4sSw+3jtLrYfZPijvnwnnE8Uol1O9BcAskoxgec+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript">
