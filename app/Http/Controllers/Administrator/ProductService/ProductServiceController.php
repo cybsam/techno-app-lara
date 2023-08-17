@@ -71,7 +71,16 @@ class ProductServiceController extends Controller
         return view('dashboard.productService.archive');
     }
 
-    public function delete(){
-        return view('dashboard.productService.trash');
+    public function delete(Request $request){
+        $proId = $request->input('serviceModalDeleteid');
+        $archivePro = ProductService::where('id',$proId)->update([
+            'is_active'=>2
+        ]);
+        if($archivePro){
+            return redirect()->back()->with('ProSerSucc','Archive Successfully, check archive page');
+        }else{
+            return redirect()->back()->with('ProSerSucc','Somthing went wrong!');
+        }
+        // return view('dashboard.productService.trash');
     }
 }

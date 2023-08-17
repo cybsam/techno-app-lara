@@ -65,11 +65,7 @@
                 <i class="bi bi-circle"></i><span>Archive</span>
                 </a>
                     </li>
-                    <li>
-                        <a href="{{ route('SupUser.ProductSerDelete') }}" class="@if(URL::current() == route('SupUser.ProductSerDelete')) active @endif">
-                <i class="bi bi-circle"></i><span>Trush</span>
-                </a>
-                    </li>
+                    
 
 
                 </ul>

@@ -17,7 +17,11 @@
     
     
     <hr>
-
+    <div>
+        @if(Session::get('ProSerSucc'))
+        <b>{{ Session::get('ProSerSucc') }}</b>
+        @endif
+    </div>
     <table class="table table-hover datatable table-sm">
         <thead>
             <tr>
