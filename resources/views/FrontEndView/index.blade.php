@@ -74,7 +74,7 @@
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/svg/design&Consultancy.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/design&Consultancy.svg')}}" alt="Chartered industrial engineers and consultants work with you to">
                         </div>
                         <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">Design & Consultancy Services</a></h4>
                         <div class="desc mb-12">Our Chartered Industrial Engineers and Consultants work with you to provide practical and cost-effective.</div>
@@ -86,7 +86,7 @@
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/svg/electrical&Fire.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/electrical&Fire.svg')}}" alt="Electrical and fire solution">
                         </div>
                         <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">Fire & Electrical Solution</a></h4>
                         <div class="desc mb-12">Fire & Electrical Solutions is competent to work in all types of domestic & business settings.</div>
@@ -98,7 +98,7 @@
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid br-none bdru">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/svg/risks.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/risks.svg')}}" alt="Automation systems regarding buildings control">
                         </div>
                         <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'automation-solution']) }}">Automation Solution</a></h4>
                         <div class="desc mb-12">The implementation of automation systems regarding building controls has been growing lately, and it is only getting better as technology .</div>
