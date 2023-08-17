@@ -118,9 +118,9 @@
             <div class="row rs-vertical-middle">
                 <div class="col-lg-6 pr-72">
                     <div class="left-side">
-                        <img src="{{ asset('public/image/fontend/img/about/about.jpg')}}" alt="">
+                        <img src="{{ asset('image/about-us/about.jpg')}}" alt="Techno Apogee started its operation from June 2006">
                         <div class="skill-tag"><span>16</span> Years <br> Experience</div>
-                        <img class="left-pattern" src="{{ asset('public/image/fontend/img/pattern/pattern1.png')}}" alt="">
+                        {{-- <img class="left-pattern" src="{{ asset('public/image/fontend/img/pattern/pattern1.png')}}" alt=""> --}}
                     </div>
                 </div>
                 <div class="col-lg-6 md-pt-50">
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <div class="pattern-img">
-                <img class="left-pattern" src="{{ asset('public/image/fontend/img/pattern/pattern1.png')}}" alt="">
+                {{-- <img class="left-pattern" src="{{ asset('public/image/fontend/img/pattern/pattern1.png')}}" alt=""> --}}
             </div>
         </div>
     </div>
@@ -170,72 +170,72 @@
                 <div class="col-lg-4 padding-0 pr-1">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/fontend/img/icons/electrical&Fire.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/service-product/electrical&Fire.svg')}}" alt="">
                         </div>
-                        <h4 class="title mb-18"><a href="#">Electrical & Fire Safety Audit & Consultancy</a></h4>
-                        <div class="desc mb-12">Integer at faucibus urna. Nullam condimentum leo id.</div>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-fire-safety-audit-consultancy-dife']) }}">Electrical & Fire Safety Audit & Consultancy</a></h4>
+                        <div class="desc mb-12">Electrical & Fire Safety in Industrial Sector by Electrical & Fire Safety Audit & Risk Assessment.</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-fire-safety-audit-consultancy-dife']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/fontend/img/icons/noc.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/service-product/noc.svg')}}" alt="">
                         </div>
-                        <h4 class="title mb-18"><a href="#">NOC & Fire Safety Plan for FSCD</a></h4>
-                        <div class="desc mb-12">Integer at faucibus urna. Nullam condimentum leo id.</div>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'noc-fire-safety-plan-for-fscd']) }}">NOC & Fire Safety Plan for FSCD</a></h4>
+                        <div class="desc mb-12">NOC & Fire Safety Plan in Industrial, Commercial, Residential  Sector by NOC & Fire Safety Plan .</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'noc-fire-safety-plan-for-fscd']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/fontend/img/icons/busbar.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/service-product/busbar.svg')}}" alt="Busbar Trunking (BBT) Systems">
                         </div>
-                        <h4 class="title mb-18"><a href="#">Busbar Trunking (BBT) Systems</a></h4>
-                        <div class="desc mb-12">Integer at faucibus urna. Nullam condimentum leo id.</div>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'busbar-trunking-bbt-systems']) }}">Busbar Trunking (BBT) Systems</a></h4>
+                        <div class="desc mb-12">Busbar Trunking (BBT) Systems.</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'busbar-trunking-bbt-systems']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 padding-0 pr-1">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/fontend/img/icons/fireDetection.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/service-product/fireDetection.svg')}}" alt="Fire Detection & Protection System">
                         </div>
-                        <h4 class="title mb-18"><a href="#">Fire Detection & Protection System</a></h4>
-                        <div class="desc mb-12">Integer at faucibus urna. Nullam condimentum leo id.</div>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'fire-protection-systems']) }}">Fire Detection & Protection System</a></h4>
+                        <div class="desc mb-12">Its purpose is to enhance life safety and lower the possible property damage by fire.</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'fire-protection-systems']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/fontend/img/icons/lightingProtection.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/service-product/lightingProtection.svg')}}" alt="Lightning Protection System">
                         </div>
-                        <h4 class="title mb-18"><a href="#">Lightning Protection System</a></h4>
-                        <div class="desc mb-12">Integer at faucibus urna. Nullam condimentum leo id.</div>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'lightning-protection-system']) }}">Lightning Protection System</a></h4>
+                        <div class="desc mb-12">A Lightning Protection System’s only purpose is to ensure safety to a building and its occupants.</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'lightning-protection-system']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 padding-0">
                     <div class="service-grid">
                         <div class="service-icon mb-23">
-                            <img src="{{ asset('public/image/fontend/img/icons/home&HotelAutomation.svg')}}" alt="">
+                            <img src="{{ asset('image/svg/service-product/home&HotelAutomation.svg')}}" alt="Home & Hotel Automation">
                         </div>
-                        <h4 class="title mb-18"><a href="#">Home & Hotel Automation</a></h4>
-                        <div class="desc mb-12">Integer at faucibus urna. Nullam condimentum leo id.</div>
+                        <h4 class="title mb-18"><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'home-hotel-automation']) }}">Home & Hotel Automation</a></h4>
+                        <div class="desc mb-12">Home Automation or Smart Home allows the automatic grip of frequently used elements.</div>
                         <div class="btn-wrap">
-                            <a class="readmore" href="">Read more <div class="btn-arrow"></div></a>
+                            <a class="readmore" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'home-hotel-automation']) }}">Read more <div class="btn-arrow"></div></a>
                         </div>
                     </div>
                 </div>
