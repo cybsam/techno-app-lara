@@ -255,23 +255,23 @@
             </div>
             <div class="rs-carousel owl-carousel owl-loaded owl-drag" data-loop="true" data-items="3" data-margin="30" data-autoplay="true" data-hoverpause="true" data-autoplay-timeout="5000" data-smart-speed="800" data-dots="false" data-nav="false" data-nav-speed="false" data-center-mode="false" data-mobile-device="1" data-mobile-device-nav="false" data-mobile-device-dots="false" data-ipad-device="3" data-ipad-device-nav="false" data-ipad-device-dots="false" data-ipad-device2="2" data-ipad-device-nav2="false" data-ipad-device-dots2="false" data-md-device="3" data-md-device-nav="false" data-md-device-dots="false">
                 
-                {{-- @foreach ($Project as $item)
+                @foreach ($frontProjectShow as $key => $frontProjectRand)
                     
                 
                 <div class="blog-wrap">
                     <div class="blog-img">
-                        <img src="{{ URL::to($item->image) }}" alt="">
+                        <img src="{{ asset('image/project') }}/{{ $frontProjectRand->project_header_image }}" alt="{{ $frontProjectRand->project_name }}">
                     </div>
                     <div class="blog-contant">
-                        <h4 class="title"><a href="{{route('portfolio', $item->slug_name)}}">{{$item->name}}</a></h4>
+                        <h4 class="title"><a href="{{ route('FrontEnd.ProjectDetailsShow',['project_slug'=>$frontProjectRand->project_slug]) }}">{{ $frontProjectRand->project_name }}</a></h4>
 
                         
                         <div class="blog-meta">
-                            
+                            {{ $frontProjectRand->project_keyword }}
                         </div>
                     </div>
                 </div>
-                @endforeach --}}
+                @endforeach
                 
             </div>
         </div>

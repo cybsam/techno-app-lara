@@ -8,13 +8,16 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\AboutUsInformation;
 use App\Models\AboutOurTeam;
 use App\Models\FrontContact;
+use App\Models\Project;
 
 class FrontEndController extends Controller
 {
     public function index(){
         // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
+        $frontProjectShow = Project::where('is_ongoing',0)->inRandomOrder()->get();
         return view('FrontEndView.index',[
             // 'AboutUsInformation'=>$AboutUsInformation,
+            'frontProjectShow'=>$frontProjectShow,
         ]);
     }
 
