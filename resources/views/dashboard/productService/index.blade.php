@@ -38,8 +38,8 @@
                     <td>
                         <div class="button-group">
                             <a href="{{ route('SupUserProduct.SubMenuShow',['menu_slug'=>$productService->__proserslug]) }}" class="btn btn-primary btn-sm">View</a>
-                            <a href="" class="btn btn-warning btn-sm">Update</a>
-                            <a href="" class="btn btn-danger btn-sm">Delete</a>
+                            <button type="button" value="{{ $productService->id }}" class="btn btn-warning btn-sm">Update</button>
+                            <button type="button" value="{{ $productService->id }}" class="btn btn-danger delteProDuctService btn-sm">Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -59,8 +59,8 @@
 
 
 
-@include('dashboard.project.partials.modal')
+@include('dashboard.productService.partials.modal')
 @endsection
 @section('js')
-@include('dashboard.project.partials.js')
+@include('dashboard.productService.partials.js')
 @endsection
