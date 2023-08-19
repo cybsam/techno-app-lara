@@ -40,7 +40,7 @@
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addteammember">+ Member</button>
             </div>
         </div>
-        <div class="card-body">
+    </div>
             
             <table class="table table-hover datatable table-sm">
                 <thead>
@@ -72,9 +72,9 @@
                             <td>{{ $listMember->created_at->diffForHumans() }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    {{-- <button type="button" data-bs-toggle="modal" data-bs-target="#adminUpdateModal" data-admin_id="{{ $admin->id }}" data-admin_name="{{ $admin->name }}" data-admin_username="{{ $admin->username }}" data-admin_email="{{ $admin->email }}" data-admin_role_int="{{ $admin->role_int }}" data-admin_role="{{ $admin->role }}" class="btn btn-warning">
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#adminUpdateModal"  class="btn btn-warning">
                                         <i class="bi bi-pencil-square" aria-hidden="true"></i>
-                                    </button> --}}
+                                    </button>
                                     <button type="submit" data-bs-toggle="modal" data-bs-target="#deleteUser" data-id="{{ $listMember->id }}" class="btn btn-danger">
                                         <i class="bi bi-trash" aria-hidden="true"></i>
                                     </button>
@@ -101,8 +101,8 @@
                     </tr>
                 </tfoot>
             </table>
-        </div>
-    </div>
+        
+    
     
 
    
