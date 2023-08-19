@@ -72,10 +72,10 @@
                             <td>{{ $listMember->created_at->diffForHumans() }}</td>
                             <td>
                                 <div class="btn-group" role="group">
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#adminUpdateModal"  class="btn btn-warning">
+                                    <button type="button" value="{{ $listMember->id }}"  class="btn btn-warning UpdateUserFromBack">
                                         <i class="bi bi-pencil-square" aria-hidden="true"></i>
                                     </button>
-                                    <button type="submit" data-bs-toggle="modal" data-bs-target="#deleteUser" data-id="{{ $listMember->id }}" class="btn btn-danger">
+                                    <button type="button" value="{{ $listMember->id }}" class="btn btn-danger delteUserFromBckEnd">
                                         <i class="bi bi-trash" aria-hidden="true"></i>
                                     </button>
                                 </div>
