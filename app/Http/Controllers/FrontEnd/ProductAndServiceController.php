@@ -13,9 +13,17 @@ class ProductAndServiceController extends Controller
         $proSlug = $slug;
         $fetchPro = ProductService::where('__proserslug',$proSlug)->first();
 
-        return view('FrontEndView.product-service.details',[
-            'fetchPro'=>$fetchPro,
-        ]);
+        if ($fetchPro) {
+            return view('FrontEndView.product-service.details',[
+                'fetchPro'=>$fetchPro,
+            ]);
+        }else{
+            abort(404);
+        }
+
+        // return view('FrontEndView.product-service.details',[
+        //     'fetchPro'=>$fetchPro,
+        // ]);
     }
 
     public function SubProductFetch(Request $request, $s_slug, $sub_slug){
@@ -23,8 +31,14 @@ class ProductAndServiceController extends Controller
         $sub_slug = $sub_slug;
         $fetchFromDb = ProductServiceSub::where('__prosermaincateslug',$s_slug)->where('__proserslug',$sub_slug)->first();
 
-        return view('FrontEndView.product-service.subproduct',[
-            '__fetchFromDb'=>$fetchFromDb,
-        ]);
+        if($fetchFromDb){
+            return view('FrontEndView.product-service.subproduct',[
+                '__fetchFromDb'=>$fetchFromDb,
+            ]);
+        }else{
+            abort(404);
+        }
+
+        
     }
 }

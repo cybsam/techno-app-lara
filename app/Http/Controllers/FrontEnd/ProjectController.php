@@ -24,17 +24,30 @@ class ProjectController extends Controller
     public function CompleteProjectList(Request $request, $project_cate_slug){
         $pro_slug = $project_cate_slug;
         $categoryWiseProjectList = Project::where('is_ongoing','0')->where('project_category_slug',$pro_slug)->get();
-        return view('FrontEndView.project.categorywise-project',[
-            'proejct_slug'=>$project_cate_slug,
-            'categoryWiseProjectList'=>$categoryWiseProjectList,
-        ]);
+
+        if ($pro_slug && $categoryWiseProjectList) {
+            return view('FrontEndView.project.categorywise-project',[
+                'proejct_slug'=>$project_cate_slug,
+                'categoryWiseProjectList'=>$categoryWiseProjectList,
+            ]);
+        }else{
+            abort(404);
+        }
+
+        
     }
 
     public function ProjectDetailsShow(Request $request, $project_slug){
         $project_slug = $project_slug;
         $projectDetaisView =  Project::where('project_slug',$project_slug)->first();
-        return view('FrontEndView.project.project-details',[
-            'projectDetaisView'=>$projectDetaisView,
-        ]);
+
+        if ($projectDetaisView) {
+            return view('FrontEndView.project.project-details',[
+                'projectDetaisView'=>$projectDetaisView,
+            ]);
+        }else{
+            abort(404);
+        }
+        
     }
 }
