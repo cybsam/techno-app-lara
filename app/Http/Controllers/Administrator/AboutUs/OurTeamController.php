@@ -150,4 +150,9 @@ class OurTeamController extends Controller
         }
         
     }
+
+    public function teamUpdate(Request $request, $user_id){
+        // dd($request->all());
+        echo $user_id;
+    }
 }
