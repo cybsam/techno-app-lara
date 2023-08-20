@@ -120,8 +120,11 @@
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                         <i class="bi bi-people"></i>
                                     </div>
+                                    @php
+                                        $dbFetchUserCount = DB::table('users')->all()->count();
+                                    @endphp
                                     <div class="ps-3">
-                                        <h6>7</h6>
+                                        <h6>{{ $dbFetchUserCount }}</h6>
                                         <span class="text-danger small pt-1 fw-bold">12%</span> <span
                                             class="text-muted small pt-2 ps-1">decrease</span>
 
