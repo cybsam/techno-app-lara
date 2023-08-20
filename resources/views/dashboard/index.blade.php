@@ -121,7 +121,7 @@
                                         <i class="bi bi-people"></i>
                                     </div>
                                     @php
-                                        $dbFetchUserCount = DB::table('users')->all()->count();
+                                        $dbFetchUserCount = DB::table('users')->get()->count();
                                     @endphp
                                     <div class="ps-3">
                                         <h6>{{ $dbFetchUserCount }}</h6>
