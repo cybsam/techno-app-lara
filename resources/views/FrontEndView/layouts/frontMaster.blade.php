@@ -12,7 +12,7 @@
         <meta name="title" content="@yield('metaTitle')">
         <meta name="description" content="@yield('metaDescription')">
         <!-- favicon -->
-        <link rel="apple-touch-icon" href="apple-touch-icon.html">
+        {{-- <link rel="apple-touch-icon" href="apple-touch-icon.html"> --}}
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('image/FrontEnd/logoFav/fav.png')}}">
         <!-- Bootstrap v4.4.1 css -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/FrontEnd/css/bootstrap.min.css')}}">
