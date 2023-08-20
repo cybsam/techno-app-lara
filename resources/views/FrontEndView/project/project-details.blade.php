@@ -4,11 +4,26 @@
 
 @section('metaDescription',"{!! $projectDetaisView->project_keyword !!}")
 @section('content')
+<style>
+.portfolio-single img{
+    width: 100%;
+    height: 400px;
+}
+
+       .img6{
+           position: relative;
+       }
+       .img6 img {
+    height: 400px;
+    width: 100%;
+}
+        
+</style>
     <div class="rs-breadcrumbs">
         <div class="container">
             <div class="breadcrumbs-inner">
                 <h1 class="page-title " style="color:#ffffff">
-                    Project Details 
+                    {{ $projectDetaisView->project_name }} 
                 </h1>
             </div>
         </div>
