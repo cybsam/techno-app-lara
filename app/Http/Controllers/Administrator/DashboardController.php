@@ -9,11 +9,17 @@ use Carbon;
 use App\Models\User;
 use Illuminate\Support\Str;
 use App\Models\FrontContact;
+use App\Models\ProductService;
 
 class DashboardController extends Controller
 {
     public function index(){
-        return view('dashboard.index');
+        $CountAllUser = User::all()->get()->count();
+        $fetchProductAndServiceLit = ProductService::where('is_active','1')->get();
+        return view('dashboard.index',[
+            'CountAllUser'=>$CountAllUser,
+            'fetchProductAndServiceLit'=>$fetchProductAndServiceLit,
+        ]);
     }
 
 

@@ -120,11 +120,9 @@
                                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                         <i class="bi bi-people"></i>
                                     </div>
-                                    @php
-                                        $dbFetchUserCount = DB::table('users')->get()->count();
-                                    @endphp
+                                    
                                     <div class="ps-3">
-                                        <h6>{{ $dbFetchUserCount }}</h6>
+                                        <h6>{{ $CountAllUser }}</h6>
                                         <span class="text-danger small pt-1 fw-bold">12%</span> <span
                                             class="text-muted small pt-2 ps-1">decrease</span>
 
@@ -135,8 +133,6 @@
                         </div>
 
                     </div><!-- End Customers Card -->
-
-
 
                     <!-- Recent Sales -->
                     <div class="col-12">
@@ -157,32 +153,25 @@
                             </div>
 
                             <div class="card-body">
-                                <h5 class="card-title">Recent Article <span>| Today</span></h5>
+                                <h5 class="card-title">Product & Service <span>| Today</span></h5>
 
                                 <table class="table table-borderless datatable">
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">User</th>
-                                            <th scope="col">Article</th>
-                                            <th scope="col">Category</th>
-                                            <th scope="col">Status</th>
+                                            <th scope="col">Product & Service</th>
+                                            <th scope="col">Parent</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {{-- @foreach ($listAllArticle as $listAllArticle)
-                                        <tr>
-                                            <th scope="row"><a href="#">#{{ $listAllArticle->id }}</a></th>
-                                            <td>{{ $listAllArticle->username }}</td>
-                                            <td><a href="{{ route('supuserBlog.pendingBlogShow',['blog_id'=>$listAllArticle->id]) }}" class="text-primary">{{ Str::limit($listAllArticle->blog_name, 20) }}</a></td>
-                                            <td>{{ $listAllArticle->sub_category_name }}</td>
-                                            <td><span class="badge bg-{{ $listAllArticle->post_status == 0 ? 'success':'warning' }}">@if($listAllArticle->post_status == 0)
-                                                {{ __('Approved') }}
-                                            @else
-                                                {{ __('Pending') }}
-                                            @endif</span></td>
-                                        </tr>
-                                        @endforeach --}}
+                                        @foreach ($fetchProductAndServiceLit as $key => $fetchProductandService)
+                                            <tr>
+                                                <td scope="col">{{ $fetchProductandService->id }}</td>
+                                                <td scope="col">{{ $fetchProductandService->__prosername }}</td>
+                                                <td scope="col">{{ $fetchProductandService->__prosermenuselect }}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
 
