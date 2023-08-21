@@ -19,6 +19,9 @@
     <div class="card">
         <div class="card-header">
             {{ _('Message From: ') }} <b>{{ $getData->sender_name }}</b>
+            <div class="float-right">
+                <a href="{{ URL::previous() }}" class="btn btn-primary">Previous Page</a>
+            </div>
         </div>
         <div class="card-body">
             <h6>Email: <a href="">{{ $getData->sender_email }}</a>.</h6>
@@ -29,8 +32,8 @@
             <p>Description:</br>{{ $getData->sender_message }}</p>
             <hr>
             <div class="button-group">
-                <a href="" class="btn btn-primary">Email</a>
-                <a href="" class="btn btn-info">Call</a>
+                <a href="mailto:{{ $getData->sender_email }}" class="btn btn-primary">Email</a>
+                <a href="tel:{{ $getData->sender_number }}" class="btn btn-info">Call</a>
                 <div class="float-right">
                     <p>Sender IP: <b>{{ $getData->sender_ip }}</b></p>
                 </div>
