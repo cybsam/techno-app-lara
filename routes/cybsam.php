@@ -14,9 +14,9 @@ use App\Http\Controllers\FrontEnd\FrontEndController;
 |
 */
 
-Route::prefix('CybSamDev')->group(function(){
+Route::prefix('cybsamdev')->group(function(){
     // Route::get('Optimize', [App\Http\Controllers\CybSamDev\CybDevController::class, 'optimize'])->name('cybsamdev.optimize');
-    Route::get('Optimize', function(){
+    Route::get('optimize', function(){
         Artisan::call('optimize');
         return 'Application cache has been Optimize';
     });
@@ -34,14 +34,18 @@ Route::prefix('CybSamDev')->group(function(){
     });
 
     //Clear config cache:
-    Route::get('/config-cache', function() {
+    Route::get('config-cache', function() {
         Artisan::call('config:cache');
         return 'Config cache has been cleared';
     }); 
 
     // Clear view cache:
-    Route::get('/view-clear', function() {
+    Route::get('view-clear', function() {
         Artisan::call('view:clear');
         return 'View cache has been cleared';
+    });
+
+    Route::get('migrate-force', function(){
+        Artisan::call('migrate', ["--force" => true]);
     });
 });
