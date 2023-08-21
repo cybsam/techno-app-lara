@@ -16,4 +16,8 @@ class BlogController extends Controller
     public function index(){
         return view('dashboard.blog.index');
     }
+
+    public function insertIndex(){
+        return view('dashboard.blog.insert');
+    }
 }
