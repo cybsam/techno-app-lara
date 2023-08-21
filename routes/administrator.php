@@ -24,9 +24,9 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::get('Users/List',[App\Http\Controllers\Administrator\UsersController::class, 'index'])->name('SupUser.ListUsers');
     Route::post('User/add',[App\Http\Controllers\Administrator\UsersController::class, 'addNewUser'])->name('SupUser.AddNewUser');
     
-    //update user
+    // update user
     Route::post('User/Update/{user_id}',[App\Http\Controllers\Administrator\UsersController::class, 'updateUser'])->name('Administrator.UpdateUser');
-    //not working
+    // not working
     Route::post('User/Update/Status',[App\Http\Controllers\Administrator\UsersController::class, 'is_active'])->name('SupUser.UserIsActive');
     Route::post('User/Delete',[App\Http\Controllers\Administrator\UsersController::class, 'softDeleteUser'])->name('SupUser.UserSoftDel');
 
@@ -44,7 +44,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
 
     Route::get('About-Us/Our-team/Index',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'index'])->name('SupUser.OurTeam');
     Route::post('Our-team/Index/Insert',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'teamInsert'])->name('SupUser.OurTeamInsert');
-    Route::get('Our-team/Index/Update/',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'teamUpdate'])->name('SupUser.OurTeamUpdate');
+    Route::post('Our-team/Index/Update/',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'teamUpdate'])->name('SupUser.OurTeamUpdate');
     Route::post('Our-team/Index/Delete',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'teamDelete'])->name('SupUser.OurTeamDelete');
 
     Route::get('About-Us/our-concern',[App\Http\Controllers\Administrator\AboutUs\OurConcernController::class, 'bckIndex'])->name('SupUser.OurConcernBck');
@@ -71,7 +71,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::get('Project/Category/Index',[App\Http\Controllers\Administrator\Project\ProjectCategoryController::class, 'showCategory'])->name('SupUser.ProjectCategoryShow');
     Route::post('Project/Category/Insert',[App\Http\Controllers\Administrator\Project\ProjectCategoryController::class, 'ProjectCategoryInsert'])->name('SupUser.ProjectCategoryInsert');
     Route::post('Project/Category/Update',[App\Http\Controllers\Administrator\Project\ProjectCategoryController::class, 'ProjectCategoryUpdate'])->name('SupUser.ProjectCategoryUpdate');
-    
+    Route::post('Project/Category/Delete',[App\Http\Controllers\Administrator\Project\ProjectCategoryController::class, 'ProjectCategorydelete'])->name('SupUser.ProjectCategoryDelete');
     // end Project
 
     // product and service start
@@ -80,6 +80,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::post('Product-and-service/insert/save',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'insert'])->name('SupUser.ProductSerInsert');
     Route::get('Product-and-service/archive',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'archive'])->name('SupUser.ProductSerArchive');
     Route::get('Product-and-service/trash',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'trush'])->name('SupUser.ProductSertrush');
+    Route::post('product-and-service/update',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'Update'])->name('SupUser.ProductServiceUpdate');
     Route::post('product-and-service/delete',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'delete'])->name('SupUser.ProductServiceDelete');
 
     Route::get('product-and-service/sub/{menu_slug}',[App\Http\Controllers\Administrator\ProductService\ProSerSubController::class, 'index'])->name('SupUserProduct.SubMenuShow');
