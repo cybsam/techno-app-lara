@@ -107,6 +107,10 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
 
     //end settings
 
+    // blog section
+    Route::get('Blog/Index',[App\Http\Controllers\Administrator\Blog\BlogController::class, 'index'])->name('SupUserBlog.Index');
+    // end blog section
+
     //contact
     Route::get('contact/front',[App\Http\Controllers\Administrator\DashboardController::class, 'ContactFrontEnd'])->name('supUser.FrontEndContact');
     Route::get('contact/front/{id}/show',[App\Http\Controllers\Administrator\DashboardController::class, 'ContactFrontEndShow'])->name('supUser.FrontEndContactShow');

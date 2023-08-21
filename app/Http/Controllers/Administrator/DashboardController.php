@@ -14,7 +14,7 @@ use App\Models\ProductService;
 class DashboardController extends Controller
 {
     public function index(){
-        $CountAllUser = User::all()->get()->count();
+        $CountAllUser = User::all()->count();
         $fetchProductAndServiceLit = ProductService::where('is_active','1')->get();
         return view('dashboard.index',[
             'CountAllUser'=>$CountAllUser,

@@ -45,51 +45,58 @@
 
             <li class="nav-heading">Product & Service</li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#product_and_service" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-gem"></i><span>Product & Service</span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#product_and_service" data-bs-toggle="collapse"
+                    href="#">
+                    <i class="bi bi-gem"></i><span>Product & Service</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="product_and_service" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                    <a href="{{ route('SupUser.ProductSerIndex') }}" class="@if(URL::current() == route('SupUser.ProductSerIndex')) active @endif">
-                    <i class="bi bi-circle"></i><span>Index</span>
-                    </a>
-                </li>
-                    <li>
-                        <a href="{{ route('SupUser.ProductSerInsertChk') }}" class="@if(URL::current() == route('SupUser.ProductSerInsertChk')) active @endif">
-                <i class="bi bi-circle"></i><span>Insert</span>
-                </a>
+                        <a href="{{ route('SupUser.ProductSerIndex') }}"
+                            class="@if (URL::current() == route('SupUser.ProductSerIndex')) active @endif">
+                            <i class="bi bi-circle"></i><span>Index</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.ProductSerArchive') }}" class="@if(URL::current() == route('SupUser.ProductSerArchive')) active @endif">
-                <i class="bi bi-circle"></i><span>Archive</span>
-                </a>
+                        <a href="{{ route('SupUser.ProductSerInsertChk') }}"
+                            class="@if (URL::current() == route('SupUser.ProductSerInsertChk')) active @endif">
+                            <i class="bi bi-circle"></i><span>Insert</span>
+                        </a>
                     </li>
- 
+                    <li>
+                        <a href="{{ route('SupUser.ProductSerArchive') }}"
+                            class="@if (URL::current() == route('SupUser.ProductSerArchive')) active @endif">
+                            <i class="bi bi-circle"></i><span>Archive</span>
+                        </a>
+                    </li>
+
                 </ul>
             </li><!-- End Components Nav -->
             {{-- @php
                 $pendingPost = App\Models\SupUserBlog::where('post_status',3)->count();
             @endphp --}}
             <li class="nav-heading">Our Project</li>
-            
+
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#our_project_front" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#our_project_front" data-bs-toggle="collapse"
+                    href="#">
                     <i class="bi bi-journal-text"></i><span>Our Project</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="our_project_front" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('SupUser.ProjectOnGoing') }}" class="@if(URL::current() == route('SupUser.ProjectOnGoing')) active @endif">
+                        <a href="{{ route('SupUser.ProjectOnGoing') }}"
+                            class="@if (URL::current() == route('SupUser.ProjectOnGoing')) active @endif">
                             <i class="bi bi-circle"></i><span>On Going Project</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.ProjectComplete') }}" class="@if(URL::current() == route('SupUser.ProjectComplete')) active @endif">
+                        <a href="{{ route('SupUser.ProjectComplete') }}"
+                            class="@if (URL::current() == route('SupUser.ProjectComplete')) active @endif">
                             <i class="bi bi-circle"></i><span>Complete Project</span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.ProjectList') }}" class="@if(url()->current() == route('SupUser.ProjectList')) active @endif">
+                        <a href="{{ route('SupUser.ProjectList') }}"
+                            class="@if (url()->current() == route('SupUser.ProjectList')) active @endif">
                             <i class="bi bi-circle"></i><span>Insert New Project</span>
                         </a>
                     </li>
@@ -103,33 +110,38 @@
             </li>
             <li class="nav-heading">About Us</li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#about_us_frontend" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-journal-text"></i><span>About Us </span><i
-                        class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#about_us_frontend" data-bs-toggle="collapse"
+                    href="#">
+                    <i class="bi bi-journal-text"></i><span>About Us </span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="about_us_frontend" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="{{ route('SupUser.OurTeam') }}" class="@if(URL()->current() == route('SupUser.OurTeam')) active @endif">
+                        <a href="{{ route('SupUser.OurTeam') }}"
+                            class="@if (URL()->current() == route('SupUser.OurTeam')) active @endif">
                             <i class="bi bi-circle"></i><span>Our Team </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.AboutUsIndex') }}" class="@if(URL()->current() == route('SupUser.AboutUsIndex')) active @endif">
+                        <a href="{{ route('SupUser.AboutUsIndex') }}"
+                            class="@if (URL()->current() == route('SupUser.AboutUsIndex')) active @endif">
                             <i class="bi bi-circle"></i><span>About Us </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.OurConcernBck') }}" class="@if(URL::current() == route('SupUser.OurConcernBck')) active @endif">
+                        <a href="{{ route('SupUser.OurConcernBck') }}"
+                            class="@if (URL::current() == route('SupUser.OurConcernBck')) active @endif">
                             <i class="bi bi-circle"></i><span>Our Concern </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.OurExpertiseIndex') }}" class="@if(URL::current() == route('SupUser.OurExpertiseIndex')) active @endif">
+                        <a href="{{ route('SupUser.OurExpertiseIndex') }}"
+                            class="@if (URL::current() == route('SupUser.OurExpertiseIndex')) active @endif">
                             <i class="bi bi-circle"></i><span>Our Expertise </span>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.MissionVission') }}" class="@if(URL()->current() == route('SupUser.MissionVission')) active @endif">
+                        <a href="{{ route('SupUser.MissionVission') }}"
+                            class="@if (URL()->current() == route('SupUser.MissionVission')) active @endif">
                             <i class="bi bi-circle"></i><span>Our Mission & Vission </span>
                         </a>
                     </li>
@@ -141,36 +153,24 @@
 
                 </ul>
             </li>
+            <li class="nav-heading">Blog</li>
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-bar-chart"></i><span>Catagory</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#blog-nav-item" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-bar-chart"></i><span>Blog</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    {{-- <li>
-                <a href="{{ route('subcatagory.index') }}">
-                <i class="bi bi-circle"></i><span>All Catagory</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('subcatagory.mycategory') }}">
-                <i class="bi bi-circle"></i><span>My Catagory</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('subcatagory.insert') }}">
-                <i class="bi bi-circle"></i><span>Insert Sub Catagory</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('subcatagoryIndex.archived') }}">
-                <i class="bi bi-circle"></i><span>Archived</span>
-                </a>
-            </li> --}}
+                <ul id="blog-nav-item" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="{{ route('SupUserBlog.Index') }}">
+                            <i class="bi bi-circle"></i><span>Index Blog</span>
+                        </a>
+                    </li>
+                    
                 </ul>
             </li><!-- End Charts Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#catagory-nav" data-bs-toggle="collapse" href="#">
+                <a class="nav-link collapsed" data-bs-target="#catagory-nav" data-bs-toggle="collapse"
+                    href="#">
                     <i class="bi bi-gem"></i><span>Super Catagory</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="catagory-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -200,7 +200,8 @@
             <li class="nav-heading">Users</li>
             <li class="nav-item @if (url()->current() == route('SupUser.ListUsers')) active @endif">
                 <a class="nav-link collapsed" data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-person-lines-fill"></i><span>Users</span><i class="bi bi-chevron-down ms-auto"></i>
+                    <i class="bi bi-person-lines-fill"></i><span>Users</span><i
+                        class="bi bi-chevron-down ms-auto"></i>
                 </a>
                 <ul id="users-nav" class="nav-content collapse active" data-bs-parent="#sidebar-nav">
                     <li>
@@ -262,7 +263,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.FrontSliderImage') }}" class="@if(URL::current() == route('SupUser.FrontSliderImage')) active @endif">
+                        <a href="{{ route('SupUser.FrontSliderImage') }}"
+                            class="@if (URL::current() == route('SupUser.FrontSliderImage')) active @endif">
                             <i class="bi bi-circle"></i><span>Front Slider</span>
                         </a>
                     </li>
@@ -283,7 +285,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('SupUser.TeamManagementInsert') }}" class="@if(URL()->current() == route('SupUser.TeamManagementInsert')) active @endif">
+                        <a href="{{ route('SupUser.TeamManagementInsert') }}"
+                            class="@if (URL()->current() == route('SupUser.TeamManagementInsert')) active @endif">
                             <i class="bi bi-circle"></i><span>Employee Management Department List</span>
                         </a>
                     </li>
@@ -298,12 +301,15 @@
                 </a>
             </li><!-- End F.A.Q Page Nav -->
             @php
-                $countUnSeenMsg = DB::table('front_contacts')->where('is_seen',0)->count();
+                $countUnSeenMsg = DB::table('front_contacts')
+                    ->where('is_seen', 0)
+                    ->count();
             @endphp
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('supUser.FrontEndContact') }}">
                     <i class="bi bi-envelope"></i>
-                    <span>Contact Message <span class="badge bg-success badge-number">{{ $countUnSeenMsg }}</span></span>
+                    <span>Contact Message <span
+                            class="badge bg-success badge-number">{{ $countUnSeenMsg }}</span></span>
                 </a>
             </li>
 
