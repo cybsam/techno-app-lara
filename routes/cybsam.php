@@ -47,5 +47,6 @@ Route::prefix('cybsamdev')->group(function(){
 
     Route::get('migrate-force', function(){
         Artisan::call('migrate', ["--force" => true]);
+        return 'Migration Complete! chech database,';
     });
 });
