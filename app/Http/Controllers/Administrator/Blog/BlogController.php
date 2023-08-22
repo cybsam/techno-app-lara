@@ -33,5 +33,34 @@ class BlogController extends Controller
 
         $headerImage = $request->file('blogImage');
 
+        $randStr = Carbon::now()->format('Y-m-d-H-i-s-u');
+        $blogSlug = Str::slug($request->input('blogName'));
+        $blogHeaderImageNewName = $blogSlug.'-'.$randStr.'.'.$headerImage->getClientOriginalExtension();
+        $uploadLocation = base_path('public/image/blog/'.$blogHeaderImageNewName);
+        $checkBlogSlug = Blog::where('__blog_slug',$blogSlug)->first();
+        if($checkBlogSlug){
+            return redirect()->back()->with('bloginsertFailed','Already available this blog, try new or change something');
+        }else{
+            
+            Image::make($headerImage)->save($uploadLocation);
+
+            $insBlog = new Blog();
+            $insBlog->__blog_name = $request->input('blogName');
+            $insBlog->__blog_slug = $blogSlug;
+            $insBlog->__blog_header_image = $blogHeaderImageNewName;
+            $insBlog->__blog_meta_title = $request->input('blogName');
+            $insBlog->__blog_meta_keyword = $request->input('blogKeyword');
+            $insBlog->__blog_short_description = $request->input('blogShortDesc');
+            $insBlog->__blog_description = $request->input('blogDescriptions');
+            $insBlog->__blog_added_by = Auth::user()->id.'-'.Auth::user()->name;
+            $insBlog->__blog_status = 1;
+            $insBlogSave = $insBlog->save();
+            if($insBlogSave){
+                return redirect()->back()->with('insertBlogSuccess','Blog Insert Success!');
+            }else{
+                return redirect()->back()->with('bloginsertFailed','Something went wrong! try again...');
+            }
+        }
+
     }
 }

@@ -25,6 +25,16 @@
         </div>
     </div>
     <div class="card-body">
+    <div class="text-danger">
+        @if(Session::get('bloginsertFailed'))
+            <b>{{ Session::get('bloginsertFailed') }}</b>
+        @endif
+    </div>
+    <div class="text-primary">
+        @if(Session::get('insertBlogSuccess'))
+            <b>{{ Session::get('insertBlogSuccess') }}</b>
+        @endif
+    </div>
         <form action="{{ route('SupUserBlog.Insert') }}" enctype="multipart/form-data" method="post">
             @csrf
             <div class="form-group">
