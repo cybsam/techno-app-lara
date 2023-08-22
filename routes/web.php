@@ -48,6 +48,10 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
 
     Route::get('project/complete/details/{project_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'ProjectDetailsShow'])->name('FrontEnd.ProjectDetailsShow');
 
+    // blog section
+    Route::get('blog/index',[App\Http\Controllers\FrontEnd\BlogController::class, 'index'])->name('FrontEndBlog.Index');
+    // end blog section
+
     // contact 
     Route::get('contact',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contact'])->name('frontEnd.ContactS');
     Route::post('contact/s',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contactStore'])->name('frontEnd.ContactStore');
