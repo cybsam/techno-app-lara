@@ -6,13 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "cyrildewit/eloquent-viewable": "^7.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.7",
         "jorenvanhocht/laravel-share": "^4.2",
         "laravel/framework": "^8.54",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.4"
+        "laravel/ui": "^3.4",
+        "laravelista/comments": "^4.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

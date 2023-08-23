@@ -49,7 +49,10 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
     Route::get('project/complete/details/{project_slug}',[App\Http\Controllers\FrontEnd\ProjectController::class, 'ProjectDetailsShow'])->name('FrontEnd.ProjectDetailsShow');
 
     // blog section
-    Route::get('blog/index',[App\Http\Controllers\FrontEnd\BlogController::class, 'index'])->name('FrontEndBlog.Index');
+    Route::get('blog',[App\Http\Controllers\FrontEnd\BlogController::class, 'index'])->name('FrontEndBlog.Index');
+    Route::get('blog/{blog_slug}',[App\Http\Controllers\FrontEnd\BlogController::class, 'showSingleBlog'])->name('FrontEndBlog.ShowSingleBlog');
+    
+    Route::post('search',[App\Http\Controllers\FrontEnd\BlogController::class, 'FrontSearch'])->name('frontEndView.FrontEndSearch');
     // end blog section
 
     // contact 

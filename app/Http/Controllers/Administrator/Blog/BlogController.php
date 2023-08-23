@@ -42,7 +42,7 @@ class BlogController extends Controller
             return redirect()->back()->with('bloginsertFailed','Already available this blog, try new or change something');
         }else{
             
-            Image::make($headerImage)->save($uploadLocation);
+            Image::make($headerImage)->resize(798,500)->save($uploadLocation);
 
             $insBlog = new Blog();
             $insBlog->__blog_name = $request->input('blogName');
@@ -53,7 +53,7 @@ class BlogController extends Controller
             $insBlog->__blog_short_description = $request->input('blogShortDesc');
             $insBlog->__blog_description = $request->input('blogDescriptions');
             $insBlog->__blog_added_by = Auth::user()->id.'-'.Auth::user()->name;
-            $insBlog->__blog_status = 1;
+            $insBlog->__blog_status = $request->input('checkbox');
             $insBlogSave = $insBlog->save();
             if($insBlogSave){
                 return redirect()->back()->with('insertBlogSuccess','Blog Insert Success!');

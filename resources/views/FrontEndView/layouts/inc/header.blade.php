@@ -155,7 +155,7 @@
                                               </ul>
                                           </li>
                                           <li>
-                                              <a href="">Blog</a>
+                                              <a href="{{ route('FrontEndBlog.Index') }}">Blog</a>
                                           </li>
                                           <li class="">
                                               <a href="{{ route('frontEnd.ContactS') }}">Contact</a>

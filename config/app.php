@@ -162,10 +162,12 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        //custom plugin
+        //custom package
         Jorenvh\Share\Providers\ShareServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
+        CyrildeWit\EloquentViewable\EloquentViewableServiceProvider::class,
+        
         /*
          * Package Service Providers...
          */
