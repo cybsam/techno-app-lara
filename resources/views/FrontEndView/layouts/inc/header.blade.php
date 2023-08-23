@@ -207,30 +207,27 @@
               </div>
               <ul class="nav-menu">
                   <li class="menu-item-has-children current-menu-item">
-                      <a href="index.html">Home</a>
+                      <a href="{{ url('/') }}">Home</a>
 
                   </li>
-                  {{-- <li class="menu-item-has-children">
-                    <a href="#">Pages</a>                                                        
-                   
-                </li> --}}
+                  
                   <li class="menu-item-has-children">
                       <a href="#">About Us</a>
                       <ul class="sub-menu">
-                          <li><a href="portfolio.html">Our Mission & Vision</a></li>
-                          <li><a href="portfolio2.html">Our Team</a></li>
-                          <li><a href="portfolio3.html">Our Expertise</a></li>
-                          <li><a href="portfolio3.html">Strategic Partners</a></li>
+                          <li><a href="{{ route('frontEndIndex.MissionAndVission') }}">Our Mission & Vision</a></li>
+                          <li><a href="{{ route('frontEndIndex.ourTeam') }}">Our Team</a></li>
+                          <li><a href="{{ route('frontEndIndex.OurConcern') }}">Our Concern</a></li>
+                          <li><a href="{{ route('frontEndIndex.our-expertise') }}">Our Expertise</a></li>
 
                       </ul>
                   </li>
                   <li class="menu-item-has-children">
                       <a href="#">PRODUCT & SERVICES</a>
                       <ul class="sub-menu">
-                          <li><a href="services-style1.html">DESIGN & CONSULTANCY SERVICES</a></li>
-                          <li><a href="services-style2.html">ELECTRICAL SOLUTION</a></li>
-                          <li><a href="business-planning.html">FIRE SOLUTION</a></li>
-                          <li><a href="business-planning.html">AUTOMATION SOLUTION</a></li>
+                          <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">DESIGN & CONSULTANCY SERVICES</a></li>
+                          <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">ELECTRICAL SOLUTION</a></li>
+                          <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'fire-solution']) }}">FIRE SOLUTION</a></li>
+                          <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'automation-solution']) }}">AUTOMATION SOLUTION</a></li>
 
                       </ul>
                   </li>
@@ -238,7 +235,7 @@
                       <a href="blog.html">Our project</a>
                   </li>
                   <li>
-                      <a href="">Blog</a>
+                    <a href="{{ route('FrontEndBlog.Index') }}">Blog</a>
                   </li>
 
                   <li class="menu-item-has-children">
@@ -254,7 +251,7 @@
                           </div>
                           <div class="info-content">
                               <h4 class="title">Address</h4>
-                              <em>05 kandi BR. New York</em>
+                              <em>{{ $AboutUsInformation->company_address_1 }}</em>
                           </div>
                       </div>
                       <div class="address-list">
@@ -263,7 +260,7 @@
                           </div>
                           <div class="info-content">
                               <h4 class="title">Email</h4>
-                              <em><a href="mailto:support@rstheme.com">support@rstheme.com</a></em>
+                              <em><a href="mailto:{{ $AboutUsInformation->company_email }}">{{ $AboutUsInformation->company_email }}</a></em>
                           </div>
                       </div>
                       <div class="address-list">
@@ -272,14 +269,14 @@
                           </div>
                           <div class="info-content">
                               <h4 class="title">Phone</h4>
-                              <em>+019988772</em>
+                              <em>{{ $AboutUsInformation->company_mobile_1 }}</em>
                           </div>
                       </div>
                   </div>
               </div>
           </nav>
-          <!-- Canvas Menu end -->
+          
       </header>
-      <!--Header End-->
+      
   </div>
-  <!--Full width header End-->
+  
