@@ -108,7 +108,7 @@
                     </thead>
                 </table>
                 <div class="text-info">
-                    <button type="submit" data-bs-toggle="modal" data-bs-target="#updateAboutUsInfo" data-id="{{ $companyInfo->id }}" data-bs-companyName="{{ $companyInfo->company_name }}" data-bs-companyWebSite="{{ $companyInfo->company_web }}" data-bs-companyEmail="{{ $companyInfo->company_email }}" data-bs-officeTime="{{ $companyInfo->company_office_time }}" data-bs-companyHeader="{{ $companyInfo->company_header }}" data-bs-companyDescription="{{ $companyInfo->company_description }}" data-bs-companyAdd1="{{ $companyInfo->company_address_1 }}" data-bs-companyAdd2="{{ $companyInfo->company_address_2 }}" data-bs-companyMobile1="{{ $companyInfo->company_mobile_1 }}" data-bs-companyMobile2="{{ $companyInfo->company_mobile_2 }}" class="btn btn-outline-warning text-black"> Update Contact Information</button>
+                    <a href="{{ route('SupUser.SetingsAboutUsInfoUpd',['aboutusinfo_id'=>$companyInfo->id]) }}" class="btn btn-outline-warning text-black">Update Contact Information</a>
                 </div>
             </div>
         </div>

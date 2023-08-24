@@ -92,6 +92,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     
     //settings 
     Route::get('Settings/AboutUsInformation',[App\Http\Controllers\Administrator\Settings\AboutUsInformationController::class, 'index'])->name('SupUser.SetingsAboutUsInfo');
+    Route::get('Settings/AboutUsInformation/{aboutusinfo_id}/update',[App\Http\Controllers\Administrator\Settings\AboutUsInformationController::class, 'indexUpdate'])->name('SupUser.SetingsAboutUsInfoUpd');
     Route::post('Settings/AboutUsInformation/Update',[App\Http\Controllers\Administrator\Settings\AboutUsInformationController::class, 'updateInformation'])->name('SupUser.SetingsAboutUsInfoUpdate');
 
     // slider
@@ -109,14 +110,13 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     //end settings
 
     // blog section
+
     Route::get('Blog/Index',[App\Http\Controllers\Administrator\Blog\BlogController::class, 'index'])->name('SupUserBlog.Index');
     Route::get('Blog/Insert',[App\Http\Controllers\Administrator\Blog\BlogController::class, 'insertIndex'])->name('SupUserBlog.InsertIndex');
     Route::post('Blog/Insert/s',[App\Http\Controllers\Administrator\Blog\BlogController::class, 'insert'])->name('SupUserBlog.Insert');
     Route::get('Blog/update/{blog_id}/{blog_slug}',[App\Http\Controllers\Administrator\Blog\BlogController::class, 'Update'])->name('SupUserBlog.Update');
     Route::post('Blog/update/save',[App\Http\Controllers\Administrator\Blog\BlogController::class, 'UpdateSave'])->name('SupUserBlog.UpdateSave');
     Route::post('Blog/delete',[App\Http\Controllers\Administrator\Blog\BlogController::class, 'delete'])->name('SupUserBlog.delete');
-    
-    
 
     // end blog section
 
