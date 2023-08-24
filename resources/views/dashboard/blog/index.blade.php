@@ -67,14 +67,14 @@
                     @foreach ($allListBlog as $key => $listBlog)
                         <tr>
                             <td>{{ $listBlog->id }}</td>
-                            <td><a href="">{{ $listBlog->__blog_name }}</a></td>
+                            <td><a href="{{ route('SupUserBlog.Update',['blog_id'=>$listBlog->id,'blog_slug'=>$listBlog->__blog_slug]) }}">{{ $listBlog->__blog_name }}</a></td>
                             <td>
                                 <img src="{{ asset('image/blog') }}/{{ $listBlog->__blog_header_image }}" height="50px"
                                     width="70px">
                             </td>
                             <td>
                                 <div class="button-group">
-                                    <a href="" class="btn btn-info btn-sm">Update</a>
+                                    <a href="{{ route('SupUserBlog.Update',['blog_id'=>$listBlog->id,'blog_slug'=>$listBlog->__blog_slug]) }}" class="btn btn-info btn-sm">Update</a>
                                     <button type="button" value="{{ $listBlog->id }}"
                                         class="btn btn-danger DeleteBlogServiceModal btn-sm">Delete</button>
                                 </div>

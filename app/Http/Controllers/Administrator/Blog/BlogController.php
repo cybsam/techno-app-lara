@@ -28,7 +28,7 @@ class BlogController extends Controller
         
         $request->validate([
             'blogName'=>['required','string'],
-            'blogImage'=>['required','mimes:png,jpg,jpeg,ico,gif'],
+            'blogImage'=>['required','mimes:png,jpg,jpeg,ico,gif','max:2048'],
             'blogKeyword'=>['required','string'],
             'blogShortDesc'=>['required','string'],
             'blogDescriptions'=>['required']
@@ -78,5 +78,78 @@ class BlogController extends Controller
         }else{
             return redirect()->back()->with('blogDeleteFailed','Something went wrong!');
         }
+    }
+
+    public function Update(Request $request, $blog_id, $blog_slug){
+        $blog_id = $blog_id;
+        $blog_slug = $blog_slug;
+        $getDataFromBlog = Blog::where('id',$blog_id)->where('__blog_slug',$blog_slug)->first();
+
+        if($getDataFromBlog){
+            return view('dashboard.blog.update',[
+                'getDataFromBlog'=>$getDataFromBlog,
+            ]);
+        }else{
+            abort(404);
+        }
+    }
+
+    public function UpdateSave(Request $request){
+        $request->validate([
+            'blogMetaKeyword'=>['required'],
+            'blogShortDesc'=>['required'],
+            'blogDescription'=>['required'],
+            'blogMetaTitle'=>['required']
+        ]);
+
+        $blogSlugFrom = $request->input('blog_slug');
+        $checkFromDatabase = Blog::where('__blog_slug',$blogSlugFrom)->first();
+        if ($checkFromDatabase) {
+            if ($request->hasFile('blogfeatureImage')) {
+                $request->validate([
+                    'blogfeatureImage'=>['required','mimes:png,jpg,jpeg,ico,gif','max:2048'],
+                ]);
+                $headerImageFile = $request->file('blogfeatureImage');
+                $randStr = Carbon::now()->format('Y-m-d-H-i-s-u');
+                // $blogSlug = Str::slug($request->input('blog_slug'));
+                $blogFeatureNewImageName = $checkFromDatabase->__blog_slug.'-'.$randStr.'.'.$headerImageFile->getClientOriginalExtension();
+                $blogNewImageFolder = base_path('public/image/blog/'.$blogFeatureNewImageName);
+
+                // unlink from db and image location
+                $dbImage = $checkFromDatabase->__blog_header_image;
+                $imageFolderLocation = base_path('public/image/blog/'.$dbImage);
+                unlink($imageFolderLocation);
+                // end unlink image
+
+                Image::make($headerImageFile)->resize(798,500)->save($blogNewImageFolder);
+
+                $checkFromDatabase->__blog_header_image = $blogFeatureNewImageName;
+                $checkFromDatabase->__blog_meta_title = $request->input('blogMetaTitle');
+                $checkFromDatabase->__blog_meta_keyword = $request->input('blogMetaKeyword');
+                $checkFromDatabase->__blog_short_description = $request->input('blogShortDesc');
+                $checkFromDatabase->__blog_description = $request->input('blogDescription');
+                $checkFromDatabase->__blog_status = $request->input('checkActiveOrNot');
+                $saveDb = $checkFromDatabase->save();
+                if($saveDb){
+                    return redirect()->back()->with('blogUpdateComplete','Blog Update Complete');
+                }else{
+                    return redirect()->back()->with('blogUpdateFailed','Something went wrong!');
+                }
+            }else{
+                
+                $checkFromDatabase->__blog_meta_title = $request->input('blogMetaTitle');
+                $checkFromDatabase->__blog_meta_keyword = $request->input('blogMetaKeyword');
+                $checkFromDatabase->__blog_short_description = $request->input('blogShortDesc');
+                $checkFromDatabase->__blog_description = $request->input('blogDescription');
+                $checkFromDatabase->__blog_status = $request->input('checkActiveOrNot');
+                $saveDb = $checkFromDatabase->save();
+                if($saveDb){
+                    return redirect()->back()->with('blogUpdateComplete','Blog Update Complete');
+                }else{
+                    return redirect()->back()->with('blogUpdateFailed','Something went wrong!');
+                }
+            }
+        }
+        
     }
 }
