@@ -14,7 +14,10 @@ use App\Models\Blog;
 class BlogController extends Controller
 {
     public function index(){
-        return view('dashboard.blog.index');
+        $allListBlog = Blog::all();
+        return view('dashboard.blog.index',[
+            'allListBlog'=>$allListBlog,
+        ]);
     }
 
     public function insertIndex(){
@@ -62,5 +65,18 @@ class BlogController extends Controller
             }
         }
 
+    }
+
+    public function delete(Request $request){
+        $deleteId = $request->input('DeleteBlogServiceId');
+        $getBlogFromDb = Blog::where('id',$deleteId)->first();
+        $imagePath = base_path('public/image/blog/'.$getBlogFromDb->__blog_header_image);
+        unlink($imagePath);
+        $getBlogFromDb->delete();
+        if($getBlogFromDb){
+            return redirect()->back()->with('blogDeleteComplete','Blog Delete Complete,');
+        }else{
+            return redirect()->back()->with('blogDeleteFailed','Something went wrong!');
+        }
     }
 }
