@@ -48,6 +48,20 @@
                             <img src="{{ asset('image/productservice/subproduct') }}/{{ $__fetchFromDb->__proserheadimage }}" alt="{{ $__fetchFromDb->__prosername }}">
                         </div>
                         <p>{!! $__fetchFromDb->__proserdescription !!}</p>
+                        <style>
+                            div#social-links ul li{
+                                display: inline-block;
+                            }
+                            div#social-links ul li a{
+                                padding: 10px;
+                                margin: 1px;
+                                font-size: 30px;
+
+                            }
+                        </style>
+                        <div>
+                            {!! $subProductSocialShare !!}
+                        </div>
                     </div>
                 </div>
 

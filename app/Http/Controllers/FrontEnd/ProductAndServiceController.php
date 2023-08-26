@@ -42,8 +42,20 @@ class ProductAndServiceController extends Controller
         $fetchFromDb = ProductServiceSub::where('__prosermaincateslug',$s_slug)->where('__proserslug',$sub_slug)->first();
 
         if($fetchFromDb){
+            $currentUrlSub = URL()->current();
+            $subProductname = $fetchFromDb->__prosername;
+            $subProductSocialShare = \Share::page(
+                $currentUrlSub,
+                $subProductname,
+            )->facebook()
+            ->twitter()
+            ->linkedin()
+            ->whatsapp()
+            ->reddit()
+            ->telegram();
             return view('FrontEndView.product-service.subproduct',[
                 '__fetchFromDb'=>$fetchFromDb,
+                'subProductSocialShare'=>$subProductSocialShare,
             ]);
         }else{
             abort(404);
