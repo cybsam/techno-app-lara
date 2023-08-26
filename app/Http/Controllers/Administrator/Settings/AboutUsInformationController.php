@@ -45,7 +45,7 @@ class AboutUsInformationController extends Controller
             'company_description'=>$request->input('company_description'),
             'company_address_1'=>$request->input('company_address_1'),
             'company_address_2'=>$request->input('company_address_2'),
-            'company_mobile_1'=>$request->input('company_name'),
+            'company_mobile_1'=>$request->input('company_mobile_1'),
             'company_mobile_2'=>$request->input('company_mobile_2'),
             'company_telephone'=>$request->input('company_tele'),
             'company_facebook'=>$request->input('facebook_page'),
