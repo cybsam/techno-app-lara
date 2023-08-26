@@ -58,10 +58,12 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::post('About-us/our-expertise/delete',[App\Http\Controllers\Administrator\AboutUs\ExpertiseController::class, 'expertiseDelete'])->name('SupUser.OurExpertiseDelete');
 
     // end about us
+
     // our project
     Route::get('Project/Index',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'showProjectList'])->name('SupUser.ProjectList');
     Route::post('Project/Insert',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectInsert'])->name('SupUser.ProjectInsert');
-    Route::post('Project/Update',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectUpdate'])->name('SupUser.ProjectUpdate');
+    Route::get('Project/{project_id}/{project_slug}/Update',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectUpdate'])->name('SupUser.ProjectUpdate');
+    Route::post('Project/Update/save',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectUpdateCom'])->name('SupUser.ProjectUpdateCont');
     Route::post('Project/Delete',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectDelete'])->name('SupUser.ProjectDelete');
     
     Route::get('Project/On-going',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectOnGoing'])->name('SupUser.ProjectOnGoing');

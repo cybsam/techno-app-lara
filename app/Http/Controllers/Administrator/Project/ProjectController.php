@@ -63,15 +63,15 @@ class ProjectController extends Controller
                 $projectSave = $project->save();
 
                 if($projectSave){
-                    return redirect()->back()->with('succ','New Project Upload Successfully');
+                    return redirect()->back()->with('ProjectInsertComplete','New Project Upload Successfully');
                 }else{
-                    return redirect()->back()->with('err','Something went wrong!');
+                    return redirect()->back()->with('ProjectInsertFailed','Something went wrong!');
                 }
             }else{
-                return redirect()->back()->with('err','You are not selected Project Status, try again!');
+                return redirect()->back()->with('ProjectInsertFailed','You are not selected Project Status, try again!');
             }
         }else{
-            return redirect()->back()->with('err','You are not selected Project Category, try again!');
+            return redirect()->back()->with('ProjectInsertFailed','You are not selected Project Category, try again!');
         }
     }
 
@@ -88,5 +88,94 @@ class ProjectController extends Controller
         return view('dashboard.project.complete',[
             'CompleteProject'=>$CompleteProject,
         ]);
+    }
+
+    public function ProjectUpdate(Request $request, $project_id, $project_slug){
+        $projectId = $project_id;
+        $projectSlug = $project_slug;
+
+        $fetchProjectFromDB = Project::where('id',$projectId)->where('project_slug',$projectSlug)->first();
+        $projectCategory = projectCategory::all();
+        if($fetchProjectFromDB){
+            return view('dashboard.project.update',[
+                'fetchProjectFromDB'=>$fetchProjectFromDB,
+                'projectCategory'=>$projectCategory,
+            ]);
+        }else{
+            abort(403);
+        }
+    }
+
+    public function ProjectUpdateCom(Request $request){
+        $request->validate([
+            'id'=>['required'],
+            'project_category_slug'=>['required'],
+            'project_slug'=>['required'],
+            'project_keyword'=>['required'],
+            'project_scope'=>['required'],
+            'project_type'=>['required'],
+            'project_location'=>['required'],
+            'project_description'=>['required'],
+            'is_ongoing'=>['required']
+        ]);
+        $projectId = $request->input('id');
+        $projectSlug = $request->input('project_slug');
+
+        $checkDBProject = Project::where('id',$projectId)->where('project_slug',$projectSlug)->first();
+        
+        $projectHeaderImage = $request->file('project_header_image');
+        if($request->hasFile('project_header_image')){
+            if($checkDBProject){
+                $request->validate([
+                    'project_header_image'=>['required','mimes:png,jpg,jpeg,gif,ico','max:2048']
+                ]);
+                $randSrt = Carbon::now()->format('Y-m-d-H-i-s-u');
+                $ProjectImageNewName = $projectSlug.'-'.$randSrt.'.'.$projectHeaderImage->getClientOriginalExtension();
+                $UpdatePath = base_path('public/image/project/'.$ProjectImageNewName);
+
+                $dbImagePath = base_path('public/image/project/'.$checkDBProject->project_header_image);
+                unlink($dbImagePath);
+
+                Image::make($projectHeaderImage)->save($UpdatePath);
+
+                $checkDBProject->project_header_image = $ProjectImageNewName;
+                $checkDBProject->project_category_slug = $request->input('project_category_slug');
+                $checkDBProject->project_keyword = $request->input('project_keyword');
+                $checkDBProject->project_scope = $request->input('project_scope');
+                $checkDBProject->project_type = $request->input('project_type');
+                $checkDBProject->project_location = $request->input('project_location');
+                $checkDBProject->project_description = $request->input('project_description');
+                $checkDBProject->is_ongoing = $request->input('is_ongoing');
+                $projectUpdate = $checkDBProject->save();
+
+                if($projectUpdate){
+                    return redirect()->back()->with('projectUpdateComplete','Project Update Complete, Check it now!');
+                }else{
+                    return redirect()->back()->with('projectUpdateFailed','Something went wrong');
+                }
+            }else{
+                abort(403);
+            }
+        }else{
+            if($checkDBProject){
+                
+                $checkDBProject->project_category_slug = $request->input('project_category_slug');
+                $checkDBProject->project_keyword = $request->input('project_keyword');
+                $checkDBProject->project_scope = $request->input('project_scope');
+                $checkDBProject->project_type = $request->input('project_type');
+                $checkDBProject->project_location = $request->input('project_location');
+                $checkDBProject->project_description = $request->input('project_description');
+                $checkDBProject->is_ongoing = $request->input('is_ongoing');
+                $projectUpdate = $checkDBProject->save();
+
+                if($projectUpdate){
+                    return redirect()->back()->with('projectUpdateComplete','Project Update Complete, Check it now!');
+                }else{
+                    return redirect()->back()->with('projectUpdateFailed','Something went wrong');
+                }
+            }else{
+                abort(403);
+            }
+        }
     }
 }

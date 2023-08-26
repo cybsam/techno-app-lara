@@ -29,12 +29,14 @@
             @foreach ($CompleteProject as $key => $completeProject)
             <tr>
                 <td>{{ $completeProject->id }}</td>
-                <td>{{ $completeProject->project_name }}</td>
+                <td><a href="{{ route('SupUser.ProjectUpdate',['project_id'=>$completeProject->id,'project_slug'=>$completeProject->project_slug]) }}">{{ $completeProject->project_name }}</a></td>
                 <td>{{ $completeProject->project_category_slug }}</td>
-                <td><img src="{{ asset('image/project') }}/{{ $completeProject->project_header_image }}" alt="{{ $completeProject->project_name }}" height="80px" width="80px"></td>
+                <td><img src="{{ asset('image/project') }}/{{ $completeProject->project_header_image }}" alt="{{ $completeProject->project_name }}" height="60px" width="80px"></td>
                 <td>
-                    <a href="" class="btn btn-secondary">Update</a>
-                    <a href="" class="btn btn-danger">Delete</a>
+                    <div class="button-group">
+                        <a href="{{ route('SupUser.ProjectUpdate',['project_id'=>$completeProject->id,'project_slug'=>$completeProject->project_slug]) }}" class="btn btn-secondary btn-sm">Update</a>
+                        <a href="" class="btn btn-danger btn-sm">Archive</a>
+                    </div>
                 </td>
             </tr>
             @endforeach

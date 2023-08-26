@@ -27,16 +27,24 @@
             </div>
         </div>
         <div class="card-body">
-            <div class="text-danger">
-                @if (Session::get('err'))
-                    <b>{{ Session::get('err') }}</b>
+            
+            
+                @if (Session::get('ProjectInsertComplete'))
+                    <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
+                        role="alert">
+                        {{ Session::get('ProjectInsertComplete') }}
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
                 @endif
-            </div>
-            <div class="text-info">
-                @if (Session::get('succ'))
-                    <b>{{ Session::get('succ') }}</b>
+                @if (Session::get('ProjectInsertFailed'))
+                    <div class="alert alert-primary bg-warning text-light border-0 alert-dismissible fade show"
+                        role="alert">
+                        {{ Session::get('ProjectInsertFailed') }}
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div>
                 @endif
-            </div>
             <div class="">
                 @if ($errors->all())
                     <span class="text-danger">
