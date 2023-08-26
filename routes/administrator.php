@@ -78,8 +78,10 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::get('Product-and-service/index',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'index'])->name('SupUser.ProductSerIndex');
     Route::get('Product-and-service/insert',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'insertCheck'])->name('SupUser.ProductSerInsertChk');
     Route::post('Product-and-service/insert/save',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'insert'])->name('SupUser.ProductSerInsert');
-    Route::get('Product-and-service/archive',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'archive'])->name('SupUser.ProductSerArchive');
+    Route::get('Product-and-service/archive/list',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'archiveList'])->name('SupUser.ProductSerArchiveList');
+    Route::post('Product-and-service/archive',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'archive'])->name('SupUser.ProductSerArchive');
     Route::get('Product-and-service/trash',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'trush'])->name('SupUser.ProductSertrush');
+    Route::get('product-and-service/{product_id}/{product_slug}/update',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'UpdateShowPro'])->name('SupUser.ProductServiceUpdateGetlink');
     Route::post('product-and-service/update',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'Update'])->name('SupUser.ProductServiceUpdate');
     Route::post('product-and-service/delete',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'delete'])->name('SupUser.ProductServiceDelete');
 

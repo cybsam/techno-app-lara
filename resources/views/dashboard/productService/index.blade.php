@@ -42,8 +42,8 @@
                     <td>
                         <div class="button-group">
                             <a href="{{ route('SupUserProduct.SubMenuShow',['menu_slug'=>$productService->__proserslug]) }}" class="btn btn-primary btn-sm">View</a>
-                            <button type="button" value="{{ $productService->id }}" class="btn btn-warning btn-sm">Update</button>
-                            <button type="button" value="{{ $productService->id }}" class="btn btn-danger delteProDuctService btn-sm">Delete</button>
+                            <a href="{{ route('SupUser.ProductServiceUpdateGetlink',['product_id'=>$productService->id,'product_slug'=>$productService->__proserslug]) }}" class="btn btn-warning btn-sm">Update</a>
+                            <button type="button" value="{{ $productService->id }}" class="btn btn-danger delteProDuctService btn-sm">Archive</button>
                         </div>
                     </td>
                 </tr>
