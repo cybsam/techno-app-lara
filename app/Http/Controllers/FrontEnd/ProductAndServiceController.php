@@ -14,16 +14,26 @@ class ProductAndServiceController extends Controller
         $fetchPro = ProductService::where('__proserslug',$proSlug)->first();
 
         if ($fetchPro) {
+            $currentUrl = URL()->current();
+            $productName = $fetchPro->__prosername;
+            $socialShareUrl = \Share::page(
+                $currentUrl,
+                $productName,
+            )->facebook()
+             ->twitter()
+             ->linkedin()
+             ->whatsapp()
+             ->reddit()
+             ->telegram();
             return view('FrontEndView.product-service.details',[
                 'fetchPro'=>$fetchPro,
+                'socialShareUrl'=>$socialShareUrl,
             ]);
         }else{
             abort(404);
         }
 
-        // return view('FrontEndView.product-service.details',[
-        //     'fetchPro'=>$fetchPro,
-        // ]);
+        
     }
 
     public function SubProductFetch(Request $request, $s_slug, $sub_slug){

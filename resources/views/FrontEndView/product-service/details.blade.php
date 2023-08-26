@@ -49,6 +49,20 @@
                             <img src="{{ asset('image/productservice') }}/{{ $fetchPro->__proserheadimage }}" alt="">
                         </div>
                         <p>{!! $fetchPro->__proserdescription !!}</p>
+                        <style>
+                            div#social-links ul li{
+                                display: inline-block;
+                            }
+                            div#social-links ul li a{
+                                padding: 10px;
+                                margin: 1px;
+                                font-size: 30px;
+
+                            }
+                        </style>
+                        <div>
+                            {!! $socialShareUrl !!}
+                        </div>
                     </div>
                 </div>
 
