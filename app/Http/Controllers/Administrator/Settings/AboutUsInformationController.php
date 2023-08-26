@@ -34,7 +34,7 @@ class AboutUsInformationController extends Controller
     }
 
     public function updateInformation(Request $request){
-        dd($request->all());
+        
         $aboutUsInfoId = $request->input('id');
         $aboutUsInfoDbCheck = AboutUsInformation::where('id',$aboutUsInfoId)->update([
             'company_name'=>$request->input('company_name'),
@@ -58,7 +58,7 @@ class AboutUsInformationController extends Controller
             'user_id'=>Auth::user()->id,
         ]);
 
-        return redirect()->back()->with('informatioUpdateSuccess','Update Success');
+        return redirect()->back()->with('informatioUpdateSuccess','About us, our information update successfully.');
 
     }
 }
