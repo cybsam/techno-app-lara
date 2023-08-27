@@ -65,10 +65,12 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::get('Project/{project_id}/{project_slug}/Update',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectUpdate'])->name('SupUser.ProjectUpdate');
     Route::post('Project/Update/save',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectUpdateCom'])->name('SupUser.ProjectUpdateCont');
     Route::post('Project/Delete',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectDelete'])->name('SupUser.ProjectDelete');
-    
+    Route::post('Project/archive/',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectArchive'])->name('SupUserProjectArchivePost');
     Route::get('Project/On-going',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectOnGoing'])->name('SupUser.ProjectOnGoing');
     Route::get('Project/Complete',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectComplete'])->name('SupUser.ProjectComplete');
-    
+    Route::get('Project/project/archive',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectArchiveList'])->name('SupUser.projectArchiveList');
+    Route::post('Project/project/archive/delete',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectArchiveDelete'])->name('SupUser.projectDelteFromDb');
+    Route::post('Project/project/archive/restore',[App\Http\Controllers\Administrator\Project\ProjectController::class, 'ProjectArchiveRestore'])->name('SupUser.projectRestoreFromDB');
     //  category
     Route::get('Project/Category/Index',[App\Http\Controllers\Administrator\Project\ProjectCategoryController::class, 'showCategory'])->name('SupUser.ProjectCategoryShow');
     Route::post('Project/Category/Insert',[App\Http\Controllers\Administrator\Project\ProjectCategoryController::class, 'ProjectCategoryInsert'])->name('SupUser.ProjectCategoryInsert');

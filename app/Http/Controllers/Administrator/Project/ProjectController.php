@@ -178,4 +178,43 @@ class ProjectController extends Controller
             }
         }
     }
+
+    public function ProjectArchive(Request $request){
+        $archiveId = $request->input('ProjectArchiveModalId');
+        Project::where('id',$archiveId)->update([
+            'is_ongoing'=>2,
+        ]);
+        return redirect()->back()->with('ProjectArchiveComplete','Project Archive Complete, check it now!');
+    }
+
+    public function ProjectArchiveList(){
+        $archiveProjectList = Project::where('is_ongoing',2)->get()->reverse();
+        return view('dashboard.project.archiveproject',[
+            'archiveProjectList'=>$archiveProjectList,
+        ]);
+    }
+
+    public function ProjectArchiveRestore(Request $request){
+        $restoreId = $request->input('ProjectRestoreBTNId');
+        $restoreFromDb = Project::where('id',$restoreId)->update(['is_ongoing'=>0]);
+        if($restoreFromDb){
+            return redirect()->back()->with('ProjectRestoreComplete','Project Restore Complete, make sure check in complete link!');
+        }else{
+            abort(403);
+        }
+    }
+
+    public function ProjectArchiveDelete(Request $request){
+        $deleteId = $request->input('ProjectDeleteBTNId');
+        $deleteFromDbProject = Project::where('id',$deleteId)->first();
+        $dbImage = $deleteFromDbProject->project_header_image;
+        $deleteImageFromLocation = base_path('public/image/project/'.$dbImage);
+        unlink($deleteImageFromLocation);
+        $deleteFromDbProject->delete();
+        if($deleteFromDbProject){
+            return redirect()->back()->with('ProjectDeleteComplete','Project Delete Complete!');
+        }else{
+            abort(403);
+        }
+    }
 }

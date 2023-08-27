@@ -35,8 +35,8 @@
                 <td><img src="{{ asset('image/project') }}/{{ $onGoingProject->project_header_image }}" alt="{{ $onGoingProject->project_name }}" height="40px" width="80px"></td>
                 <td>
                     <div class="button-group">
-                        <a href="{{ route('SupUser.ProjectUpdate',['project_id'=>$onGoingProject->id,'project_slug'=>$onGoingProject->project_slug]) }}" class="btn btn-secondary">Update</a>
-                        <a href="" class="btn btn-danger">Archive</a>
+                        <a href="{{ route('SupUser.ProjectUpdate',['project_id'=>$onGoingProject->id,'project_slug'=>$onGoingProject->project_slug]) }}" class="btn btn-secondary btn-sm">Update</a>
+                        <button type="button" value="{{ $onGoingProject->id }}" class="btn btn-danger btn-sm ProjectArchiveButton">Archive</button>
                     </div>
                 </td>
             </tr>
@@ -47,5 +47,8 @@
 
 
 
-
+@include('dashboard.project.partials.modal')
+@endsection
+@section('js')
+@include('dashboard.project.partials.js')
 @endsection

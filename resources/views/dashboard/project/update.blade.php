@@ -26,9 +26,10 @@
 
                         <a href="{{ route('SupUser.ProjectCategoryShow') }}" class="btn btn-success">Project Category
                             List</a>
-                        <div class="float-right">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#projectcategory">+ Project Category</button>
+                        <div class="float-right">
+                            <a href="{{ URL::previous() }}" class="btn btn-secondary">Return Back</a>
                         </div>
                     </div>
                     <div class="card-body">

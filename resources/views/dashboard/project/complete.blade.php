@@ -14,7 +14,14 @@
             </ol>
         </nav>
     </div>
-
+    @if (Session::get('ProjectArchiveComplete'))
+    <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
+        role="alert">
+        {{ Session::get('ProjectArchiveComplete') }}
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+            aria-label="Close"></button>
+    </div>
+@endif
     <table class="table table-hover datatable table-sm">
         <thead>
             <tr>
@@ -31,11 +38,11 @@
                 <td>{{ $completeProject->id }}</td>
                 <td><a href="{{ route('SupUser.ProjectUpdate',['project_id'=>$completeProject->id,'project_slug'=>$completeProject->project_slug]) }}">{{ $completeProject->project_name }}</a></td>
                 <td>{{ $completeProject->project_category_slug }}</td>
-                <td><img src="{{ asset('image/project') }}/{{ $completeProject->project_header_image }}" alt="{{ $completeProject->project_name }}" height="60px" width="80px"></td>
+                <td><img src="{{ asset('image/project') }}/{{ $completeProject->project_header_image }}" alt="{{ $completeProject->project_name }}" height="35px" width="80px"></td>
                 <td>
                     <div class="button-group">
                         <a href="{{ route('SupUser.ProjectUpdate',['project_id'=>$completeProject->id,'project_slug'=>$completeProject->project_slug]) }}" class="btn btn-secondary btn-sm">Update</a>
-                        <a href="" class="btn btn-danger btn-sm">Archive</a>
+                        <button type="button" value="{{ $completeProject->id }}" class="btn btn-danger btn-sm ProjectArchiveButton">Archive</button>
                     </div>
                 </td>
             </tr>
@@ -44,5 +51,8 @@
     </table>
 
 
-
+@include('dashboard.project.partials.modal')
+@endsection
+@section('js')
+@include('dashboard.project.partials.js')
 @endsection

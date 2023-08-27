@@ -100,6 +100,12 @@
                             <i class="bi bi-circle"></i><span>Insert New Project</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="{{ route('SupUser.projectArchiveList') }}"
+                            class="@if (url()->current() == route('SupUser.projectArchiveList')) active @endif">
+                            <i class="bi bi-circle"></i><span>Archive Project List</span>
+                        </a>
+                    </li>
                     {{-- <li>
                         <a href="">
                             <i class="bi bi-circle"></i><span>Archive Project</span>
