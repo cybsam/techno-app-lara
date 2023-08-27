@@ -92,7 +92,7 @@
                 <hr>
                 <div class="form-group mt-2">
                     <label for="">__Project Keywords: ( , )<b class="text-danger">**</b></label>
-                    <input type="text" name="project_keyword" value="{{ old('project_name') }}" class="form-control" id="project_keyword" required="required">
+                    <input type="text" name="project_keyword" value="{{ old('project_keyword') }}" class="form-control" id="project_keyword" required="required">
                     <div class="text-danger">
                         @error('project_name')
                             <b>{{ $message }}</b>
@@ -101,7 +101,7 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="">__Project Scope: <b class="text-danger">*</b></label>
-                    <textarea class="form-control"  name="project_scope" id="project_scope">{{ old('project_name') }}</textarea>
+                    <textarea class="form-control"  name="project_scope" id="project_scope">{{ old('project_scope') }}</textarea>
                     <div class="text-danger">
                         @error('project_name')
                             <b>{{ $message }}</b>
@@ -110,7 +110,7 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="">__Project Type: <b class="text-danger">*</b></label>
-                    <textarea name="project_type"  id="project_type" class="form-control">{{ old('project_name') }}</textarea>
+                    <textarea name="project_type"  id="project_type" class="form-control">{{ old('project_type') }}</textarea>
                     <div class="text-danger">
                         @error('project_name')
                             <b>{{ $message }}</b>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="form-group mt-2">
                     <label for="">__Project Location <span class="text-warning">(if have location then insert or leave it blank)</span></label>
-                    <input type="text" name="project_location" value="{{ old('project_name') }}" id="project_location" class="form-control" placeholder="Ex. ho:226, rd:03, ave:01, mirpur 12">
+                    <input type="text" name="project_location" value="{{ old('project_location') }}" id="project_location" class="form-control" placeholder="Ex. ho:226, rd:03, ave:01, mirpur 12">
                     <div class="text-danger">
                         @error('project_location')
                             <b>{{ $message }}</b>

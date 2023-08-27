@@ -24,7 +24,7 @@ class ProjectController extends Controller
     public function ProjectInsert(Request $request){
         $request->validate([
             'project_name'=>['required'],
-            'project_header_image'=>['required','mimes:jpg,jped,png,ico,gif','max:3000'],
+            'project_header_image'=>['required','mimes:jpg,jpeg,png,ico,gif','max:3000'],
             // 'project_category_slug'=>['required'],
             'project_keyword'=>['required'],
             'project_scope'=>['required'],
