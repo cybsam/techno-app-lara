@@ -44,6 +44,18 @@
                               <img src="{{ asset('image/project') }}/{{ $projectDetaisView->project_header_image }}" alt="Slider">
                         </div>
                         <p class="margin-0 mt-5">{!! $projectDetaisView->project_description !!}</p>
+                        <style>
+                            div#social-links ul li{
+                                display: inline-block;
+                            }
+                            div#social-links ul li a{
+                                padding: 10px;
+                                margin: 1px;
+                                font-size: 30px;
+
+                            }
+                        </style>
+                        <p>{!! $socialShareProject !!}</p>
                         
                     </div>
                    
