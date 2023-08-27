@@ -34,28 +34,28 @@ class ProjectController extends Controller
             abort(404);
         }
 
-        
     }
 
     public function ProjectDetailsShow(Request $request, $project_slug){
         $project_slug = $project_slug;
         $projectDetaisView =  Project::where('project_slug',$project_slug)->first();
 
-        // share project
-        $currentUrl = URL()->current();
-        $projectHeader = $projectDetaisView->project_name;
-
-        $socialShareProject = \Share::page(
-            $currentUrl,
-            $projectHeader
-        )->facebook()
-        ->twitter()
-        ->linkedin()
-        ->whatsapp()
-        ->reddit()
-        ->telegram();
+        
 
         if ($projectDetaisView) {
+            // share project
+            $currentUrl = URL()->current();
+            $projectHeader = $projectDetaisView->project_name;
+
+            $socialShareProject = \Share::page(
+                $currentUrl,
+                $projectHeader
+            )->facebook()
+            ->twitter()
+            ->linkedin()
+            ->whatsapp()
+            ->reddit()
+            ->telegram();
             return view('FrontEndView.project.project-details',[
                 'projectDetaisView'=>$projectDetaisView,
                 'socialShareProject'=>$socialShareProject,
