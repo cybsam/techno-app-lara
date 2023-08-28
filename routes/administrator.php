@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Auth;
 Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventbackhistory','isVerifyEmail'])->group(function(){
     Route::get('Dashboard', [App\Http\Controllers\Administrator\DashboardController::class, 'index'])->name('Administrator.index');
     Route::get('Dashboard/profile',[App\Http\Controllers\Administrator\DashboardController::class,'UserProfile'])->name('SupUser.Profile');
+    Route::post('Dashboard/profile/update/',[App\Http\Controllers\Administrator\DashboardController::class,'UserProfileUpdateNameImage'])->name('SupUser.ProfileUpdateNameImage');
+    Route::post('Dashboard/profile/update/password',[App\Http\Controllers\Administrator\DashboardController::class,'UserProfileUpdatePassword'])->name('SupUser.ProfileUpdatePassword');
+    
     //user 
     Route::get('Users/List',[App\Http\Controllers\Administrator\UsersController::class, 'index'])->name('SupUser.ListUsers');
     Route::post('User/add',[App\Http\Controllers\Administrator\UsersController::class, 'addNewUser'])->name('SupUser.AddNewUser');

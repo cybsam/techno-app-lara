@@ -44,7 +44,7 @@
                             
 
                             <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit
+                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit
                                     Profile</button>
                             </li>
 
@@ -82,10 +82,10 @@
                                 @endif
                             
 
-                            <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                            <div class="tab-pane fade show active profile-edit pt-3" id="profile-edit">
 
                                 <!-- Profile Edit Form -->
-                                <form action="" method="POST"
+                                <form action="{{ route('SupUser.ProfileUpdateNameImage') }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
                                     <div class="row mb-3">
@@ -95,8 +95,10 @@
                                             <img src="{{ asset('image/users') }}/{{ Auth::user()->user_image }}"
                                                 alt="Profile">
                                             <div class="pt-2">
-                                                <a href="#" class="btn btn-primary btn-sm"
-                                                    title="Upload new profile image"><i class="bi bi-upload"></i></a>
+                                                
+                                                    <input type="file" name="profileImageUpload" id="profileImageUpload" class="btn btn-primary btn-sm">
+                                                
+                                                    
                                                 <a href="#" class="btn btn-danger btn-sm"
                                                     title="Remove my profile image"><i class="bi bi-trash"></i></a>
                                             </div>
