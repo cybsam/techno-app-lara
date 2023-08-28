@@ -16,7 +16,7 @@
     <div class="card">
         <div class="card-header">
             <div class="float-right">
-                <a href="" class="btn btn-warning">Update</a>
+                <a href="{{ route('SupUser.AboutUsIndexShow') }}" class="btn btn-warning">Update</a>
             </div>
         </div>
         <div class="card-body">

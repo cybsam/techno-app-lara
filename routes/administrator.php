@@ -38,8 +38,9 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     // about us
     
     Route::get('About-Us/Index',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'aboutUs'])->name('SupUser.AboutUsIndex');
+    Route::get('About-Us/Index/update/show',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'aboutUsShowData'])->name('SupUser.AboutUsIndexShow');
     Route::post('About-Us/Index/update',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'aboutUsUpdate'])->name('SupUser.AboutUsIndexUpdate');
-    Route::post('About-Us/Index/delete',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'aboutUsDevete'])->name('SupUser.AboutUsIndexDelete');
+    
     
     Route::get('About-Us/Mission&Vission',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'missionAndVission'])->name('SupUser.MissionVission');
     Route::post('About-Us/Mission&Vission/update',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'missionAndVissionUpdate'])->name('SupUser.MissionVissionUpdate');
