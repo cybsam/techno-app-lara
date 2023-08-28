@@ -34,7 +34,7 @@
                         <td>
                             <img src="{{ asset('image/about-us/about-us') }}/{{ $backAbout->image }}" alt="about us" height="100%" width="100%">
                         </td>
-                        <td>{{ $backAbout->description }}</td>
+                        <td>{!! $backAbout->description !!}</td>
                         
                     </tr>
                 </tbody>
