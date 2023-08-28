@@ -64,18 +64,18 @@
                                     @endforeach
                                 </span>
                             @endif
-                            @if (Session::get('success'))
+                            @if (Session::get('userProfileUpdateDone'))
                                     <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
                                         role="alert">
-                                        {{ Session::get('success') }}
+                                        {{ Session::get('userProfileUpdateDone') }}
                                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
                                             aria-label="Close"></button>
                                     </div>
                                 @endif
-                                @if (Session::get('logfail'))
+                                @if (Session::get('userProfileUpdateError'))
                                     <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show"
                                         role="alert">
-                                        {{ Session::get('logfail') }}
+                                        {{ Session::get('userProfileUpdateError') }}
                                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
                                             aria-label="Close"></button>
                                     </div>
@@ -131,7 +131,7 @@
 
                             <div class="tab-pane fade pt-3" id="profile-change-password">
                                 <!-- Change Password Form -->
-                                <form action="" method="POST">
+                                <form action="{{ route('SupUser.ProfileUpdatePassword') }}" method="POST">
                                     @csrf
                                     <div class="row mb-3">
                                         <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current

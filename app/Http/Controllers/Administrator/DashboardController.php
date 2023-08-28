@@ -12,6 +12,7 @@ use App\Models\FrontContact;
 use App\Models\ProductService;
 use Carbon\Carbon as CarbonCarbon;
 use Image;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
@@ -72,7 +73,32 @@ class DashboardController extends Controller
         }
     }
 
-    
+    public function UserProfileUpdatePassword(Request $request){
+        $request->validate([
+            'oldpassword'=>'required',
+            'password'=>'required|confirmed|min:8',
+            'password_confirmation'=>'required',
+        ]);
+
+        if($request->input('oldpassword') == $request->input('password')){
+            return redirect()->back()->with('userProfileUpdateError','Your Old password is not bd your current password!');
+        }else{
+            $oldPasswordFromuser = $request->input('oldpassword');
+            $newPasswordFromUser = $request->input('password');
+
+            $passwordFromDatabase = Auth::user()->password;
+
+            if(Hash::check($oldPasswordFromuser,$passwordFromDatabase)){
+                User::find(Auth::user()->id)->update([
+                    'password' => Hash::make($newPasswordFromUser)
+                ]);
+                return redirect()->back()->with('userProfileUpdateDone','Your Password Update Succesfully...');
+            }else{
+                return back()->withErrors("Password:- Your old password is not correct, please try again.");
+            }
+
+        }
+    }
 
     public function VisitWebSite(){
         return redirect()->route('frontEndIndex');
