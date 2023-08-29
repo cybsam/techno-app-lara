@@ -1,5 +1,5 @@
 @extends('FrontEndView.layouts.frontMaster')
-@section('title', 'Our Concern ~ About Us - Fire Panel Repair & Maintenance BD | Techno Apogee Limited')
+@section('title', 'Our Concern ~ About Us | Techno Apogee')
 @section('content')
 
     

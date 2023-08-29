@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="title" content="@yield('metaTitle')">
         <meta name="description" content="@yield('metaDescription')">
+        {!! SEO::generate() !!}
         <!-- favicon -->
         {{-- <link rel="apple-touch-icon" href="apple-touch-icon.html"> --}}
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('image/FrontEnd/logoFav/fav.png')}}">

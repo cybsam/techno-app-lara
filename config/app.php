@@ -167,6 +167,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
 
         CyrildeWit\EloquentViewable\EloquentViewableServiceProvider::class,
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
         
         /*
          * Package Service Providers...
@@ -238,6 +239,14 @@ return [
         //custom
         'Share' => Jorenvh\Share\ShareFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+
+        'SEOMeta'       => Artesaos\SEOTools\Facades\SEOMeta::class,
+        'OpenGraph'     => Artesaos\SEOTools\Facades\OpenGraph::class,
+        'Twitter'       => Artesaos\SEOTools\Facades\TwitterCard::class,
+        'JsonLd'        => Artesaos\SEOTools\Facades\JsonLd::class,
+        'JsonLdMulti'   => Artesaos\SEOTools\Facades\JsonLdMulti::class,
+        // or
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
 
     ],
 
