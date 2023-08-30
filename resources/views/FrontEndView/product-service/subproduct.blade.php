@@ -1,7 +1,7 @@
 @extends('FrontEndView.layouts.frontMaster')
-@section('title', 'Product and Service Details ~ Product And Service - Fire Panel Repair & Maintenance BD | Techno Apogee Limited')
-@section('metaTitle'," {{ $__fetchFromDb->__prosername }} ")
-@section('metaDescription'," {{ $__fetchFromDb->__proserkeyword }} ")
+{{-- @section('title', 'Product and Service Details ~ Product And Service - Fire Panel Repair & Maintenance BD | Techno Apogee Limited') --}}
+{{-- @section('metaTitle'," {{ $__fetchFromDb->__prosername }} ") --}}
+{{-- @section('metaDescription'," {{ $__fetchFromDb->__proserkeyword }} ") --}}
 @section('cssFront')
 
 

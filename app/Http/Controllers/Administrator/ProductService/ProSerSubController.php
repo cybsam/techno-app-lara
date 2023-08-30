@@ -47,7 +47,7 @@ class ProSerSubController extends Controller
             $headerImage = $request->file('__proserheadimage');
             $ImageNewName = $productSlug.'-'.$input['__prosermaincateslug'].'-'.$randstr.'.'.$headerImage->getClientOriginalExtension();
             $uploadLocation = base_path('public/image/productservice/subproduct/'.$ImageNewName);
-            Image::make($headerImage)->save($uploadLocation);
+            Image::make($headerImage)->resize(1000,750)->save($uploadLocation);
 
             $insDbProSub = new ProductServiceSub();
             $insDbProSub->__prosername = $input['__prosername'];

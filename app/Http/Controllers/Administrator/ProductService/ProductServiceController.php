@@ -48,7 +48,7 @@ class ProductServiceController extends Controller
                 $headerImage = $request->file('__proserheadimage');
                 $headerImageNewName = $productSlug.'-'.$afterMenuVal[1].'-'.$randstr.'.'.$headerImage->getClientOriginalExtension();
                 $uploadLocation = base_path('public/image/productservice/'.$headerImageNewName);
-                Image::make($headerImage)->save($uploadLocation);
+                Image::make($headerImage)->resize(1000,750)->save($uploadLocation);
                 $insPro = new ProductService();
                 $insPro->__prosername = $input['__prosername'];
                 $insPro->__proserslug = $productSlug;
