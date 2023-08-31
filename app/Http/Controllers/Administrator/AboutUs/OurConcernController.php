@@ -83,6 +83,8 @@ class OurConcernController extends Controller
                 $oldLocation = base_path('public/image/about-us/our-concern/'.$dbImage);
                 unlink($oldLocation);
 
+                Image::make($request->file('concernImage'))->save($newLocation);
+
                 // update database
                 $updaSucc =  OurConcern::where('id',$concernId)->update([
                     'concern_image'=>$imageNewName,
