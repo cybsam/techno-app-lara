@@ -44,7 +44,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     
     Route::get('About-Us/Mission&Vission',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'missionAndVission'])->name('SupUser.MissionVission');
     Route::post('About-Us/Mission&Vission/update',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'missionAndVissionUpdate'])->name('SupUser.MissionVissionUpdate');
-    Route::post('About-Us/Mission&Vission/delete',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'missionAndVissionDelete'])->name('SupUser.MissionVissionDelete');
+    Route::get('About-Us/Mission&Vission/{mission_vission_id}/update',[App\Http\Controllers\Administrator\AboutUs\AboutUsController::class, 'missionAndVissionShow'])->name('SupUser.MissionVissionShow');
 
     Route::get('About-Us/Our-team/Index',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'index'])->name('SupUser.OurTeam');
     Route::post('Our-team/Index/Insert',[App\Http\Controllers\Administrator\AboutUs\OurTeamController::class, 'teamInsert'])->name('SupUser.OurTeamInsert');

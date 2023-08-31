@@ -16,7 +16,7 @@
     <div class="card">
         <div class="card-header">
             <div class="float-right">
-                <a href="" class="btn btn-warning">Update</a>
+                <a href="{{ route('SupUser.MissionVissionShow',['mission_vission_id'=>$backView->id]) }}" class="btn btn-primary">Update Mission and Vission</a>
             </div>
         </div>
         <div class="card-body">

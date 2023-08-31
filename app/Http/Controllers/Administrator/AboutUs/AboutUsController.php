@@ -76,4 +76,81 @@ class AboutUsController extends Controller
         $backView = MissionAndVission::where('id','1')->first();
         return view('dashboard.about-us.our-mission-vission.index',['backView'=>$backView]);
     }
+
+    public function missionAndVissionShow($mission_vission_id){
+        $id = $mission_vission_id;
+        if($id != 1){
+            abort(403);
+        }else{
+            $backView = MissionAndVission::where('id','1')->first();
+            return view('dashboard.about-us.our-mission-vission.update',[
+                'backView'=>$backView,
+            ]);
+        }
+    }
+
+    public function missionAndVissionUpdate(Request $request){
+        $request->validate([
+            'keyword'=>['required'],
+            'missionDescription'=>['required'],
+            'vissionDescription'=>['required'],
+        ]);
+
+        if($request->hasFile('missionImage') || $request->hasFile('vissionImage')){
+            $request->validate([
+                'missionImage'=>['mimes:png,jpg,jpeg,gif,ico,csv'],
+                'vissionImage'=>['mimes:png,jpg,jpeg,gif,ico,csv'],
+            ]);
+            $checkDBImg = MissionAndVission::where('id','1')->first();
+            $old_pathMissionImage = base_path('public/image/about-us/mission-vission/'.$checkDBImg->mission_image);
+            $oldPathVissionImage = base_path('public/image/about-us/mission-vission/'.$checkDBImg->vission_image);
+            if($request->hasFile('missionImage')){
+                $NewImageName = 'missionImage'.'.'.$request->file('missionImage')->getClientOriginalExtension();
+                $newImageLink = base_path('public/image/about-us/mission-vission/'.$NewImageName);
+                unlink($old_pathMissionImage);
+                Image::make($request->file('missionImage'))->save($newImageLink);
+                $miss = MissionAndVission::where('id','1')->update([
+                    'mission_description'=>$request->input('missionDescription'),
+                    'mission_image'=>$NewImageName,
+                    'vission_description'=>$request->input('vissionDescription'),
+                    'mission_vission_keyword'=>$request->input('keyword'),
+                    'added_by'=>Auth::user()->id.'-'.Auth::user()->name,
+                ]);
+                if($miss){
+                    return redirect()->back()->with('MissionVissionUpdateComplete','Mission and vission update complete!');
+                }else{
+                    return redirect()->back()->with('MissionVissionUpdateError','Something went wrong!');
+                }
+            }elseif($request->hasFile('vissionImage')){
+                $NewImageName = 'vissionImage'.'.'.$request->file('vissionImage')->getClientOriginalExtension();
+                $newImageLink = base_path('public/image/about-us/mission-vission/'.$NewImageName);
+                unlink($oldPathVissionImage);
+                Image::make($request->file('vissionImage'))->save($newImageLink);
+                $miss = MissionAndVission::where('id','1')->update([
+                    'mission_description'=>$request->input('missionDescription'),
+                    'vission_image'=>$NewImageName,
+                    'vission_description'=>$request->input('vissionDescription'),
+                    'mission_vission_keyword'=>$request->input('keyword'),
+                    'added_by'=>Auth::user()->id.'-'.Auth::user()->name,
+                ]);
+                if($miss){
+                    return redirect()->back()->with('MissionVissionUpdateComplete','Mission and vission update complete!');
+                }else{
+                    return redirect()->back()->with('MissionVissionUpdateError','Something went wrong!');
+                }
+            }
+        }else{
+            $miss = MissionAndVission::where('id','1')->update([
+                'mission_description'=>$request->input('missionDescription'),
+                'vission_description'=>$request->input('vissionDescription'),
+                'mission_vission_keyword'=>$request->input('keyword'),
+                'added_by'=>Auth::user()->id.'-'.Auth::user()->name,
+            ]);
+            if($miss){
+                return redirect()->back()->with('MissionVissionUpdateComplete','Mission and vission update complete!');
+            }else{
+                return redirect()->back()->with('MissionVissionUpdateError','Something went wrong!');
+            }
+        }
+    }
 }
