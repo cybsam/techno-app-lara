@@ -54,7 +54,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::get('About-Us/our-concern',[App\Http\Controllers\Administrator\AboutUs\OurConcernController::class, 'bckIndex'])->name('SupUser.OurConcernBck');
     Route::post('About-Us/our-concern/insert',[App\Http\Controllers\Administrator\AboutUs\OurConcernController::class, 'bckIndexInsert'])->name('SupUser.OurConcernBckInsert');
     Route::post('About-Us/our-concern/update',[App\Http\Controllers\Administrator\AboutUs\OurConcernController::class, 'bckIndexUpdate'])->name('SupUser.OurConcernBckUpdate');
-    Route::post('About-Us/our-concern/delete',[App\Http\Controllers\Administrator\AboutUs\OurConcernController::class, 'bckIndexDelete'])->name('SupUser.OurConcernBckDelete');
+    Route::get('About-Us/our-concern/{concern_id}/update/show',[App\Http\Controllers\Administrator\AboutUs\OurConcernController::class, 'bckIndexUpdateShow'])->name('SupUser.OurConcernBckUpdateShow');
 
     Route::get('About-us/our-expertise',[App\Http\Controllers\Administrator\AboutUs\ExpertiseController::class, 'expertiseIndex'])->name('SupUser.OurExpertiseIndex');
     Route::post('About-us/our-expertise/store',[App\Http\Controllers\Administrator\AboutUs\ExpertiseController::class, 'expertiseStore'])->name('SupUser.OurExpertiseStore');
