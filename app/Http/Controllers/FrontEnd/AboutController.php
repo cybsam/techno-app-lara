@@ -109,10 +109,10 @@ class AboutController extends Controller
         $support_team_electrical_maintenance = AboutOurTeam::where('department','support-team-electrical-maintenance')->get();
         $development = AboutOurTeam::where('department','development')->get();
 
-        SEOTools::setTitle('Our Expertise');
+        SEOTools::setTitle('Our Team');
         SEOTools::setDescription('We manage complex projects offering results that fit our client’s needs including general contracting, design, construction management, business development, feasibility studies and production planning among others. We are committed to continuous training and instruction to ensure a safe working environment for our employees and the clients we serve. We also provide a full range of virtual design and construction services, as well as the latest in smart mapping and computerized modeling with our In house expert and chartered highly qualified expert consultant.');
         SEOTools::opengraph()->setUrl(url::current());
-        SEOTools::setCanonical('https://codecasts.com.br/lesson');
+        SEOTools::setCanonical('');
         SEOTools::opengraph()->addProperty('type', 'expertise');
         SEOTools::twitter()->setSite('cybsam');
         SEOTools::jsonLd()->addImage(URL::current());

@@ -1,5 +1,5 @@
 @extends('FrontEndView.layouts.frontMaster')
-@section('title', 'our mission and Vission | Techno Apogee')
+{{-- @section('title', 'our mission and Vission | Techno Apogee') --}}
 {{-- @section('metaTitle','Techno Apogee Mission And Vission, Techno Apogee Limited, Apogee Engineering Limited, Apogee Consulting Limited') --}}
 {{-- @section('metaDescription',"{{ $missionAndVission->mission_vission_keyword }}") --}}
 @section('content')
@@ -58,7 +58,7 @@
                 
                     <div class="col-lg-6">
                         <div class="weDo">
-                            <img src="{{asset('image/fontend/img/vission.jpg')}}" alt="">
+                            <img src="{{ asset('image/about-us/mission-vission') }}/{{ $missionAndVission->vission_image }}" alt="">
                         </div>
                     </div>
 
