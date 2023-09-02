@@ -45,13 +45,13 @@
             @foreach ($ProductServiceSubMenu as $key => $ProductServiceSubMenu)
                 <tr>
                     <td>{{ $ProductServiceSubMenu->id }}</td>
-                    <td><a href="">{{ $ProductServiceSubMenu->__proserslug }}</a></td>
+                    <td><a href="{{ route('SupUserProduct.SubMenuUpdateShow',['subProUpdate_slug'=>$ProductServiceSubMenu->__proserslug]) }}">{{ $ProductServiceSubMenu->__proserslug }}</a></td>
                     <td><img src="{{ asset('image/productservice/subproduct') }}/{{ $ProductServiceSubMenu->__proserheadimage }}" height="55px" width="55px" alt="{{ $ProductServiceSubMenu->__prosername }}"></td>
                     <td>{{ $ProductServiceSubMenu->__prosermaincateslug }}</td>
                     <td>
                         <div class="button-group">
                             
-                            <a href="" class="btn btn-warning btn-sm">Update</a>
+                            <a href="{{ route('SupUserProduct.SubMenuUpdateShow',['subProUpdate_slug'=>$ProductServiceSubMenu->__proserslug]) }}" class="btn btn-warning btn-sm">Update</a>
                             <button type="button" value="{{ $ProductServiceSubMenu->id }}" class="btn btn-danger deleteProductServiceSub btn-sm">Delete</button>
                         </div>
                     </td>
