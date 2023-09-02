@@ -12,6 +12,7 @@ class AboutUsInformation extends Model
         'company_name',
         'company_web',
         'company_email',
+        'company_email_1',
         'company_office_time',
         'company_header',
         'company_description',

@@ -18,6 +18,7 @@ class CreateAboutUsInformationTable extends Migration
             $table->string('company_name')->nullable();
             $table->string('company_web')->nullable();
             $table->string('company_email')->nullable();
+            $table->string('company_email_1')->nullable();
             $table->string('company_office_time')->nullable();
             $table->string('company_header')->nullable();
             $table->longText('company_description')->nullable();
