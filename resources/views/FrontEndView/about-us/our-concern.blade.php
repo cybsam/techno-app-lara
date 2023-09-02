@@ -20,7 +20,7 @@
                 @foreach ($fetchFromDb as $key => $fetchConcern)
                 <div class="col-lg-4 ">
                     <div class="ourConcern">
-                        <img src="{{ asset('image/about-us/our-concern') }}/{{ $fetchConcern->concern_image }}" alt="{{ $fetchConcern->concern_name }}">
+                        <img src="{{ asset('image/about-us/our-concern') }}/{{ $fetchConcern->concern_image }}" width="100%" height="100px" alt="{{ $fetchConcern->concern_name }}">
                         <p>{!! $fetchConcern->concern_description !!}.</p>
                     </div>
                 </div>

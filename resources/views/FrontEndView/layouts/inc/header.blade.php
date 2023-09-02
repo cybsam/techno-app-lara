@@ -85,7 +85,7 @@
                                                   <li>
                                                       <div class="sub-menu-mega">
                                                           <div class="meu-item " style="padding-left: 56px;">
-                                                              <a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">DESIGN & CONSULTANCY SERVICES</a>
+                                                              {{-- <a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">DESIGN & CONSULTANCY SERVICES</a> --}}
                                                               
                                                               <ul>
                                                                   @foreach ($productAndServiceDesign as $ProductDesign)
@@ -94,7 +94,7 @@
                                                               </ul>
                                                           </div>
                                                           <div class="meu-item ">
-                                                              <a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">ELECTRICAL SOLUTION</a>
+                                                              {{-- <a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">ELECTRICAL SOLUTION</a> --}}
                                                               <ul>
                                                                   @foreach ($productAndServiceElectrial as $ElectricalSol)
                                                                       
