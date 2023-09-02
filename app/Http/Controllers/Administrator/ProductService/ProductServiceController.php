@@ -81,11 +81,35 @@ class ProductServiceController extends Controller
     }
 
     public function archiveList(Request $request){
-        return view('dashboard.productService.archive');
+        $listArchive = ProductService::where('is_active',0)->get();
+        return view('dashboard.productService.archive',[
+            'listArchive'=>$listArchive,
+        ]);
     }
 
     public function delete(Request $request){
-        return "window.alert('be carefull')";
+        $id = $request->input('archiveProdiuctDeleteMoffffID');
+        $fetch = ProductService::where('id',$id)->first();
+        if($fetch){
+            $imageURl = base_path('public/image/productservice/'.$fetch->__proserheadimage);
+            unlink($imageURl);
+            $dltFetch = $fetch->delete();
+            if($dltFetch){
+                return redirect()->back()->with('productDelteSucc','Product Delete successfully!');
+            }else {
+                return redirect()->back()->with('productDelteFall','Product Delete unsuccessfully!');
+            }
+        }else{
+            abort(403);
+        }
+    }
+
+    public function Restore(Request $request){
+        $restoreid = $request->input('archiveProdRestoreModffffID');
+        ProductService::where('id',$restoreid)->update([
+            'is_active'=>1
+        ]);
+        return redirect()->back()->with('productDelteSucc','Product Restore Done');
     }
 
     public function UpdateShowPro(Request $request, $product_id, $product_slug){

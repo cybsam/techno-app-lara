@@ -92,6 +92,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::get('product-and-service/{product_id}/{product_slug}/update',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'UpdateShowPro'])->name('SupUser.ProductServiceUpdateGetlink');
     Route::post('product-and-service/update',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'Update'])->name('SupUser.ProductServiceUpdate');
     Route::post('product-and-service/delete',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'delete'])->name('SupUser.ProductServiceDelete');
+    Route::post('product-and-service/Restore',[App\Http\Controllers\Administrator\ProductService\ProductServiceController::class, 'Restore'])->name('SupUser.ProductServiceRestore');
 
     Route::get('product-and-service/sub/{menu_slug}',[App\Http\Controllers\Administrator\ProductService\ProSerSubController::class, 'index'])->name('SupUserProduct.SubMenuShow');
     Route::get('product-and-service/sub/Insert/{menu_slug}',[App\Http\Controllers\Administrator\ProductService\ProSerSubController::class, 'InsertSh'])->name('SupUserProduct.SubMenuInsert');
