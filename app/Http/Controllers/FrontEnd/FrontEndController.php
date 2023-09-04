@@ -10,9 +10,34 @@ use App\Models\AboutOurTeam;
 use App\Models\FrontContact;
 use App\Models\Project;
 
+
+use Illuminate\Support\Facades\URL;
+// seo tools
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\TwitterCard;
+use Artesaos\SEOTools\Facades\JsonLd;
+use Artesaos\SEOTools\Facades\JsonLdMulti;
+use Artesaos\SEOTools\Facades\SEOTools;
+
 class FrontEndController extends Controller
 {
     public function index(){
+        // SEOTools::setTitle('Techno Apogee');
+        $contentDescription = "Techno Apogee started its operation in June 2006 in Dhaka, Bangladesh. We provide the best EPC support in Bangladesh's Fire Electrical & Automation field. We confirm the most precise and cost-effective solution for Government and private sectors in Bangladesh.
+
+        Techno Apogee is continuing its business as a Projects Solution Design, Supplier, and Service provider of a wide range of Fire Safety Solutions, Electrical Solutions, and Automation Solutions.
+        
+        We are the authorized Electronics Safety and Security Association of Bangladesh (ESSAB) member. Moreover, we are also enlisted members of the Fire Service Civil Defense (FSCD) & Department of Inspection for Factories and Establishments (DIFE).";
+
+        $currentURL = URL::current();
+        SEOTools::setDescription($contentDescription);
+        SEOTools::opengraph()->setUrl($currentURL);
+        SEOTools::setCanonical('https://technoapogee.com/en/about-us');
+        SEOTools::opengraph()->addProperty('type', 'Techno Apogee Home Page');
+        SEOTools::twitter()->setSite('@TechnoApogee');
+        SEOTools::jsonLd()->addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
+
         // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
         $frontProjectShow = Project::where('is_ongoing',0)->inRandomOrder()->get();
         return view('FrontEndView.index',[
@@ -24,6 +49,20 @@ class FrontEndController extends Controller
 
 
     Public function contact(){
+        SEOTools::setTitle('Contact Us');
+        $contentDescription = "Techno Apogee started its operation in June 2006 in Dhaka, Bangladesh. We provide the best EPC support in Bangladesh's Fire Electrical & Automation field. We confirm the most precise and cost-effective solution for Government and private sectors in Bangladesh.
+
+        Techno Apogee is continuing its business as a Projects Solution Design, Supplier, and Service provider of a wide range of Fire Safety Solutions, Electrical Solutions, and Automation Solutions.
+        
+        We are the authorized Electronics Safety and Security Association of Bangladesh (ESSAB) member. Moreover, we are also enlisted members of the Fire Service Civil Defense (FSCD) & Department of Inspection for Factories and Establishments (DIFE).";
+
+        $currentURL = URL::current();
+        SEOTools::setDescription($contentDescription);
+        SEOTools::opengraph()->setUrl($currentURL);
+        SEOTools::setCanonical('https://technoapogee.com/en/about-us');
+        SEOTools::opengraph()->addProperty('type', 'Techno Apogee Home Page');
+        SEOTools::twitter()->setSite('@TechnoApogee');
+        SEOTools::jsonLd()->addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
         $AboutUsInformation = AboutUsInformation::where('id',1)->first();
         return view('FrontEndView.Contact.index',[
             'AboutUsInformation'=>$AboutUsInformation,
