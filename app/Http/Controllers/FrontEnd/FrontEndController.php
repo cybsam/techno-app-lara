@@ -23,22 +23,37 @@ use Artesaos\SEOTools\Facades\SEOTools;
 class FrontEndController extends Controller
 {
     public function index(){
-        // SEOTools::setTitle('Techno Apogee');
+        $AboutUsInformation = AboutUsInformation::where('id',1)->first();
         $contentDescription = "Techno Apogee started its operation in June 2006 in Dhaka, Bangladesh. We provide the best EPC support in Bangladesh's Fire Electrical & Automation field. We confirm the most precise and cost-effective solution for Government and private sectors in Bangladesh.
 
         Techno Apogee is continuing its business as a Projects Solution Design, Supplier, and Service provider of a wide range of Fire Safety Solutions, Electrical Solutions, and Automation Solutions.
         
         We are the authorized Electronics Safety and Security Association of Bangladesh (ESSAB) member. Moreover, we are also enlisted members of the Fire Service Civil Defense (FSCD) & Department of Inspection for Factories and Establishments (DIFE).";
-
         $currentURL = URL::current();
-        SEOTools::setDescription($contentDescription);
-        SEOTools::opengraph()->setUrl($currentURL);
-        SEOTools::setCanonical('https://technoapogee.com/en/about-us');
-        SEOTools::opengraph()->addProperty('type', 'Techno Apogee Home Page');
-        SEOTools::twitter()->setSite('@TechnoApogee');
-        SEOTools::jsonLd()->addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
+        SEOMeta::setTitle('Techno Apogee');
+        SEOMeta::setDescription($contentDescription);
+        SEOMeta::addMeta('article:published_time', $AboutUsInformation->create_at, 'property');
+        SEOMeta::addMeta('article:section', 'Techno Apogee', 'property');
+        SEOMeta::addKeyword(['Techno Apogee', 'Techno', 'Apogee', 'Apogee Group', 'Apogee Consultancy', 'Apogee Solution', 'Automation Techno','Solution Apogee','techno','techno apogee']);
 
-        // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
+        OpenGraph::setDescription($contentDescription);
+        OpenGraph::setTitle('Techno Apogee');
+        OpenGraph::setUrl($currentURL);
+        OpenGraph::addProperty('type', 'Techno Apogee');
+        OpenGraph::addProperty('locale', 'pt-br');
+        OpenGraph::addProperty('locale:alternate', ['pt-pt', 'en-us']);
+
+        OpenGraph::addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
+        OpenGraph::addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
+        OpenGraph::addImage(['url' => 'https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG', 'size' => 300]);
+        OpenGraph::addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG', ['height' => 300, 'width' => 300]);
+
+        JsonLd::setTitle('Techno Apogee');
+        JsonLd::setDescription($contentDescription);
+        JsonLd::setType('Techno Apogee');
+        JsonLd::addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
+
+        
         $frontProjectShow = Project::where('is_ongoing',0)->inRandomOrder()->get();
         return view('FrontEndView.index',[
             // 'AboutUsInformation'=>$AboutUsInformation,
@@ -49,7 +64,8 @@ class FrontEndController extends Controller
 
 
     Public function contact(){
-        SEOTools::setTitle('Contact Us');
+        $AboutUsInformation = AboutUsInformation::where('id',1)->first();
+        
         $contentDescription = "Techno Apogee started its operation in June 2006 in Dhaka, Bangladesh. We provide the best EPC support in Bangladesh's Fire Electrical & Automation field. We confirm the most precise and cost-effective solution for Government and private sectors in Bangladesh.
 
         Techno Apogee is continuing its business as a Projects Solution Design, Supplier, and Service provider of a wide range of Fire Safety Solutions, Electrical Solutions, and Automation Solutions.
@@ -57,13 +73,33 @@ class FrontEndController extends Controller
         We are the authorized Electronics Safety and Security Association of Bangladesh (ESSAB) member. Moreover, we are also enlisted members of the Fire Service Civil Defense (FSCD) & Department of Inspection for Factories and Establishments (DIFE).";
 
         $currentURL = URL::current();
-        SEOTools::setDescription($contentDescription);
-        SEOTools::opengraph()->setUrl($currentURL);
-        SEOTools::setCanonical('https://technoapogee.com/en/about-us');
-        SEOTools::opengraph()->addProperty('type', 'Techno Apogee Home Page');
-        SEOTools::twitter()->setSite('@TechnoApogee');
-        SEOTools::jsonLd()->addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
-        $AboutUsInformation = AboutUsInformation::where('id',1)->first();
+
+        // start 2nd seo
+        SEOMeta::setTitle('Contact Us');
+        SEOMeta::setDescription($contentDescription);
+        SEOMeta::addMeta('article:published_time', $AboutUsInformation->create_at, 'property');
+        SEOMeta::addMeta('article:section', 'Techno Apogee', 'property');
+        SEOMeta::addKeyword(['Techno Apogee', 'Techno', 'Apogee', 'Apogee Group', 'Apogee Consultancy', 'Apogee Solution', 'Automation Techno','Solution Apogee','techno','techno apogee']);
+
+        OpenGraph::setDescription($contentDescription);
+        OpenGraph::setTitle('Contact Us');
+        OpenGraph::setUrl($currentURL);
+        OpenGraph::addProperty('type', 'Contact Us Techno Apogee');
+        OpenGraph::addProperty('locale', 'pt-br');
+        OpenGraph::addProperty('locale:alternate', ['pt-pt', 'en-us']);
+
+        OpenGraph::addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
+        OpenGraph::addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
+        OpenGraph::addImage(['url' => 'https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG', 'size' => 300]);
+        OpenGraph::addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG', ['height' => 300, 'width' => 300]);
+
+        JsonLd::setTitle('Contact Us');
+        JsonLd::setDescription($contentDescription);
+        JsonLd::setType('Contact Us Techno Apogee');
+        JsonLd::addImage('https://technoapogee.com/public/image/FrontEnd/logoFav/logo.PNG');
+
+        // end seo part
+        
         return view('FrontEndView.Contact.index',[
             'AboutUsInformation'=>$AboutUsInformation,
         ]);
