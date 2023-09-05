@@ -148,7 +148,7 @@
                         </div>
                     </div>
                     <div class="btn-part">
-                        <a class="readon2" href="#">Learn More <div class="btn-arrow"></div></a>
+                        <a class="readon2" href="{{ route('frontEndIndex.about-us') }}">Learn More <div class="btn-arrow"></div></a>
                     </div>
                 </div>
             </div>
