@@ -1,2 +1,0 @@
-meajore task: user update and user is active button is not working, 
-project slug is un unique, make it unique
