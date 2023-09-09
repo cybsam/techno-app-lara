@@ -81,10 +81,11 @@
                     <div class="row y-middle">
                         <div class="col-lg-6 md-mb-10 text-lg-end text-center order-last">
                             <ul class="copy-right-menu">
+                                <li><a href="{{ route('login') }}">Auth</a></li>
                                 <li><a href="{{ route('frontEndIndex.about-us') }}">About</a></li>
                                 <li><a href="{{ route('FrontEnd.OnGoingProject') }}">Projects</a></li>
                                 <li><a href="">Downloads</a></li>
-                                <li><a href="{{ route('frontEnd.ContactS') }}">Contact</a></li>
+                                <li><a href="{{ route('frontEnd.ContactS') }}">Contact Us</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-6">

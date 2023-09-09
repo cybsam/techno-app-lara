@@ -31,8 +31,8 @@
                             <ul>
                                 <li class="opening"> <em><i class="flaticon-clock"></i>Saturday - Thursday /
                                         {{ $AboutUsInformation->company_office_time }}</em> </li>
-                                <li><a href="{{ route('login') }}">Login</a></li>
-
+                                 
+                                    <li><a href="{{ route('frontEnd.ContactS') }}">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>
