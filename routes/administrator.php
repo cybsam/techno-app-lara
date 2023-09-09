@@ -61,6 +61,13 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::post('About-us/our-expertise/update',[App\Http\Controllers\Administrator\AboutUs\ExpertiseController::class, 'expertiseUpdate'])->name('SupUser.OurExpertiseUpdate');
     Route::post('About-us/our-expertise/delete',[App\Http\Controllers\Administrator\AboutUs\ExpertiseController::class, 'expertiseDelete'])->name('SupUser.OurExpertiseDelete');
 
+    Route::get('About-us/Strategic-Partners/Index',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'IndexPartners'])->name('SupUser.OurStrategicPartners');
+    Route::get('About-us/Strategic-Partners/Insert',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'InsertPartners'])->name('SupUser.OurStrategicPartnersInsert');
+    Route::post('About-us/Strategic-Partners/Insert/save',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'IndexPartnersSave'])->name('SupUser.OurStrategicPartnersInsertSave');
+    Route::get('About-us/Strategic-Partners/{strategic_id}/Update',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'IndexPartnersUpdateSh'])->name('SupUser.OurStrategicPartnersUpdateShow');
+    Route::post('About-us/Strategic-Partners/Update/s',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'IndexPartnersUpdateSave'])->name('SupUser.OurStrategicPartnersUpdateSave');
+    Route::post('About-us/Strategic-Partners/Delete',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'IndexPartnersDelete'])->name('SupUser.OurStrategicPartnersDelete');
+    
     // end about us
 
     // our project
