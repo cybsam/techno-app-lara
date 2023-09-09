@@ -5,11 +5,11 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10">
                             <div class="footer-logo mb-40">
-                                <a href="{{ route('frontEndIndex') }}"><img src="{{ asset('image/FrontEnd/logoFav/logo.png') }}"
-                                        alt=""></a>
+                                <a href="{{ route('frontEndIndex') }}"><img src="{{ asset('image/FrontEnd/logoFav/logo.PNG') }}"
+                                        alt="Techno Apogee"></a>
                             </div>
                             <div class="textwidget white-color pb-40">
-                                <p>{{ $AboutUsInformation->company_description }}.</p>
+                                <p>{{ $AboutUsInformation->company_description }}</p>
                             </div>
                             <ul class="footer-social md-mb-30">
                                 <li>
@@ -54,7 +54,7 @@
                                 <li>
                                     <i class="flaticon-email"></i>
                                     <div class="desc">
-                                        <a href="mailto:{{ $AboutUsInformation->company_email }}">{{ $AboutUsInformation->company_email }}</a>
+                                        <a href="mailto:{{ $AboutUsInformation->company_email_1 }}">{{ $AboutUsInformation->company_email_1 }}</a>
                                     </div>
                                 </li>
                                 <li>
@@ -81,15 +81,15 @@
                     <div class="row y-middle">
                         <div class="col-lg-6 md-mb-10 text-lg-end text-center order-last">
                             <ul class="copy-right-menu">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Our Service</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{{ route('frontEndIndex.about-us') }}">About</a></li>
+                                <li><a href="{{ route('FrontEnd.OnGoingProject') }}">Projects</a></li>
+                                <li><a href="">Downloads</a></li>
+                                <li><a href="{{ route('frontEnd.ContactS') }}">Contact</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-6">
                             <div class="copyright text-lg-start text-center ">
-                                <p>&copy;2006 - <?php echo date('Y'); ?> Techno Apogee Limited | All Rights Reserved.</p>
+                                <p>&copy;2006 - <?php echo date('Y'); ?> Techno Apogee | All Rights Reserved.</p>
                             </div>
                         </div>
                     </div>

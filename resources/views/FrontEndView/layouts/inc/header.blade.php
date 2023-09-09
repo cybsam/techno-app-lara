@@ -154,12 +154,18 @@
                                                   </li>
                                               </ul>
                                           </li>
-                                          <li>
-                                              <a href="{{ route('FrontEndBlog.Index') }}">Blog</a>
-                                          </li>
-                                          <li class="">
-                                              <a href="{{ route('frontEnd.ContactS') }}">Contact</a>
-                                          </li>
+                                          
+                                        <li class="menu-item-has-children">
+                                            <a href="">Downloads</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="">Company Profile</a></li>
+                                                <li><a href="">Enlistment Documents</a></li>
+                                                <li><a href="">Product DataSheet</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('FrontEndBlog.Index') }}">Blogs</a>
+                                        </li>
                                       </ul> <!-- //.nav-menu -->
                                   </nav>
                               </div> <!-- //.main-menu -->
@@ -232,7 +238,7 @@
                       </ul>
                   </li>
                   <li>
-                      <a href="blog.html">Our project</a>
+                      <a href="">Downloads</a>
                   </li>
                   <li>
                     <a href="{{ route('FrontEndBlog.Index') }}">Blog</a>
