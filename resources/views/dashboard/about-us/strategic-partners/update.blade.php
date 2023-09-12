@@ -1,4 +1,3 @@
-
 @extends('layouts.SupUserMaster')
 @section('title', 'Strategic Partners Update ~ About Us - Techno Apogee')
 @section('SupUserContent')
@@ -13,19 +12,35 @@
             </ol>
         </nav>
     </div>
+    @if (Session::get('StrategicPartnersUpdateDone'))
+        <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+            {{ Session::get('StrategicPartnersUpdateDone') }}
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    @if (Session::get('strategicPartnersUpdateFailed'))
+        <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+            {{ Session::get('strategicPartnersUpdateFailed') }}
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
 
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ route('SupUser.OurStrategicPartnersUpdateSave') }}" method="post"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <span>Partner Name</span>
-                        <input type="text" name="strategic_partners_name" id="strategic_partners_name" class="form-control" value="{{ $FromDatabase->strategic_partners_name }}">
+                        <input type="text" name="strategic_partners_name" id="strategic_partners_name"
+                            class="form-control" value="{{ $FromDatabase->strategic_partners_name }}">
                     </div>
                     <div class="form-group">
                         <span>Partner Logo</span>
-                        <input type="file" name="strategic_partners_logo" id="strategic_partners_logo" class="form-control">
+                        <input type="file" name="strategic_partners_logo" id="strategic_partners_logo"
+                            class="form-control">
+                        <input type="hidden" name="Strid" value="{{ $FromDatabase->id }}">
                     </div>
                     <div class="form-group">
                         <span>Partner Name</span>
@@ -45,7 +60,8 @@
                         image
                     </div>
                     <div class="card-body">
-                        <img src="{{ asset('image/about-us/strategic-partners') }}/{{ $FromDatabase->strategic_partners_logo }}" height="" alt="Logo">
+                        <img src="{{ asset('image/about-us/strategic-partners') }}/{{ $FromDatabase->strategic_partners_logo }}"
+                            height="" alt="Logo">
                     </div>
                 </div>
             </div>
@@ -53,7 +69,7 @@
     </div>
 
 
-@include('dashboard.about-us.strategic-partners.partials.modal')
+    @include('dashboard.about-us.strategic-partners.partials.modal')
 @endsection
 @section('js')
     @include('dashboard.about-us.strategic-partners.partials.js')
