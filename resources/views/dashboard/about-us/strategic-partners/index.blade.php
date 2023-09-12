@@ -17,8 +17,25 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    @if (Session::get('strategicPartnersDone'))
+                        <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show"
+                            role="alert">
+                            {{ Session::get('strategicPartnersDone') }}
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
+                    @if (Session::get('strategicPartnersError'))
+                        <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show"
+                            role="alert">
+                            {{ Session::get('strategicPartnersError') }}
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
                     <div class="card-header">
-                        <button type="button" class="btn btn-primary float-right">Insert Strategic Partners</button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#StrategicPartnersModal"
+                            class="btn btn-primary float-right">+ Insert Strategic Partners</button>
                     </div>
                     <div class="card-body">
                         <table class="table table-border datatable">
@@ -36,12 +53,13 @@
                                     <tr>
                                         <td>{{ $listPartners->id }}</td>
                                         <td>{{ $listPartners->strategic_partners_name }}</td>
-                                        <td><img src="{{ asset('image/about-us/strategic-partners') }}/{{ $listPartners->strategic_partners_logo }}" alt="Logo"></td>
+                                        <td><img src="{{ asset('image/about-us/strategic-partners') }}/{{ $listPartners->strategic_partners_logo }}"
+                                                alt="Partners Logo" height="70px" width="70px"></td>
                                         <td>{{ $listPartners->strategic_partners_about }}</td>
                                         <td>
                                             <div class="btn-group">
-                                                <button class="btn btn-warning">Update</button>
-                                                <button class="btn btn-danger">Delete</button>
+                                                <a href="{{ route('SupUser.OurStrategicPartnersUpdateShow',['strategic_id'=>$listPartners->id]) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                                <button class="btn btn-danger"><i class="bi bi-trash"></i></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -55,9 +73,8 @@
     </div>
 
 
-@include('dashboard.about-us.strategic-partners.partials.modal')
+    @include('dashboard.about-us.strategic-partners.partials.modal')
 @endsection
 @section('js')
-@include('dashboard.about-us.strategic-partners.partials.js')
+    @include('dashboard.about-us.strategic-partners.partials.js')
 @endsection
-    
