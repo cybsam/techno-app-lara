@@ -1,7 +1,4 @@
 @extends('FrontEndView.layouts.frontMaster')
-{{-- @section('title', 'our mission and Vission | Techno Apogee') --}}
-{{-- @section('metaTitle','Techno Apogee Mission And Vission, Techno Apogee Limited, Apogee Engineering Limited, Apogee Consulting Limited') --}}
-{{-- @section('metaDescription',"{{ $missionAndVission->mission_vission_keyword }}") --}}
 @section('content')
 <style>
     .weDoMission {

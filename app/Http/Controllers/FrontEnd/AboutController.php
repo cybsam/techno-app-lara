@@ -11,6 +11,7 @@ use App\Models\AboutUs;
 use App\Models\MissionAndVission;
 use App\Models\OurConcern;
 use App\Models\Expertise;
+use App\Models\StrategicPartner;
 use Illuminate\Support\Facades\URL;
 // seo tools
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -163,6 +164,23 @@ class AboutController extends Controller
 
     // Our Strategic Partners
     public function strategicPartners(){
-        return view('FrontEndView.about-us.our-strategic-partners');
+
+        $listStretegicPartnersList = StrategicPartner::where('is_active','0')->get();
+
+        if($listStretegicPartnersList){
+            SEOTools::setTitle('Our Stretegic Partners');
+            SEOTools::setDescription('We manage complex projects offering results that fit our client’s needs including general contracting, design, construction management, business development, feasibility studies and production planning among others. We are committed to continuous training and instruction to ensure a safe working environment for our employees and the clients we serve. We also provide a full range of virtual design and construction services, as well as the latest in smart mapping and computerized modeling with our In house expert and chartered highly qualified expert consultant.');
+            SEOTools::opengraph()->setUrl(url::current());
+            SEOTools::setCanonical(URL::current());
+            SEOTools::opengraph()->addProperty('type', 'about-us/strategic-partners');
+            SEOTools::twitter()->setSite('cybsam');
+            SEOTools::jsonLd()->addImage(URL::current());
+            return view('FrontEndView.about-us.our-strategic-partners',[
+                'listStretegicPartnersList'=>$listStretegicPartnersList,
+            ]);
+        }else{
+            abort(403);
+        }
+        
     }
 }
