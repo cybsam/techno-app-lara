@@ -33,9 +33,12 @@
                         </div>
                     </div>
                 @endforeach
-
+                <div class="d-flex">
+                    {{ $listStretegicPartnersList->links() }}
+                </div>
             </div>
         </div>
+        
     </section>
 
 
