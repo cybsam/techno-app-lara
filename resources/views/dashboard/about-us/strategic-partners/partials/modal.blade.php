@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Stretegic Partner</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -23,13 +23,13 @@
                     </div>
                     <div class="form-group">
                         <label for="">about strategic partner</label>
-                        <textarea name="strategic_partners_about" id="summernote" class="form-control" >{{ old('strategic_partners_about') }}</textarea>
+                        <textarea name="strategic_partners_about" id="summernote" cols="30" rows="10" class="form-control" >{{ old('strategic_partners_about') }}</textarea>
                         
                     </div>
                 
             </div>
             <div class="modal-footer">
-                <button type="reset" class="btn btn-secondary">close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 <button type="submit" class="btn btn-primary">Insert Value</button>
             </div>
         </form>

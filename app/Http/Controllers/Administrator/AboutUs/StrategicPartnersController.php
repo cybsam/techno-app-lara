@@ -30,7 +30,7 @@ class StrategicPartnersController extends Controller
         $request->validate([
             'strategic_partners_name'=>['required'],
             'strategic_partners_about'=>['required'],
-            'strategic_partners_logo'=>['required','mimes:png,jpg,ico,jpeg,gif,bmp']
+            'strategic_partners_logo'=>['required','mimes:png,jpg,ico,jpeg,gif,bmp,svg']
         ]);
 
         $checkDatabase = StrategicPartner::where('strategic_partners_name',$request->input('strategic_partners_name'))->first();
@@ -90,7 +90,7 @@ class StrategicPartnersController extends Controller
 
         if($request->hasFile('strategic_partners_logo')){
             $request->validate([
-                'strategic_partners_logo'=>['required','mimes:png,jpg,ico,gif,jpeg,bmp'],
+                'strategic_partners_logo'=>['required','mimes:png,jpg,ico,jpeg,gif,bmp,svg'],
             ]);
             if($checkDataStra){
                 $oldImagepath = base_path('public/image/about-us/strategic-partners/'.$checkDataStra->strategic_partners_logo);

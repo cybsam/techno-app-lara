@@ -165,7 +165,7 @@ class AboutController extends Controller
     // Our Strategic Partners
     public function strategicPartners(){
 
-        $listStretegicPartnersList = StrategicPartner::where('is_active','0')->get();
+        $listStretegicPartnersList = StrategicPartner::where('is_active','0')->inRandomOrder()->get();
 
         if($listStretegicPartnersList){
             SEOTools::setTitle('Our Stretegic Partners');
