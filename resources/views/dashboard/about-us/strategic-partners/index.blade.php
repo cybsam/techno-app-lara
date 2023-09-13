@@ -55,7 +55,7 @@
                                         <td>{{ $listPartners->strategic_partners_name }}</td>
                                         <td><img src="{{ asset('image/about-us/strategic-partners') }}/{{ $listPartners->strategic_partners_logo }}"
                                                 alt="Partners Logo" height="70px" width="70px"></td>
-                                        <td>{{ $listPartners->strategic_partners_about }}</td>
+                                        <td>{{ \Str::limit($listPartners->strategic_partners_about,100) }}</td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="{{ route('SupUser.OurStrategicPartnersUpdateShow',['strategic_id'=>$listPartners->id]) }}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>

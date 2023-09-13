@@ -43,8 +43,8 @@
                         <input type="hidden" name="Strid" value="{{ $FromDatabase->id }}">
                     </div>
                     <div class="form-group">
-                        <span>Partner Name</span>
-                        <textarea name="strategic_partners_about" class="form-control" id="strategic_partners_about">{{ $FromDatabase->strategic_partners_about }}</textarea>
+                        <span>Partner About</span>
+                        <textarea name="strategic_partners_about" class="form-control" cols="30" rows="10" id="strategic_partners_about">{{ $FromDatabase->strategic_partners_about }}</textarea>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -57,7 +57,9 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header">
-                        image
+                        <div class="d-grid gap-2">
+                            <a href="{{ URL::previous() }}" class="btn btn-primary">&#8592 Back </a>
+                        </div>
                     </div>
                     <div class="card-body">
                         <img src="{{ asset('image/about-us/strategic-partners') }}/{{ $FromDatabase->strategic_partners_logo }}"

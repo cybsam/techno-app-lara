@@ -27,8 +27,8 @@
                                 class="card-img-top" alt="{{ $listStretegicPartners->strategic_partners_name }}">
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ $listStretegicPartners->strategic_partners_name }}</h5>
-                                <p class="card-text mb-4">{{ $listStretegicPartners->strategic_partners_about }}.</p>
-                                {{-- <a href="#" class="btn btn-primary text-white mt-auto align-self-start">Book now</a> --}}
+                                <p class="card-text mb-4">{{ \Str::limit($listStretegicPartners->strategic_partners_about,100) }}.</p>
+                                <a href="" class="btn btn-primary text-white mt-auto align-self-start">Read More...</a>
                             </div>
                         </div>
                     </div>
