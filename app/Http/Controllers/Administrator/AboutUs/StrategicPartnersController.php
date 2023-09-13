@@ -44,7 +44,7 @@ class StrategicPartnersController extends Controller
                 $imageNewname = Str::slug($request->input('strategic_partners_name')).'-'.$randStr.'.'.$imageFr->getClientOriginalExtension();
                 $imageLocation = base_path('public/image/about-us/strategic-partners/'.$imageNewname);
 
-                Image::make($imageFr)->save($imageLocation);
+                Image::make($imageFr)->resize(285,190)->save($imageLocation);
 
                 $insDBStra = new StrategicPartner();
                 $insDBStra->strategic_partners_name = $request->input('strategic_partners_name');
@@ -98,7 +98,7 @@ class StrategicPartnersController extends Controller
                 $newImageNewName = Str::slug($request->input('strategic_partners_name')).'-'.$randStr.'.'.$request->file('strategic_partners_logo')->getClientOriginalExtension();
                 $ImageNewLocation = base_path('public/image/about-us/strategic-partners/'.$newImageNewName);
                 unlink($oldImagepath);
-                Image::make($request->file('strategic_partners_logo'))->save($ImageNewLocation);
+                Image::make($request->file('strategic_partners_logo'))->resize(285,190)->save($ImageNewLocation);
 
                 $updDB = $checkDataStra->update([
                     'strategic_partners_name'=>$request->input('strategic_partners_name'),
