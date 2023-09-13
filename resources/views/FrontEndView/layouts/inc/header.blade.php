@@ -59,7 +59,7 @@
                                 <nav class="rs-menu hidden-md">
                                     <ul class="nav-menu">
                                         <li class="current-menu-item">
-                                            <a href="{{ route('frontEndIndex') }}">Home</a>
+                                            <a href="{{ route('frontEndIndex') }}"><i class="fa fa-home" aria-hidden="true"></i></a>
                                         </li>
                                         <li class="menu-item-has-children">
                                             <a href="{{ route('frontEndIndex.about-us') }}">About Us</a>
@@ -211,7 +211,7 @@
             </div>
             <ul class="nav-menu">
                 <li class="menu-item-has-children current-menu-item">
-                    <a href="{{ route('frontEndIndex') }}">Home</a>
+                    <a href="{{ route('frontEndIndex') }}"><i class="fa fa-home" aria-hidden="true"></i></a>
 
                 </li>
                 
