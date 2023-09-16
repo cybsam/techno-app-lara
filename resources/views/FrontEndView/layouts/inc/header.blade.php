@@ -94,7 +94,7 @@
                                                             </ul>
                                                         </div>
                                                         <div class="meu-item ">
-                                                            <a href="">ELECTRICAL SOLUTIONS</a>
+                                                            <a href="">HVAC and BBT Solutions</a>
                                                             <ul>
                                                                 @foreach ($productAndServiceElectrial as $ElectricalSol)
                                                                     
