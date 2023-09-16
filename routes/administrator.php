@@ -68,6 +68,7 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
     Route::post('About-us/Strategic-Partners/Update/s',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'IndexPartnersUpdateSave'])->name('SupUser.OurStrategicPartnersUpdateSave');
     Route::post('About-us/Strategic-Partners/Delete',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'IndexPartnersDelete'])->name('SupUser.OurStrategicPartnersDelete');
     
+    Route::post('about-us/strategic-partners/category/insert',[App\Http\Controllers\Administrator\AboutUs\StrategicPartnersController::class, 'partnersCategory'])->name('SupUser.StrategicPartnersCategory');
     // end about us
 
     // our project

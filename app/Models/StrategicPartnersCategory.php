@@ -5,17 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StrategicPartner extends Model
+class StrategicPartnersCategory extends Model
 {
     use HasFactory;
-
     protected $fillable = [
-        'strategic_partners_name',
-        'strategic_partners_logo',
         'strategic_partner_categroy',
         'strategic_partner_categroy_slug',
-        'strategic_partners_about',
-        'strategic_partners_addedby',
-        'is_active',
     ];
+
+    
 }

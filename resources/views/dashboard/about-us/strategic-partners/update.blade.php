@@ -43,6 +43,15 @@
                         <input type="hidden" name="Strid" value="{{ $FromDatabase->id }}">
                     </div>
                     <div class="form-group">
+                        <span>Partner Category</span>
+                        <select name="strategic_partner_categroy" id="strategic_partner_categroy" class="form-control">
+                            <option value="{{ $FromDatabase->strategic_partner_categroy_slug }}" selected>{{ $FromDatabase->strategic_partner_categroy }}</option>
+                            @foreach ($category as $key => $partners_cate)
+                                <option value="{{ $partners_cate->strategic_partner_categroy_slug }}">{{ $partners_cate->strategic_partner_categroy }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <span>Partner About</span>
                         <textarea name="strategic_partners_about" class="form-control" cols="30" rows="10" id="strategic_partners_about">{{ $FromDatabase->strategic_partners_about }}</textarea>
                     </div>

@@ -34,6 +34,7 @@
                         </div>
                     @endif
                     <div class="card-header">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#insertStretegicPartnersCategory" class="btn btn-secondary">+ Insert Partner Category</button>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#StrategicPartnersModal"
                             class="btn btn-primary float-right">+ Insert Strategic Partners</button>
                     </div>
@@ -44,6 +45,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Logo</th>
+                                    <th scope="col">Category</th>
                                     <th scope="col">About</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -55,6 +57,7 @@
                                         <td>{{ $listPartners->strategic_partners_name }}</td>
                                         <td><img src="{{ asset('image/about-us/strategic-partners') }}/{{ $listPartners->strategic_partners_logo }}"
                                                 alt="Partners Logo" height="70px" width="70px"></td>
+                                        <td>{{ $listPartners->strategic_partner_categroy }}</td>
                                         <td>{{ \Str::limit($listPartners->strategic_partners_about,100) }}</td>
                                         <td>
                                             <div class="btn-group">
