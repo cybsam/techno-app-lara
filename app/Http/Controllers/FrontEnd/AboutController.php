@@ -213,4 +213,42 @@ class AboutController extends Controller
         }
         
     }
+
+    public function DetailsStrategicPartners(Request $request, $strategic_partner_name){
+        $strategicPartnersName = $strategic_partner_name;
+
+        $checkDatabase = StrategicPartner::where('strategic_partners_name', $strategicPartnersName)->where('is_active','0')->first();
+        if($checkDatabase){
+
+            // social share
+            $socialShareUrl = URL::current();
+            $partName = $checkDatabase->strategic_partners_name;
+            $socialShare = \Share::page(
+                $socialShareUrl,
+                $partName,
+            )->facebook()
+            ->twitter()
+            ->linkedin()
+            ->whatsapp()
+            ->reddit()
+            ->telegram();
+
+            // seo
+            SEOTools::setTitle($checkDatabase->strategic_partners_name);
+            SEOTools::setDescription($checkDatabase->strategic_partners_about);
+            SEOTools::opengraph()->setUrl(url::current());
+            SEOTools::setCanonical(URL::current());
+            SEOTools::opengraph()->addProperty('type', 'about-us/strategic-partners');
+            SEOTools::twitter()->setSite('strategic partner');
+            SEOTools::jsonLd()->addImage('/public/image/about-us/strategic-partners/'.$checkDatabase->strategic_partners_logo);
+
+
+            return view('FrontEndView.about-us.singleStrategic',[
+                'checkDatabase'=>$checkDatabase,
+                'socialShare'=>$socialShare,
+            ]);
+        }else{
+            abort(403);
+        }
+    }
 }

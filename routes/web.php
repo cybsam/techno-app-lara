@@ -39,6 +39,7 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
     Route::get('about-us/our-Concern', [App\Http\Controllers\FrontEnd\AboutController::class, 'OurConcern'])->name('frontEndIndex.OurConcern');
     Route::get('about-us/our-expertise', [App\Http\Controllers\FrontEnd\AboutController::class, 'ourExpertise'])->name('frontEndIndex.our-expertise');
     Route::get('about-us/strategic-partners', [App\Http\Controllers\FrontEnd\AboutController::class, 'strategicPartners'])->name('frontEndIndex.strategic-partners');
+    Route::get('about-us/strategic-partner/{strategic_partner_name}',[App\Http\Controllers\FrontEnd\AboutController::class, 'DetailsStrategicPartners'])->name('FrontEndStrategic.PartnersDetails');
 
     Route::get('product-and-service/{slug}',[App\Http\Controllers\FrontEnd\ProductAndServiceController::class, 'ProductFetch'])->name('frontEndIndex.ProductAndService');
     Route::get('product-and-service/{s_slug}/{sub_slug}',[App\Http\Controllers\FrontEnd\ProductAndServiceController::class, 'SubProductFetch'])->name('frontEndIndex.ProductAndServiceSubPro');
