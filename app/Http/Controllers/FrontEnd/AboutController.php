@@ -166,6 +166,21 @@ class AboutController extends Controller
     public function strategicPartners(){
 
         $listStretegicPartnersList = StrategicPartner::where('is_active','0')->paginate(12);
+        $automationSolutiuon = StrategicPartner::where('strategic_partner_categroy_slug','automation-solutions')->where('is_active','0')->get();
+        $fireHidrent = StrategicPartner::where('strategic_partner_categroy_slug','fire-hydrant-sprinkler')->where('is_active','0')->get();
+        $fireDetectionSystem = StrategicPartner::where('strategic_partner_categroy_slug','fire-detection-alarm-systems')->where('is_active','0')->get();
+        $jointSystems = StrategicPartner::where('strategic_partner_categroy_slug','expansion-joint-systems')->where('is_active','0')->get();
+        $HVACSystems = StrategicPartner::where('strategic_partner_categroy_slug','heating-ventilation-and-air-conditioning-hvac')->where('is_active','0')->get();
+        $BBTSystems = StrategicPartner::where('strategic_partner_categroy_slug','busbar-trunking-systems-bbt')->where('is_active','0')->get();
+        $networkingSystem = StrategicPartner::where('strategic_partner_categroy_slug','networking-systems')->where('is_active','0')->get();
+        $CCTVSystem = StrategicPartner::where('strategic_partner_categroy_slug','cctv-systems')->where('is_active','0')->get();
+        $pbaxSystems = StrategicPartner::where('strategic_partner_categroy_slug','pabx-systems')->where('is_active','0')->get();
+        $PASystems = StrategicPartner::where('strategic_partner_categroy_slug','public-address-systems')->where('is_active','0')->get();
+        $videoConferance = StrategicPartner::where('strategic_partner_categroy_slug','video-conference-systems')->where('is_active','0')->get();
+        $alermSystem = StrategicPartner::where('strategic_partner_categroy_slug','intruder-burglar-alarm-system')->where('is_active','0')->get();
+        $metalDetactor = StrategicPartner::where('strategic_partner_categroy_slug','baggage-scanner-metal-detector')->where('is_active','0')->get();
+        $parkingSystem = StrategicPartner::where('strategic_partner_categroy_slug','parking-management-systems')->where('is_active','0')->get();
+        $digitalLock = StrategicPartner::where('strategic_partner_categroy_slug','digital-hotel-lock-systems')->where('is_active','0')->get();
 
         if($listStretegicPartnersList){
             SEOTools::setTitle('Our Stretegic Partners');
@@ -177,6 +192,21 @@ class AboutController extends Controller
             SEOTools::jsonLd()->addImage(URL::current());
             return view('FrontEndView.about-us.our-strategic-partners',[
                 'listStretegicPartnersList'=>$listStretegicPartnersList,
+                'automationSolutiuon'=>$automationSolutiuon,
+                'fireHidrent'=>$fireHidrent,
+                'fireDetectionSystem'=>$fireDetectionSystem,
+                'jointSystems'=>$jointSystems,
+                'HVACSystems'=>$HVACSystems,
+                'BBTSystems'=>$BBTSystems,
+                'networkingSystem'=>$networkingSystem,
+                'CCTVSystem'=>$CCTVSystem,
+                'pbaxSystems'=>$pbaxSystems,
+                'PASystems'=>$PASystems,
+                'videoConferance'=>$videoConferance,
+                'alermSystem'=>$alermSystem,
+                'metalDetactor'=>$metalDetactor,
+                'parkingSystem'=>$parkingSystem,
+                'digitalLock'=>$digitalLock,
             ]);
         }else{
             abort(403);

@@ -8,7 +8,8 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('Administrator.index') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('SupUser.AboutUsIndex') }}">About Us</a></li>
-                <li class="breadcrumb-item active">Strategic Partners Update</li>
+                <li class="breadcrumb-item"><a href="{{ route('SupUser.OurStrategicPartners') }}">Strategic Partners</a></li>
+                <li class="breadcrumb-item active">Strategic Partner Update</li>
             </ol>
         </nav>
     </div>
@@ -35,12 +36,22 @@
                         <span>Partner Name</span>
                         <input type="text" name="strategic_partners_name" id="strategic_partners_name"
                             class="form-control" value="{{ $FromDatabase->strategic_partners_name }}">
+                            <div class="text-danger">
+                                @error('strategic_partners_name')
+                                    <span>{{ $message }}</span>
+                                @enderror
+                            </div>
                     </div>
                     <div class="form-group">
                         <span>Partner Logo</span>
                         <input type="file" name="strategic_partners_logo" id="strategic_partners_logo"
                             class="form-control">
                         <input type="hidden" name="Strid" value="{{ $FromDatabase->id }}">
+                        <div class="text-danger">
+                            @error('strategic_partners_logo')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
                         <span>Partner Category</span>
@@ -50,10 +61,20 @@
                                 <option value="{{ $partners_cate->strategic_partner_categroy_slug }}">{{ $partners_cate->strategic_partner_categroy }}</option>
                             @endforeach
                         </select>
+                        <div class="text-danger">
+                            @error('strategic_partner_categroy')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <div class="form-group">
                         <span>Partner About</span>
                         <textarea name="strategic_partners_about" class="form-control" cols="30" rows="10" id="strategic_partners_about">{{ $FromDatabase->strategic_partners_about }}</textarea>
+                        <div class="text-danger">
+                            @error('strategic_partners_about')
+                                <span>{{ $message }}</span>
+                            @enderror
+                        </div>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -68,6 +89,9 @@
                     <div class="card-header">
                         <div class="d-grid gap-2">
                             <a href="{{ URL::previous() }}" class="btn btn-primary">&#8592 Back </a>
+                            @if (Session::get('StrategicPartnersUpdateDone') || Session::get('strategicPartnersUpdateFailed'))
+                                <a href="{{ route('SupUser.OurStrategicPartners') }}" class="btn btn-info text-white">Strategic Partners List</a>
+                            @endif
                         </div>
                     </div>
                     <div class="card-body">
@@ -75,6 +99,7 @@
                             height="" alt="Logo">
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
