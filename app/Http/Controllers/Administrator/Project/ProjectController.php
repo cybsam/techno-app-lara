@@ -109,6 +109,7 @@ class ProjectController extends Controller
     public function ProjectUpdateCom(Request $request){
         $request->validate([
             'id'=>['required'],
+            'project_name'=>['required'],
             'project_category_slug'=>['required'],
             'project_slug'=>['required'],
             'project_keyword'=>['required'],
@@ -138,6 +139,7 @@ class ProjectController extends Controller
 
                 Image::make($projectHeaderImage)->save($UpdatePath);
 
+                $checkDBProject->project_name = $request->input('project_name');
                 $checkDBProject->project_header_image = $ProjectImageNewName;
                 $checkDBProject->project_category_slug = $request->input('project_category_slug');
                 $checkDBProject->project_keyword = $request->input('project_keyword');
@@ -158,7 +160,7 @@ class ProjectController extends Controller
             }
         }else{
             if($checkDBProject){
-                
+                $checkDBProject->project_name = $request->input('project_name');
                 $checkDBProject->project_category_slug = $request->input('project_category_slug');
                 $checkDBProject->project_keyword = $request->input('project_keyword');
                 $checkDBProject->project_scope = $request->input('project_scope');

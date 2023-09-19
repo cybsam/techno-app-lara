@@ -29,7 +29,7 @@
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#projectcategory">+ Project Category</button>
                         <div class="float-right">
-                            <a href="{{ URL::previous() }}" class="btn btn-secondary">Return Back</a>
+                            <a href="{{ route('SupUser.ProjectOnGoing') }}" class="btn btn-secondary">&#8617; Project List</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -64,7 +64,7 @@
                             <div class="form-group mt-2">
                                 <label for="">__Project Name: <b class="text-danger">*</b></label>
                                 <input type="text" name="project_name" id="project_name" class="form-control"
-                                    value="{{ $fetchProjectFromDB->project_name }}" readonly>
+                                    value="{{ $fetchProjectFromDB->project_name }}">
                                 <div class="text-danger">
                                     @error('project_name')
                                         <b>{{ $message }}</b>
