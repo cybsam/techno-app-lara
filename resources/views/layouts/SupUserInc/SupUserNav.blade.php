@@ -96,10 +96,7 @@
               </li><!-- End Notification Nav -->
 
               <li class="nav-item dropdown">
-                  {{-- @php
-                    $msgfetch = DB::table('contacts')->where('seen',0)->take(5)->get();
-                    $countMsg = $msgfetch->count();
-                @endphp --}}
+                  
                 @php
                     $countUnSeenMsg = DB::table('front_contacts')->where('is_seen',0)->count();
                     $fetchMsgFrnt = DB::table('front_contacts')->where('is_seen',0)->take(7)->get();
@@ -113,7 +110,7 @@
                   <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                       <li class="dropdown-header">
                           You have {{ $countUnSeenMsg }} new messages
-                          <a href="#"><span
+                          <a href="{{ route('supUser.FrontEndContact') }}"><span
                                   class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                       </li>
                       <li>
@@ -121,7 +118,7 @@
                       </li>
                       @foreach ($fetchMsgFrnt as $key => $fetchMsgFrnt)
                       <li class="message-item">
-                          <a href="">
+                          <a href="{{ route('supUser.FrontEndContactShow',['id'=>$fetchMsgFrnt->id]) }}">
                               <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
                               <div>
                                   <h4>{{ $fetchMsgFrnt->sender_name }}</h4>
@@ -140,7 +137,7 @@
                       </li>
 
                       <li class="dropdown-footer">
-                          <a href="#">Show all messages</a>
+                          <a href="{{ route('supUser.FrontEndContact') }}">Show all messages</a>
                       </li>
 
                   </ul><!-- End Messages Dropdown Items -->

@@ -168,7 +168,8 @@
                                         @foreach ($fetchProductAndServiceLit as $key => $fetchProductandService)
                                             <tr>
                                                 <td scope="col">{{ $fetchProductandService->id }}</td>
-                                                <td scope="col">{{ $fetchProductandService->__prosername }}</td>
+                                                
+                                                <td scope="col"><a href="{{ route('SupUserProduct.SubMenuShow',['menu_slug'=>$fetchProductandService->__proserslug]) }}">{{ $fetchProductandService->__prosername }}</a> </td>
                                                 <td scope="col">{{ $fetchProductandService->__prosermenuselect }}</td>
                                             </tr>
                                         @endforeach

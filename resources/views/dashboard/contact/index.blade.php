@@ -35,7 +35,7 @@
                     <td><a href="mailto:{{ $contactU->sender_email }}">{{ $contactU->sender_email }}</a></td>
                     <td>{{ Str::limit($contactU->sender_subject, 20) }}</td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="{{ route('supUser.FrontEndContactShow',['id'=>$contactU->id]) }}">View</a>
+                        <a class="btn btn-primary btn-sm" href="{{ route('supUser.FrontEndContactShow',['id'=>$contactU->id]) }}"><i class="bi bi-eye"></i></a>
                         
                     </td>
                 </tr>
