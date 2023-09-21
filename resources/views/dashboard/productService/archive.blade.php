@@ -9,7 +9,7 @@
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('Administrator.index') }}">Dashboard</a></li>
-                
+                <li class="breadcrumb-item"><a href="{{ route('SupUser.ProductSerIndex') }}">Product & Service</a></li>
                 <li class="breadcrumb-item active">Product & Service Archive</li>
             </ol>
         </nav>
@@ -52,8 +52,8 @@
                     <td>
                         <div class="button-group">
                             
-                            <button type="button" value="{{ $productService->id }}" class="btn btn-primary productrestoreBTN btn-sm">Restore</button>
-                            <button type="button" value="{{ $productService->id }}" class="btn btn-danger productHardDeleteBTN btn-sm">Delete</button>
+                            <button type="button" value="{{ $productService->id }}" class="btn btn-primary productrestoreBTN btn-sm"><i class="bi bi-arrow-clockwise"></i></button>
+                            <button type="button" value="{{ $productService->id }}" class="btn btn-danger productHardDeleteBTN btn-sm"><i class="bi bi-trash"></i></button>
                         </div>
                     </td>
                 </tr>

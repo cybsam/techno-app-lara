@@ -20,7 +20,7 @@
 
     <div class="card">
         <div class="card-header">
-            <a href="{{ URL::previous() }}" class="btn btn-secondary"><- Back</a>
+            <a href="{{ URL::previous() }}" class="btn btn-secondary">&larr; Back</a>
             <div class="float-right">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#projectcategory">+
                     Project Category</button>

@@ -26,7 +26,7 @@
         @endif
     </div>
     <div class="card-header">
-        <a href="{{ URL::previous() }}" class="btn btn-info"><- Back</a>
+        <a href="{{ URL::previous() }}" class="btn btn-info">&larr; Back</a>
         <div class="float-right">
             <a href="{{ route('SupUserProduct.SubMenuInsert',['menu_slug'=>$menu_slug]) }}" class="btn btn-primary btn-sm">+ Sub Product</a>
         </div>
@@ -51,7 +51,7 @@
                     <td>
                         <div class="button-group">
                             
-                            <a href="{{ route('SupUserProduct.SubMenuUpdateShow',['subProUpdate_slug'=>$ProductServiceSubMenu->__proserslug]) }}" class="btn btn-warning btn-sm">Update</a>
+                            <a href="{{ route('SupUserProduct.SubMenuUpdateShow',['subProUpdate_slug'=>$ProductServiceSubMenu->__proserslug]) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
                             <button type="button" value="{{ $ProductServiceSubMenu->id }}" class="btn btn-danger deleteProductServiceSub btn-sm">Delete</button>
                         </div>
                     </td>

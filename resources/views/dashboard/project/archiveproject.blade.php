@@ -51,8 +51,8 @@
                 <td><img src="{{ asset('image/project') }}/{{ $archiveProject->project_header_image }}" alt="{{ $archiveProject->project_name }}" height="40px" width="80px"></td>
                 <td>
                     <div class="button-group">
-                        <button type="button" value="{{ $archiveProject->id }}" class="btn btn-secondary btn-sm ProjectArchiveRestoreBTN">Restore</button>
-                        <button type="button" value="{{ $archiveProject->id }}" class="btn btn-danger btn-sm ProjectArchiveDeleteBTN">Delete</button>
+                        <button type="button" value="{{ $archiveProject->id }}" class="btn btn-primary btn-sm ProjectArchiveRestoreBTN"><i class="bi bi-arrow-clockwise"></i></button>
+                        <button type="button" value="{{ $archiveProject->id }}" class="btn btn-danger btn-sm ProjectArchiveDeleteBTN"><i class="bi bi-trash"></i></button>
                     </div>
                 </td>
             </tr>

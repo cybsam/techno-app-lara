@@ -35,8 +35,8 @@
                 <td><img src="{{ asset('image/project') }}/{{ $onGoingProject->project_header_image }}" alt="{{ $onGoingProject->project_name }}" height="40px" width="80px"></td>
                 <td>
                     <div class="button-group">
-                        <a href="{{ route('SupUser.ProjectUpdate',['project_id'=>$onGoingProject->id,'project_slug'=>$onGoingProject->project_slug]) }}" class="btn btn-secondary btn-sm">Update</a>
-                        <button type="button" value="{{ $onGoingProject->id }}" class="btn btn-danger btn-sm ProjectArchiveButton">Archive</button>
+                        <a href="{{ route('SupUser.ProjectUpdate',['project_id'=>$onGoingProject->id,'project_slug'=>$onGoingProject->project_slug]) }}" class="btn btn-secondary btn-sm"><i class="bi bi-pencil-square"></i></a>
+                        <button type="button" value="{{ $onGoingProject->id }}" class="btn btn-danger btn-sm ProjectArchiveButton"><i class="bi bi-archive"></i></button>
                     </div>
                 </td>
             </tr>

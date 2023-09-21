@@ -41,9 +41,9 @@
                     <td>{{ $productService->__prosermenuselect }}</td>
                     <td>
                         <div class="button-group">
-                            <a href="{{ route('SupUserProduct.SubMenuShow',['menu_slug'=>$productService->__proserslug]) }}" class="btn btn-primary btn-sm">View</a>
-                            <a href="{{ route('SupUser.ProductServiceUpdateGetlink',['product_id'=>$productService->id,'product_slug'=>$productService->__proserslug]) }}" class="btn btn-warning btn-sm">Update</a>
-                            <button type="button" value="{{ $productService->id }}" class="btn btn-danger delteProDuctService btn-sm">Archive</button>
+                            <a href="{{ route('SupUserProduct.SubMenuShow',['menu_slug'=>$productService->__proserslug]) }}" class="btn btn-primary btn-sm"><i class="bi bi-eye"></i></a>
+                            <a href="{{ route('SupUser.ProductServiceUpdateGetlink',['product_id'=>$productService->id,'product_slug'=>$productService->__proserslug]) }}" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i></a>
+                            <button type="button" value="{{ $productService->id }}" class="btn btn-danger delteProDuctService btn-sm"><i class="bi bi-archive"></i></button>
                         </div>
                     </td>
                 </tr>

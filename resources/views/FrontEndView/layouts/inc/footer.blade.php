@@ -32,9 +32,9 @@
                         <div class="col-lg-3 col-md-12 col-sm-12 md-mb-10 pl-55 md-pl-15">
                             <h3 class="footer-title">Our Services</h3>
                             <ul class="site-map">
-                                <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">DESIGN & CONSULTANCY SERVICES</a></li>
-                                <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">ELECTRICAL SOLUTION</a></li>
-                                <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'fire-solution']) }}">FIRE SOLUTION</a></li>
+                                <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">DESIGN & CONSULTANCY</a></li>
+                                <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'busbar-trunking-bbt-systems']) }}">HVAC & BBT SOLUTIONS</a></li>
+                                <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'fire-detection-system']) }}">FIRE SOLUTION</a></li>
                                 <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'automation-solution']) }}">AUTOMATION SOLUTION</a></li>
                             </ul>
                         </div>
