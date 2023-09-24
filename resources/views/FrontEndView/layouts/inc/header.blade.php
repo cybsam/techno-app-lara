@@ -222,6 +222,7 @@
                         <li><a href="{{ route('frontEndIndex.ourTeam') }}">Our Team</a></li>
                         <li><a href="{{ route('frontEndIndex.OurConcern') }}">Our Concern</a></li>
                         <li><a href="{{ route('frontEndIndex.our-expertise') }}">Our Expertise</a></li>
+                        <li><a href="{{ route('frontEndIndex.strategic-partners') }}">Strategic Partners</a></li>
 
                     </ul>
                 </li>
@@ -232,7 +233,7 @@
                         <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'electrical-solution']) }}">ELECTRICAL SOLUTION</a></li>
                         <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'fire-solution']) }}">FIRE SOLUTION</a></li>
                         <li><a href="{{ route('frontEndIndex.ProductAndService',['slug'=>'automation-solution']) }}">AUTOMATION SOLUTION</a></li>
-                        <li><a href="{{ route('frontEndIndex.strategic-partners') }}">Strategic Partners</a></li>
+                        
                     </ul>
                 </li>
                 <li>
