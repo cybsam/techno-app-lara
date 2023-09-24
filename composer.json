@@ -15,7 +15,8 @@
         "laravel/framework": "^8.54",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
-        "laravelista/comments": "^4.5"
+        "laravelista/comments": "^4.5",
+        "teampanfu/laravel-hcaptcha": "^1.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

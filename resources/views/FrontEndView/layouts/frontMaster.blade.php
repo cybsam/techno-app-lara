@@ -125,6 +125,8 @@
         <script src="{{ asset('js/FrontEnd/js/main.js')}}"></script>
         <script src="https://kit.fontawesome.com/17569ebc40.js" crossorigin="anonymous"></script>
 
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
     </body>
 
 </html>

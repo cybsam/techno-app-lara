@@ -85,7 +85,10 @@
                             </div>
                         </div>
                         <div class="message">
-                            <textarea name="sender_message" id="sender_message" placeholder="Message"></textarea>
+                            <textarea name="sender_message" id="sender_message" placeholder="Type Message..."></textarea>
+                        </div>
+                        <div>
+                            {!! HCaptcha::display() !!}
                         </div>
                         <button type="submit">Submit</button>
                     </form>

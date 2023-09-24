@@ -99,7 +99,7 @@
                   
                 @php
                     $countUnSeenMsg = DB::table('front_contacts')->where('is_seen',0)->count();
-                    $fetchMsgFrnt = DB::table('front_contacts')->where('is_seen',0)->take(7)->get();
+                    $fetchMsgFrnt = DB::table('front_contacts')->where('is_seen',0)->take(7)->get()->reverse();
                 @endphp
 
                   <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">

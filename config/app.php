@@ -168,6 +168,8 @@ return [
 
         CyrildeWit\EloquentViewable\EloquentViewableServiceProvider::class,
         Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+
+        Panfu\Laravel\HCaptcha\HCaptchaServiceProvider::class,
         
         /*
          * Package Service Providers...
@@ -239,6 +241,8 @@ return [
         //custom
         'Share' => Jorenvh\Share\ShareFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
+
+        'HCaptcha' => Panfu\Laravel\HCaptcha\Facades\HCaptcha::class,
 
         'SEOMeta'       => Artesaos\SEOTools\Facades\SEOMeta::class,
         'OpenGraph'     => Artesaos\SEOTools\Facades\OpenGraph::class,
