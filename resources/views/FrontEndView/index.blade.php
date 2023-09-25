@@ -29,9 +29,7 @@
                             <h1 class="sl-title">Engineering </h1>
                         </div>
                       
-                        <div class="slider-bottom ">
-                            <a class="readon consultant slider" href="{{ route('frontEndIndex.ProductAndService',['slug'=>'design-consultancy-service']) }}">Discover More</a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -43,9 +41,9 @@
                             <h1 class="sl-title">Construction</h1>
                         </div>
                         
-                        <div class="slider-bottom ">
+                        {{-- <div class="slider-bottom ">
                             <a class="readon consultant" href="contact.html">Discover More</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -57,9 +55,9 @@
                             <h1 class="sl-title">Pocurement</h1>
                         </div>
                         
-                        <div class="slider-bottom">
+                        {{-- <div class="slider-bottom">
                             <a class="readon consultant" href="contact.html">Discover More</a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

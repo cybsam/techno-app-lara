@@ -2078,7 +2078,8 @@ blockquote cite:before {
     position: static;
 }
 .full-width-header .rs-header.style2 .topbar-area {
-    background-color: #f47117;
+    background-color: #121212;
+    /* background-color: #f47117; */
 }
 .full-width-header
     .rs-header.style2
