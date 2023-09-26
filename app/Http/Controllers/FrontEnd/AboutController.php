@@ -101,7 +101,7 @@ class AboutController extends Controller
 
     // Our team
     public function OurTeam(){
-        // $AboutUsInformation = AboutUsInformation::where('id',1)->first();
+        // $AboutUsInformation = AboutUsInformation::where('id',1)->first();01
         $management = AboutOurTeam::where('department','management')->get();
         $project_engineering_operation_department = AboutOurTeam::where('department','project-engineering-operation-department')->get();
         $admin_operation = AboutOurTeam::where('department','admin-operation')->get();
@@ -115,7 +115,7 @@ class AboutController extends Controller
         SEOTools::opengraph()->setUrl(url::current());
         SEOTools::setCanonical('');
         SEOTools::opengraph()->addProperty('type', 'expertise');
-        SEOTools::twitter()->setSite('cybsam');
+        SEOTools::twitter()->setSite('Techno Apogee');
         SEOTools::jsonLd()->addImage(URL::current());
         
         return view('FrontEndView.about-us.our-team',[
@@ -140,7 +140,7 @@ class AboutController extends Controller
         SEOTools::opengraph()->setUrl(url::current());
         SEOTools::setCanonical('https://codecasts.com.br/lesson');
         SEOTools::opengraph()->addProperty('type', 'articles');
-        SEOTools::twitter()->setSite('cybsam');
+        SEOTools::twitter()->setSite('techno apogee');
         SEOTools::jsonLd()->addImage(URL::current());
 
         
@@ -156,7 +156,7 @@ class AboutController extends Controller
         SEOTools::opengraph()->setUrl(url::current());
         SEOTools::setCanonical('https://codecasts.com.br/lesson');
         SEOTools::opengraph()->addProperty('type', 'expertise');
-        SEOTools::twitter()->setSite('cybsam');
+        SEOTools::twitter()->setSite('techno apogee');
         SEOTools::jsonLd()->addImage(URL::current());
 
         return view('FrontEndView.about-us.our-expertise',['expertiseFetch'=>$expertiseFetch]);
