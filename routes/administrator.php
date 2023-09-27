@@ -140,6 +140,13 @@ Route::prefix('en/Administrator')->middleware(['auth:web','isAdmin','preventback
 
     // end blog section
 
+    // list all download
+
+    Route::get('download/index',[App\Http\Controllers\Administrator\Download\DownloadsController::class, 'indexList'])->name('SupUserDownload.indexList');
+    Route::get('download/insert',[App\Http\Controllers\Administrator\Download\DownloadsController::class, 'insertDownload'])->name('SupUserDownload.insertDown');
+
+    // end list download
+
     //contact
     Route::get('contact/front',[App\Http\Controllers\Administrator\DashboardController::class, 'ContactFrontEnd'])->name('supUser.FrontEndContact');
     Route::get('contact/front/{id}/show',[App\Http\Controllers\Administrator\DashboardController::class, 'ContactFrontEndShow'])->name('supUser.FrontEndContactShow');

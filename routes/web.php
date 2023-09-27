@@ -56,6 +56,10 @@ Route::prefix('en')->middleware(['guest:web'])->group(function(){
     Route::post('search',[App\Http\Controllers\FrontEnd\BlogController::class, 'FrontSearch'])->name('frontEndView.FrontEndSearch');
     // end blog section
 
+    // download
+    
+    // end download
+
     // contact 
     Route::get('contact',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contact'])->name('frontEnd.ContactS');
     Route::post('contact/s',[App\Http\Controllers\FrontEnd\FrontEndController::class, 'contactStore'])->name('frontEnd.ContactStore');
