@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class DownloadsController extends Controller
 {
-    //
+    public function indexList(){
+        return view('dashboard.download.index');
+    }
 }

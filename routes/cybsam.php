@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontEnd\FrontEndController;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +46,17 @@ Route::prefix('cybsamdev')->group(function(){
         return 'View cache has been cleared';
     });
 
+    // for migrate force
     Route::get('migrate-force', function(){
         Artisan::call('migrate', ["--force" => true]);
         return 'Migration Complete! chech database,';
     });
+
+    // for storage link
+    Route::get('storage-link', function(){
+        Artisan::call('storage:link');
+        return response('Storate Link successfully generate.');
+    });
+
+    
 });

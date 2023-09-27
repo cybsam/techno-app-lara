@@ -177,34 +177,7 @@
                 </ul>
             </li><!-- End Charts Nav -->
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" data-bs-target="#catagory-nav" data-bs-toggle="collapse"
-                    href="#">
-                    <i class="bi bi-gem"></i><span>Super Catagory</span><i class="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="catagory-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                    {{-- <li>
-                <a href="{{ route('supuser.cata.super') }}">
-                <i class="bi bi-circle"></i><span>Active Catagory</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('supuser.MycategorySuper') }}">
-                <i class="bi bi-circle"></i><span>My Catagory</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('supuser.cata.super.insert') }}">
-                <i class="bi bi-circle"></i><span>Insert Catagory</span>
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('supuser.cata.super.archive') }}">
-                <i class="bi bi-circle"></i><span>Archived</span>
-                </a>
-            </li> --}}
-                </ul>
-            </li>
+            
 
             <li class="nav-heading">Users</li>
             <li class="nav-item @if (url()->current() == route('SupUser.ListUsers')) active @endif">
@@ -232,29 +205,31 @@
                 </ul>
             </li>
 
-            {{-- <li class="nav-heading">Menu</li>
+            <li class="nav-heading">Downloads</li>
             <li class="nav-item ">
-                <a class="nav-link collapsed" data-bs-target="#menu_part" data-bs-toggle="collapse" href="#">
-                    <i class="bi bi-menu-up"></i><span>Menu Bar</span><i class="bi bi-chevron-down ms-auto"></i>
+                <a class="nav-link collapsed" data-bs-target="#downloads_sidebar_loc" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-download"></i><span>Files</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
-                <ul id="menu_part" class="nav-content collapse active" data-bs-parent="#sidebar-nav">
+                <ul id="downloads_sidebar_loc" class="nav-content collapse active" data-bs-parent="#sidebar-nav">
                     <li>
-                        <a href="" class="">
-                            <i class="bi bi-circle"></i><span>Menu List</span>
+                        <a href="{{ route('SupUserDownload.indexList') }}" class="@if(URL::current() == route('SupUserDownload.indexList')) active @endif">
+                            <i class="bi bi-circle"></i><span>Index/List File</span>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <i class="bi bi-circle"></i><span>Archive Users</span>
+                            <i class="bi bi-circle"></i><span>Insert File</span>
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <i class="bi bi-circle"></i><span>Block Users</span>
+                            <i class="bi bi-circle"></i><span>Archive File</span>
                         </a>
                     </li>
                 </ul>
-            </li> --}}
+            </li>
+
+            
 
 
 
